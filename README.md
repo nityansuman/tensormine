@@ -132,7 +132,7 @@ layer = MyDenseLayer(10)
 
 ## How to use TensorHub
 
-+ [Text Classifier Example](run_text_classification.py)
++ [Text Classifier Example](examples/run_text_classification.py)
 
 *Lot more coming your way. Stay put.*
 
