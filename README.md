@@ -216,6 +216,6 @@ so feel free to open an issue on GitHub or send along a pull request.
 
 ## Let's Work Together
 
-Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together of an awesome project.
+Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together.
 
 If you like the work I do, show your appreciation by "FORK", "STAR", or "SHARE".
