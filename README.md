@@ -105,7 +105,7 @@ class MyModel(tf.keras.Model):
 model = MyModel()
 ```
 
-**Implementing custom layers**
+**Implementing Custom Layers**
 
 The best way to implement your own layer is extending the tf.keras.Layer class and implementing: * __init__ , where you can do all input-independent initialization * build, where you know the shapes of the input tensors and can do the rest of the initialization * call, where you do the forward computation
 
@@ -125,38 +125,89 @@ class MyDenseLayer(tf.keras.layers.Layer):
 layer = MyDenseLayer(10)
 ```
 
+**Or Like This**
+```
+class Linear(Layer):
+    """y = w.x + b"""
+
+    def __init__(self, units=32):
+        super(Linear, self).__init__()
+        self.units = units
+
+    def build(self, input_shape):
+        self.w = self.add_weight(shape=(input_shape[-1], self.units),
+                                initializer='random_normal',
+                                trainable=True)
+        self.b = self.add_weight(shape=(self.units,),
+                                initializer='random_normal',
+                                trainable=True)
+
+    def call(self, inputs):
+        return tf.matmul(inputs, self.w) + self.b
+
+
+# Instantiate our lazy layer.
+linear_layer = Linear(4)
+
+# This will also call `build(input_shape)` and create the weights.
+y = linear_layer(tf.ones((2, 2)))
+```
+
+
 ## How to use TensorHub
 
 + [Text Classifier Example](examples/run_text_classification.py)
 
-*Lot more coming your way. Stay put.*
+*More examples coming soon. Stay put.*
 
 
 ## Whats cooking Inside
 
+*Planned for version 1.0 as of now.*AlexNet
+
 + Natural Language Processing
     + Cooked Models:
         + Text Classification
-            + RNN
-            + LSTM
-            + GRU
-        + Neural Machine Translation (Optional Attention)
-            + GRU
-            + LSTM
+            + Basic Text Classifiers using RNNs.
+            + Text Classifiers using RNNs with Attention
+            + Text Classifiers using 1D or 2D CNNs
+        + Neural Machine Translation
+            + NMT Engine using RNNs
+            + NMT Engine using RNNs with Attention
+        + Named Entity Recognition
+            + Standard NER Modules with Stacked RNNs
     + Building Blocks:
         + Attention
             + Multi-Head Self-Attention
             + Bahdanau Attention
             + Luong Attention
-        + Encoder (Optional Attention)
+        + Encoder - Decoder(Optional Attention and Bi-Dir.)
             + RNN
             + GRU
             + LSTM
-        + Decoder (Optional Attention)
-            + RNN
-            + GRU
-            + LSTM
-
+        + Embeddings
+            + Embedding Layer Wrapper
+            + Position Embedding
+    + Utilities:
+        + Processor
+            + Create Word/Char Vocabulary for Embedding Lookup
+            + Load Pre-trained Embedding
+        + Trainer
+            + Train TF 2.0 Models with Ease
++ Image
+    + Cooked Models:
+        + Image Classification
+            + Basic Image Classifiers using CNNs
+            + Inception Based Image Classifier
+            + AlexNet
+    + Building Blocks:
+        + Feature Extraction
+            + Simple CNN
+            + Inception v1, v2, v3
+        + Transfer Learning
+    + Utilities:
+        + Data Augmentation
+        + Trainer
 
 ```
 We"re eager to collaborate with you too,
