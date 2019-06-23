@@ -163,7 +163,7 @@ y = linear_layer(tf.ones((2, 2)))
 
 ## Whats cooking Inside
 
-*Planned for version 1.0 as of now.*AlexNet
+*Planned for version 1.0 as of now.*
 
 + Natural Language Processing
     + Cooked Models:
@@ -198,13 +198,19 @@ y = linear_layer(tf.ones((2, 2)))
     + Cooked Models:
         + Image Classification
             + Basic Image Classifiers using CNNs
-            + Inception Based Image Classifier
-            + AlexNet
+            + AlexNet Based Image Classifier
     + Building Blocks:
         + Feature Extraction
-            + Simple CNN
-            + Inception v1, v2, v3
-        + Transfer Learning
+            + CNN Modules
+            + Inception Modules
+        + Transfer Learning with ImageNet Weights
+            + Xception
+            + Inception
+            + VGG
+            + ResNet
+            + MobileNet
+            + DenseNet
+            + NASNet
     + Utilities:
         + Data Augmentation
         + Trainer
