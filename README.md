@@ -14,12 +14,7 @@ Our aim is to provide you enough interlocking building blocks that you can build
 
 `TensorHub or THub` for short, is a library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research. We provide a set of cooked models that can be used directly with a single call in it"s default configuration or with a custom configuration. We provide a wide range of lego like neural interlocking blocks to so that you can build more and worry less.
 
-
-## Requirements
-+ Tensorflow 2.0.0-beta1
-+ Python 3.0
-
-## Install
+## Available at PyPI to Install
 ```
 pip install tensorhub
 ```
@@ -41,7 +36,7 @@ A simple and flexible architecture to take new ideas from concept to code, to st
 **[Build, deploy, and experiment easily with TensorFlow](https://www.tensorflow.org/)**
 
 
-## How To Code in TensorFlow 2.0
+## How To Code in TensorFlow - The Experienced Way
 
 **Sequential Interface**
 
