@@ -145,9 +145,9 @@ layer = MyDenseLayer(10)
             + RNN
             + LSTM
             + GRU
-        + Neural Machine Translation
-            + GRU (w/ or w/o Attention)
-            + LSTM (w/ or w/o Attention)
+        + Neural Machine Translation (Optional Attention)
+            + GRU
+            + LSTM
     + Building Blocks:
         + Attention
             + Multi-Head Self-Attention
