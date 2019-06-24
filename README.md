@@ -14,12 +14,7 @@ Our aim is to provide you enough interlocking building blocks that you can build
 
 `TensorHub or THub` for short, is a library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research. We provide a set of cooked models that can be used directly with a single call in it"s default configuration or with a custom configuration. We provide a wide range of lego like neural interlocking blocks to so that you can build more and worry less.
 
-
-## Requirements
-+ Tensorflow 2.0.0-beta1
-+ Python 3.0
-
-## Install
+## Available at PyPI to Install
 ```
 pip install tensorhub
 ```
@@ -41,7 +36,7 @@ A simple and flexible architecture to take new ideas from concept to code, to st
 **[Build, deploy, and experiment easily with TensorFlow](https://www.tensorflow.org/)**
 
 
-## How To Code in TensorFlow 2.0
+## How To Code in TensorFlow - The Experienced Way
 
 **Sequential Interface**
 
@@ -110,7 +105,7 @@ class MyModel(tf.keras.Model):
 model = MyModel()
 ```
 
-**Implementing custom layers**
+**Implementing Custom Layers**
 
 The best way to implement your own layer is extending the tf.keras.Layer class and implementing: * __init__ , where you can do all input-independent initialization * build, where you know the shapes of the input tensors and can do the rest of the initialization * call, where you do the forward computation
 
@@ -130,38 +125,95 @@ class MyDenseLayer(tf.keras.layers.Layer):
 layer = MyDenseLayer(10)
 ```
 
+**Or Like This**
+```
+class Linear(Layer):
+    """y = w.x + b"""
+
+    def __init__(self, units=32):
+        super(Linear, self).__init__()
+        self.units = units
+
+    def build(self, input_shape):
+        self.w = self.add_weight(shape=(input_shape[-1], self.units),
+                                initializer='random_normal',
+                                trainable=True)
+        self.b = self.add_weight(shape=(self.units,),
+                                initializer='random_normal',
+                                trainable=True)
+
+    def call(self, inputs):
+        return tf.matmul(inputs, self.w) + self.b
+
+
+# Instantiate our lazy layer.
+linear_layer = Linear(4)
+
+# This will also call `build(input_shape)` and create the weights.
+y = linear_layer(tf.ones((2, 2)))
+```
+
+
 ## How to use TensorHub
 
 + [Text Classifier Example](examples/run_text_classification.py)
 
-*Lot more coming your way. Stay put.*
+*More examples coming soon. Stay put.*
 
 
 ## Whats cooking Inside
 
+*Planned for version 1.0 as of now.*
+
 + Natural Language Processing
     + Cooked Models:
         + Text Classification
-            + RNN
-            + LSTM
-            + GRU
-        + Neural Machine Translation (Optional Attention)
-            + GRU
-            + LSTM
+            + Basic Text Classifiers using RNNs.
+            + Text Classifiers using RNNs with Attention
+            + Text Classifiers using 1D or 2D CNNs
+        + Neural Machine Translation
+            + NMT Engine using RNNs
+            + NMT Engine using RNNs with Attention
+        + Named Entity Recognition
+            + Standard NER Modules with Stacked RNNs
     + Building Blocks:
         + Attention
             + Multi-Head Self-Attention
             + Bahdanau Attention
             + Luong Attention
-        + Encoder (Optional Attention)
+        + Encoder - Decoder(Optional Attention and Bi-Dir.)
             + RNN
             + GRU
             + LSTM
-        + Decoder (Optional Attention)
-            + RNN
-            + GRU
-            + LSTM
-
+        + Embeddings
+            + Embedding Layer Wrapper
+            + Position Embedding
+    + Utilities:
+        + Processor
+            + Create Word/Char Vocabulary for Embedding Lookup
+            + Load Pre-trained Embedding
+        + Trainer
+            + Train TF 2.0 Models with Ease
++ Image
+    + Cooked Models:
+        + Image Classification
+            + Basic Image Classifiers using CNNs
+            + AlexNet Based Image Classifier
+    + Building Blocks:
+        + Feature Extraction
+            + CNN Modules
+            + Inception Modules
+        + Transfer Learning with ImageNet Weights
+            + Xception
+            + Inception
+            + VGG
+            + ResNet
+            + MobileNet
+            + DenseNet
+            + NASNet
+    + Utilities:
+        + Data Augmentation
+        + Trainer
 
 ```
 We"re eager to collaborate with you too,
@@ -170,6 +222,6 @@ so feel free to open an issue on GitHub or send along a pull request.
 
 ## Let's Work Together
 
-Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together on an awesome project.
+Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together.
 
 If you like the work I do, show your appreciation by "FORK", "STAR", or "SHARE".
