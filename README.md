@@ -8,7 +8,7 @@ The core open source library to help you develop and train ML models easy and fa
 
 ## How to use TensorHub
 
-`TensorHub` is a global collection of `Lego blocks` for Neutral Networks. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
+`TensorHub` is a global collection of `Lego blocks` for Neural Networks. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
 
 Our aim is to provide you enough interlocking building blocks that you can build any neural architecture from basic to advance in less than `15 minutes` with less than `30 lines` of codes in `TensorFlow 2.0`.
 
