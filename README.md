@@ -1,10 +1,10 @@
 # TensorHub <img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg"> <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/tensorhub.svg"> <img alt="PyPI - Wheel" src="https://img.shields.io/pypi/wheel/tensorhub.svg"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg">
 
-**Models Implemented in TensorFlow 2.0** (*Under active development.*)
-
-The core open source library to help you develop and train ML models easy and fast as never before.
+The core open source library to help you develop and train ML models easy and fast as never before in TensorFlow.
 
 ![TensorHub](data/header.png)
+
+*Next Pre-Release: v1.0alpha2 --> 1st July 2019*
 
 
 ## How to use TensorHub
