@@ -6,6 +6,7 @@ The core open source library to help you develop and train ML models easy and fa
 
 ![TensorHub](data/header.png)
 
+
 ## How to use TensorHub
 
 `TensorHub` is a global collection of `Lego blocks` for Neural Networks. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
@@ -14,10 +15,63 @@ Our aim is to provide you enough interlocking building blocks that you can build
 
 `TensorHub or THub` for short, is a library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research. We provide a set of cooked models that can be used directly with a single call in it"s default configuration or with a custom configuration. We provide a wide range of lego like neural interlocking blocks to so that you can build more and worry less.
 
-## Available at PyPI to Install
+**Tutorials**
+
++ [Text Classifier Example](examples/run_text_classification.py)
+
+*More examples coming soon. Stay put.*
+
+
+## Available on PyPI
 ```
 pip install tensorhub
 ```
+
+
+## Upcoming in v1.0
+```
+ROOT
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+├── data
+│   └── header.png
+├── examples
+│   └── run_text_classification.py
+├── setup.py
+├── tensorhub
+│   ├── image
+│   │   ├── __init__.py
+│   │   ├── blocks
+│   │   │   ├── custom_layers
+│   │   │   └── layers.py
+│   │   ├── cooked_models
+│   │   │   └── classification.py
+│   │   └── utilities
+│   └── text
+│       ├── __init__.py
+│       ├── blocks
+│       │   ├── attention.py
+│       │   ├── attention_wrapper
+│       │   │   ├── bahdanau_attention.py
+│       │   │   └── luong_attention.py
+│       │   ├── custom_layers
+│       │   │   └── linear_layer.py
+│       │   └── layers.py
+│       ├── cooked_models
+│       │   ├── classification.py
+│       │   ├── document_classification.py
+│       │   ├── entity_recognition.py
+│       │   ├── machine_translation.py
+│       │   └── sentiment_analysis.py
+│       ├── utilities
+│       │   ├── processor.py
+│       │   └── trainer.py
+│       └── wrapper
+│           └── embeddings.py
+```
+
 
 ## Why TensorFlow
 TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.
@@ -40,27 +94,23 @@ A simple and flexible architecture to take new ideas from concept to code, to st
 
 **Sequential Interface**
 
-The best place to start is with the user-friendly Sequential API. You can create models by plugging together building blocks. Run the “Hello World” example below, then visit the tutorials to learn more.
-
+The best place to start is with the user-friendly Sequential API. You can create simple models by plugging together building blocks. Run the “Hello World” example below, then visit the tutorials to learn more.
 ```
-my_model = tf.keras.models.Sequential([
+model = tf.keras.models.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),
     tf.keras.layers.Dense(128, activation="relu"),
     tf.keras.layers.Dropout(0.2),
     tf.keras.layers.Dense(10, activation="softmax")
 ])
 
-OR
+# Compile your model
+model.compile(optimizer="rmsprop", loss="categorical_crossentropy", metrics=["accuracy"])
 
-inputs = tf.keras.layers.Input(shape=(784,))
-x = tf.keras.layers.Dense(64, activation="relu")(inputs)
-x = tf.keras.layers.Dense(64, activation="relu")(x)
-predictions = Dense(10, activation="softmax")(x)
-my_model = tf.keras.models.Model(inputs=inputs, outputs=predictions)
+# Train
+model.fit(data, labels)
 ```
 
 **Functional Interface**
-
 ```
 # Input to the model
 inputs = Input(shape=(784,))
@@ -85,7 +135,6 @@ model.fit(data, labels)
 **Subclassing Interface**
 
 The Subclassing API provides a define-by-run interface for advanced research. Create a class for your model, then write the forward pass imperatively. Easily **author custom layers**, **activations**, **training loop** and much more.
-
 ```
 class MyModel(tf.keras.Model):
     def __init__(self):
@@ -108,7 +157,6 @@ model = MyModel()
 **Implementing Custom Layers**
 
 The best way to implement your own layer is extending the tf.keras.Layer class and implementing: * __init__ , where you can do all input-independent initialization * build, where you know the shapes of the input tensors and can do the rest of the initialization * call, where you do the forward computation
-
 ```
 class MyDenseLayer(tf.keras.layers.Layer):
   def __init__(self, num_outputs):
@@ -145,7 +193,6 @@ class Linear(Layer):
     def call(self, inputs):
         return tf.matmul(inputs, self.w) + self.b
 
-
 # Instantiate our lazy layer.
 linear_layer = Linear(4)
 
@@ -154,73 +201,12 @@ y = linear_layer(tf.ones((2, 2)))
 ```
 
 
-## How to use TensorHub
-
-+ [Text Classifier Example](examples/run_text_classification.py)
-
-*More examples coming soon. Stay put.*
-
-
-## Whats cooking Inside
-
-*Planned for version 1.0 as of now.*
-
-+ Natural Language Processing
-    + Cooked Models:
-        + Text Classification
-            + Basic Text Classifiers using RNNs.
-            + Text Classifiers using RNNs with Attention
-            + Text Classifiers using 1D or 2D CNNs
-        + Neural Machine Translation
-            + NMT Engine using RNNs
-            + NMT Engine using RNNs with Attention
-        + Named Entity Recognition
-            + Standard NER Modules with Stacked RNNs
-    + Building Blocks:
-        + Attention
-            + Multi-Head Self-Attention
-            + Bahdanau Attention
-            + Luong Attention
-        + Encoder - Decoder(Optional Attention and Bi-Dir.)
-            + RNN
-            + GRU
-            + LSTM
-        + Embeddings
-            + Embedding Layer Wrapper
-            + Position Embedding
-    + Utilities:
-        + Processor
-            + Create Word/Char Vocabulary for Embedding Lookup
-            + Load Pre-trained Embedding
-        + Trainer
-            + Train TF 2.0 Models with Ease
-+ Image
-    + Cooked Models:
-        + Image Classification
-            + Basic Image Classifiers using CNNs
-            + AlexNet Based Image Classifier
-    + Building Blocks:
-        + Feature Extraction
-            + CNN Modules
-            + Inception Modules
-        + Transfer Learning with ImageNet Weights
-            + Xception
-            + Inception
-            + VGG
-            + ResNet
-            + MobileNet
-            + DenseNet
-            + NASNet
-    + Utilities:
-        + Data Augmentation
-        + Trainer
-
-```
-We"re eager to collaborate with you too,
-so feel free to open an issue on GitHub or send along a pull request.
-```
-
 ## Let's Work Together
+
+```
+We're eager to collaborate with you.
+Feel free to open an issue on or send along a pull request. Check 'upcoming v1.0' section for new ideas.
+```
 
 Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together.
 
