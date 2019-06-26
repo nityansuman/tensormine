@@ -18,7 +18,7 @@ Our aim is to provide you enough interlocking building blocks that you can build
 
 **Tutorials**
 
-+ [Text Classifier Example](examples/run_text_classification.py)
++ [Text Classifier Example](examples/run_text_classifiers.py)
 
 *More examples coming soon. Stay put.*
 
