@@ -4,7 +4,7 @@ The core open source library to help you develop and train ML models easy and fa
 
 ![TensorHub](data/header.png)
 
-*Next Pre-Release: v1.0alpha2 --> 1st July 2019*
+*Next Pre-Release: v1.0beta1 --> 1st July 2019*
 
 
 ## How to use TensorHub
