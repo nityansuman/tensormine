@@ -29,8 +29,7 @@ import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
-from tensorhub.text.wrapper.embeddings import Embeddings
-from tensorhub.text.cooked_models.classification import SimpleTextClassification
+from tensorhub.text.cooked_models.classifiers import SequenceClassifier
 
 # Multiclass Text Classification on 'News Healines' Dataset
 
@@ -123,7 +122,7 @@ test_ds = tf.data.Dataset.from_tensor_slices((x_test, y_test)).batch(64)
 #
 #
 # GRU model
-custom_model = SimpleTextClassification(
+custom_model = SequenceClassifier(
     model_name="gru",
     vocab_size=len(word_index) + 1,
     num_classes=len(classes)
