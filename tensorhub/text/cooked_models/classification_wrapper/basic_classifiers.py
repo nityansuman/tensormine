@@ -25,7 +25,6 @@ SOFTWARE.
 
 # Load packages
 from tensorflow import keras
-from wrapper.embeddings import EmbeddingLayer
 
 
 class PerceptronClassifier:
@@ -39,8 +38,7 @@ class PerceptronClassifier:
             self.output_activation = "softmax"
         self.max_seq_length = max_seq_length
         self.num_layers = num_layers
-        self.default_units = [256]*(self.num_layers)
-        self.units = units if units != None else self.default_units
+        self.units = units if units != None else [256]*(self.num_layers)
         self.dp_rate = dp_rate
         self.learn_embedding = learn_embedding
         self.embedding_dim = embedding_dim
@@ -80,9 +78,8 @@ class SequenceClassifier:
         self.bidir = bidir
         self.num_layers = num_layers
         self.max_seq_length = max_seq_length
-        self.default_units = [128]*(self.num_layers)
         self.dp_rate = dp_rate
-        self.units = units if units != None else self.default_units
+        self.units = units if units != None else [128]*(self.num_layers)
         self.learn_embedding = learn_embedding
         self.embedding_dim = embedding_dim
         self.embedding_matrix = embedding_matrix
