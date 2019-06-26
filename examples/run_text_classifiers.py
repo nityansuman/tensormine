@@ -122,11 +122,14 @@ test_ds = tf.data.Dataset.from_tensor_slices((x_test, y_test)).batch(64)
 #
 #
 # GRU model
-custom_model = SequenceClassifier(
+classifier = SequenceClassifier(
     model_name="gru",
     vocab_size=len(word_index) + 1,
     num_classes=len(classes)
 )
+
+# Model is a property
+custom_model = classifier.model
 
 # SET MODEL TRAINING AND VALIDATION ENVIRONMENT
 #
