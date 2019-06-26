@@ -11,9 +11,10 @@ The core open source library to help you develop and train ML models easy and fa
 
 `TensorHub` is a global collection of `Lego blocks` for Neural Networks. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
 
-Our aim is to provide you enough interlocking building blocks that you can build any neural architecture from basic to advance in less than `15 minutes` with less than `30 lines` of codes in `TensorFlow 2.0`.
-
 `TensorHub or THub` for short, is a library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research. We provide a set of cooked models that can be used directly with a single call in it"s default configuration or with a custom configuration. We provide a wide range of lego like neural interlocking blocks to so that you can build more and worry less.
+
+Our aim is to provide you enough interlocking building blocks that you can build any neural architecture from basic to advance with less code.
+
 
 **Tutorials**
 
@@ -28,7 +29,7 @@ pip install tensorhub
 ```
 
 
-## Upcoming in v1.0
+## Upcoming in v1.0 (More to come... under progress)
 ```
 ROOT
 ├── CODE_OF_CONDUCT.md
@@ -38,38 +39,51 @@ ROOT
 ├── data
 │   └── header.png
 ├── examples
-│   └── run_text_classification.py
+│   └── run_text_classifiers.py
 ├── setup.py
 ├── tensorhub
+│   ├── __init__.py
+│   ├── blocks
+│   │   ├── attention_wrapper
+│   │   │   ├── bahdanau_attention
+│   │   │   ├── multi_head_self_attention
+│   │   │   └── luong_attention
+│   │   ├── layer_wrapper
+│   │   │   └── basic_layers
+│   │   └── layers (Load wrappers from here)
 │   ├── image
 │   │   ├── __init__.py
-│   │   ├── blocks
-│   │   │   ├── custom_layers
-│   │   │   └── layers.py
 │   │   ├── cooked_models
-│   │   │   └── classification.py
+│   │   │   ├── classification_wrapper
+│   │   │   │   ├── ResNet50
+│   │   │   │   ├── Xception
+│   │   │   │   ├── VGG16
+│   │   │   │   ├── VGG19
+│   │   │   │   ├── Inceptionv3
+│   │   │   │   ├── InceptionResNetv2
+│   │   │   │   ├── NasNetLarge
+│   │   │   │   ├── NasNetSmall
+│   │   │   │   ├── MobileNet
+│   │   │   │   ├── Densenet121
+│   │   │   │   ├── Densenet169
+│   │   │   │   └── Densenet201
+│   │   │   └── classifiers (Load classifiers from here)
 │   │   └── utilities
 │   └── text
 │       ├── __init__.py
-│       ├── blocks
-│       │   ├── attention.py
-│       │   ├── attention_wrapper
-│       │   │   ├── bahdanau_attention.py
-│       │   │   └── luong_attention.py
-│       │   ├── custom_layers
-│       │   │   └── linear_layer.py
-│       │   └── layers.py
 │       ├── cooked_models
-│       │   ├── classification.py
-│       │   ├── document_classification.py
-│       │   ├── entity_recognition.py
-│       │   ├── machine_translation.py
-│       │   └── sentiment_analysis.py
-│       ├── utilities
-│       │   ├── processor.py
-│       │   └── trainer.py
-│       └── wrapper
-│           └── embeddings.py
+│       │   ├── classification_wrapper
+│       │   │   ├── Perceptron
+│       │   │   ├── RNN
+│       │   │   ├── LSTM
+│       │   │   └── GRU
+│       │   └── classifiers (Load classifiers from here)
+│       └── utilities
+│           ├── Trainer
+│           │   └── TensorFlow 2.0 Trainer
+│           └── processor
+│               ├── Load Pre-trained Embeddings
+│               └── Create Vocabulary
 ```
 
 
@@ -159,15 +173,15 @@ model = MyModel()
 The best way to implement your own layer is extending the tf.keras.Layer class and implementing: * __init__ , where you can do all input-independent initialization * build, where you know the shapes of the input tensors and can do the rest of the initialization * call, where you do the forward computation
 ```
 class MyDenseLayer(tf.keras.layers.Layer):
-  def __init__(self, num_outputs):
-    super(MyDenseLayer, self).__init__()
-    self.num_outputs = num_outputs
+	def __init__(self, num_outputs):
+		super(MyDenseLayer, self).__init__()
+		self.num_outputs = num_outputs
 
-  def build(self, input_shape):
-    self.kernel = self.add_variable("kernel", shape=[int(input_shape[-1]), self.num_outputs])
+	def build(self, input_shape):
+    	self.kernel = self.add_variable("kernel", shape=[int(input_shape[-1]), self.num_outputs])
 
-  def call(self, input):
-    return tf.matmul(input, self.kernel)
+	def call(self, input):
+    	return tf.matmul(input, self.kernel)
 
 # Call your layer
 layer = MyDenseLayer(10)
@@ -211,3 +225,6 @@ Feel free to open an issue on or send along a pull request. Check 'upcoming v1.0
 Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together.
 
 If you like the work I do, show your appreciation by "FORK", "STAR", or "SHARE".
+
+
+[![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
