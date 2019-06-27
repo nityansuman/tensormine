@@ -28,7 +28,7 @@ from tensorflow import keras
 
 
 class CNNClassifier:
-    def __init__(self, img_shape, num_channels=3, num_classes, num_cnn_blocks=2, conv_sz=None, filter_sz=None, pool_sz=2):
+    def __init__(self, img_shape, num_classes, num_channels=3, num_cnn_blocks=2, conv_sz=None, filter_sz=None, pool_sz=2):
         self.img_shape = img_shape
         self.num_cnn_blocks = num_cnn_blocks
         self.num_channels = num_channels
