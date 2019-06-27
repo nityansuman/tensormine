@@ -16,6 +16,9 @@ dist/
 # Vs-Code project files
 *.vscode
 
+*.idea
+*.pyc
+
 # Ignore jupyter cheskpoints
 *.ipynb_checkpoints
 
