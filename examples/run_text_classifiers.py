@@ -20,11 +20,10 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from tensorhub.text.cooked_models.classifiers import SequenceClassifier
 
+
 # Multiclass Text Classification on 'News Healines' Dataset
 
 # DATA PREPRATION
-#
-#
 # Path to dataset in use
 filepath = "~/__data__/news-category.json"
 
@@ -108,8 +107,6 @@ train_ds = tf.data.Dataset.from_tensor_slices((x_train, y_train)).batch(32)
 test_ds = tf.data.Dataset.from_tensor_slices((x_test, y_test)).batch(64)
 
 # LOAD ONE OF THE COOKED MODELS FROM OUR LIBRARY
-#
-#
 # GRU model
 classifier = SequenceClassifier(
     model_name="gru",
@@ -117,12 +114,10 @@ classifier = SequenceClassifier(
     num_classes=len(classes)
 )
 
-# Model is a property
+# Get model architecture from the instantiated object
 custom_model = classifier.model
 
 # SET MODEL TRAINING AND VALIDATION ENVIRONMENT
-#
-#
 # Train model using a tensor function
 # In future, this will be separated as a different module with multiple development and production environment
 def train_validate_model(model, train_ds, test_ds, epochs=3):
