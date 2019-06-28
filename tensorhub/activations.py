@@ -12,10 +12,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-
-# Load transformation layers
-from layer_wrapper.basic_layers import Linear
-
-# Load attention layers
-from attention_wrapper.bahdanau_attention import BahdanauAttention
-from attention_wrapper.luong_attention import LuongAttention
