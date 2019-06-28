@@ -1,32 +1,31 @@
 # TensorHub <img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg"> <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/tensorhub.svg"> <img alt="PyPI - Wheel" src="https://img.shields.io/pypi/wheel/tensorhub.svg"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg">
 
-The core open source library to help you develop and train ML models easy and fast as never before in TensorFlow.
+The open source library to help you develop and train ML models easy and fast as never before in TensorFlow.
 
 ![TensorHub](data/header.png)
 
 *Next Pre-Release: v1.0beta1 --> 1st July 2019*
 
+## Available on PyPI
+```
+pip install tensorhub
+```
 
 ## How to use TensorHub
 
-`TensorHub` is a global collection of `Lego blocks` for Neural Networks. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
+`TensorHub` is a global collection of `blocks` and `ready to serve models`. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
 
-`TensorHub or THub` for short, is a library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research. We provide a set of cooked models that can be used directly with a single call in it"s default configuration or with a custom configuration. We provide a wide range of lego like neural interlocking blocks to so that you can build more and worry less.
+`TensorHub or THub` for short, is a wrapper library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research with `TensorFlow 2.0`. 
 
 Our aim is to provide you enough interlocking building blocks that you can build any neural architecture from basic to advance with less code.
 
 
 **Tutorials**
 
++ [Learn TensorFlow 2.0](examples/)
 + [Text Classifier Example](examples/run_text_classifiers.py)
 
 *More examples coming soon. Stay put.*
-
-
-## Available on PyPI
-```
-pip install tensorhub
-```
 
 
 ## Repository Map
