@@ -25,7 +25,6 @@ SOFTWARE.
 
 # Load modules
 from classification_wrapper.basic_classifiers import CNNClassifier
-
 from classification_wrapper.transfer_learning import VGG16
 from classification_wrapper.transfer_learning import VGG19
 from classification_wrapper.transfer_learning import MobileNet
@@ -38,5 +37,3 @@ from classification_wrapper.transfer_learning import DenseNet169
 from classification_wrapper.transfer_learning import DenseNet201
 from classification_wrapper.transfer_learning import NASNetMobile
 from classification_wrapper.transfer_learning import NASNetLarge
-
-
