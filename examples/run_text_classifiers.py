@@ -115,7 +115,7 @@ classifier = SequenceClassifier(
 )
 
 # Get model architecture from the instantiated object
-custom_model = classifier.model
+custom_model = classifier.model()
 
 # SET MODEL TRAINING AND VALIDATION ENVIRONMENT
 # Train model using a tensor function
