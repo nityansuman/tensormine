@@ -40,7 +40,8 @@ class ModelTail:
         self.activation = activation
 
         # Check if number of layers and number of dropouts have same dimension
-        assert len(num_nodes) == len(self.dropouts)
+        if not len(num_nodes) == len(self.dropouts):
+            raise AssertionError()
 
     def create_model_tail(self, model):
         """Method creates top model. This model will be added at the top of keras application model.
