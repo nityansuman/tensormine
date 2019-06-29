@@ -4,7 +4,7 @@ The open source library to help you develop and train ML models easy and fast as
 
 ![TensorHub](data/header.png)
 
-*Next Pre-Release: v1.0beta1 --> 1st July 2019*
+*Next Pre-Release: v1.0alpha3 --> 1st July 2019*
 
 ## Available on PyPI
 ```
@@ -141,7 +141,7 @@ A simple and flexible architecture to take new ideas from concept to code, to st
 
 ```
 We're eager to collaborate with you.
-Feel free to open an issue on or send along a pull request. Check 'upcoming v1.0' section for new ideas.
+Feel free to open an issue on or send along a pull request.
 ```
 
 Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together.
