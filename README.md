@@ -1,4 +1,11 @@
-# TensorHub <img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg"> <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/tensorhub.svg"> <img alt="PyPI - Wheel" src="https://img.shields.io/pypi/wheel/tensorhub.svg"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg">
+# TensorHub 
+
+[![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
+
+<img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg?color=orange&style=for-the-badge">
+<img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg?style=for-the-badge">
+<img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=for-the-badge">
+<img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dw/tensorhub.svg?color=red&style=for-the-badge">
 
 The open source library to help you develop and train ML models easy and fast as never before in TensorFlow.
 
@@ -145,6 +152,3 @@ Feel free to open an issue on or send along a pull request.
 Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together.
 
 If you like the work I do, show your appreciation by "FORK", "STAR", or "SHARE".
-
-
-[![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
