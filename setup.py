@@ -33,7 +33,7 @@ with open("README.md", mode="r") as fh:
 # Create setup
 setuptools.setup(
     name="tensorhub",
-    version="1.0-alpha2",
+    version="1.0-alpha3",
     author="Kumar Nityan Suman",
     author_email="nityan.suman@gmail.com",
     description="The core open source library to help you develop and train ML models easy and fast as never before.",
