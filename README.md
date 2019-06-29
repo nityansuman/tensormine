@@ -28,49 +28,91 @@ Our aim is to provide you enough interlocking building blocks that you can build
 *More examples coming soon. Stay put.*
 
 
-## Repository Map
-```
-.
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── data
-│   └── header.png
-├── examples
-│   └── run_text_classifiers.py
-├── setup.py
-├── tensorhub
-│   ├── activations.py
-│   ├── blocks
-│   │   ├── attention_wrapper
-│   │   │   ├── bahdanau_attention.py
-│   │   │   └── luong_attention.py
-│   │   └── layer_wrapper
-│   │       └── basic_layers.py
-│   ├── image
-│   │   ├── cooked_models
-│   │   │   ├── classification_wrapper
-│   │   │   │   ├── basic_classifiers.py
-│   │   │   │   └── transfer_learning
-│   │   │   │       ├── model_tail.py
-│   │   │   │       └── transfer_learning.py
-│   │   │   └── classifiers.py
-│   │   └── utilities
-│   ├── layers.py
-│   ├── losses.py
-│   ├── metrics.py
-│   ├── text
-│   │   ├── cooked_models
-│   │   │   ├── classification_wrapper
-│   │   │   │   └── basic_classifiers.py
-│   │   │   ├── classifiers.py
-│   │   │   ├── entity_recognition_wrapper
-│   │   │   └── machine_translation_wrapper
-│   │   └── utilities
-│   │       └── processor.py
-│   └── trainer.py
-```
+## Coming in TensorHub v1.0
++ Cooked Models
+    + Image Classification
+        + Xception
+        + VGG16
+        + VGG19
+        + ResNet50
+        + InceptionV3
+        + InceptionResNetV2
+        + MobileNet
+        + DenseNet
+        + NASNet
+
+    + Text Classification
+        + RNN, LSTM, GRU
+        + Text-CNN
+        + *Under Planning*
+
+    + Neural Machine Translation
+        + Encoder-Decoder Standard Sequence Model (Encoder, Decoder -> [RNN, LSTM, GRU])
+        + Translation with Attention
+
+    + Text Generation
+        + RNN, LSTM, GRU
+        + *Under Planning*
+
++ Layers
+    + Standard
+        + Linear
+        + *Under planning*
+    + Attention
+        + Bahdanau Attention
+        + Luong Attention
+        + Self-Attention
+
+
++ Losses
+    + Mean Squared Error
+    + Mean Absolute Error
+    + Mean Absolute Percentage Error
+    + Mean Squared Algorithmic Error
+    + Hige
+    + Squared Hinge
+    + Binary Cross Entropy
+    + Categorical Cross Entropy
+    + Sparse Categorical Cross Entropy
+    + Poisson
+    
++ Metrics
+    + Binary Accuracy
+    + Categorical Accuracy
+    + Sparse Categorcial Accuracy
+    + Top-k Categorical Accuracy
+    + Sparse Top-K Categorical Accuracy
+    + Mean Prediction
+    + Precision
+    + Recall/Sensitivity
+    + F1-Score
+    + Matthews correlation coefficient (MCC)
+    + Specificity/Selectivity 
+    + False Discovery Rate
+    + False Omission Rate
+
+    (*All `Losses` can be used as a metric to evaluate the model performance.*)
+
++ Activations
+    + RELU
+    + SELU
+    + GELU
+    + ELU
+    + Tanh
+    + Sigmoid
+    + Hard Sigmoid
+    + Softmax
+    + Softplus
+    + Softsign
+    + Exponential
+    + Linear
+
++ Utilities
+    + Text
+        + Custom Tokenizer
+        + Load Embeddings
+    + Image
+        + *Under Planning*
 
 
 ## Why TensorFlow
