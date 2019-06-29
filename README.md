@@ -227,4 +227,5 @@ Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](http
 If you like the work I do, show your appreciation by "FORK", "STAR", or "SHARE".
 
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f34aeed031e249fab2b9df6d74fd1e98)](https://app.codacy.com/app/nityansuman/tensorhub?utm_source=github.com&utm_medium=referral&utm_content=nityansuman/tensorhub&utm_campaign=Badge_Grade_Settings)
 [![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
