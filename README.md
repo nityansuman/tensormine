@@ -25,7 +25,7 @@ Our aim is to provide you enough interlocking building blocks that you can build
 + [Learn TensorFlow 2.0](examples/)
 + [Text Classifier Example](examples/run_text_classifiers.py)
 
-*More examples coming soon. Stay put.*
+`More examples coming soon. Stay put.`
 
 
 ## Coming in TensorHub v1.0
@@ -44,7 +44,7 @@ Our aim is to provide you enough interlocking building blocks that you can build
     + Text Classification
         + RNN, LSTM, GRU
         + Text-CNN
-        + *Under Planning*
+        + *More to come...*
 
     + Neural Machine Translation
         + Encoder-Decoder Standard Sequence Model (Encoder, Decoder -> [RNN, LSTM, GRU])
@@ -53,6 +53,9 @@ Our aim is to provide you enough interlocking building blocks that you can build
     + Text Generation
         + RNN, LSTM, GRU
         + *Under Planning*
+    
+    + Named Entity Recogniton
+        + *More to come...*
 
 + Layers
     + Standard
@@ -62,6 +65,7 @@ Our aim is to provide you enough interlocking building blocks that you can build
         + Bahdanau Attention
         + Luong Attention
         + Self-Attention
+        + *More to come...*
 
 
 + Losses
@@ -111,8 +115,9 @@ Our aim is to provide you enough interlocking building blocks that you can build
     + Text
         + Custom Tokenizer
         + Load Embeddings
+        + *More to come...*
     + Image
-        + *Under Planning*
+        + *More to come...*
 
 
 ## Why TensorFlow
