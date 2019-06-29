@@ -26,14 +26,12 @@ pip install tensorhub
 
 Our aim is to provide you enough interlocking building blocks that you can build any neural architecture from basic to advance with less code.
 
-
 **Tutorials**
 
 + [Learn TensorFlow 2.0](examples/)
 + [Text Classifier Example](examples/run_text_classifiers.py)
 
 `More examples coming soon. Stay put.`
-
 
 ## Coming in TensorHub v1.0
 + Cooked Models
@@ -71,7 +69,6 @@ Our aim is to provide you enough interlocking building blocks that you can build
         + Luong Attention
         + Self-Attention
         + *More to come...*
-
 
 + Losses
     + Mean Squared Error
@@ -124,7 +121,6 @@ Our aim is to provide you enough interlocking building blocks that you can build
     + Image
         + *More to come...*
 
-
 ## Why TensorFlow
 TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.
 
@@ -141,9 +137,7 @@ A simple and flexible architecture to take new ideas from concept to code, to st
 
 **[Build, deploy, and experiment easily with TensorFlow](https://www.tensorflow.org/)**
 
-
 ## Let's Work Together
-
 ```
 We're eager to collaborate with you.
 Feel free to open an issue on or send along a pull request.
