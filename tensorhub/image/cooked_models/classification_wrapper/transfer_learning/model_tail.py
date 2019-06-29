@@ -39,7 +39,7 @@ class ModelTail:
         self.dropouts = dropouts if dropouts != None else [0.5, 0.5]
         self.activation = activation
 
-        # Check if the length of "list of dense-layer dimensions" and "list of dropout values" is same
+        # Check if number of layers and number of dropouts have same dimension
         assert len(num_nodes) == len(self.dropouts)
 
     def create_model_tail(self, model):
@@ -52,13 +52,13 @@ class ModelTail:
             sequential model with dense layers, dropout layers and softmax layer as specified.
         """
         # Creating a sequential model to at as top layers
-        top_model = Sequential()
-        top_model.add(Flatten(input_shape=model.output_shape[1:]))
+        top_model = keras.Sequential()
+        top_model.add(keras.layers.Flatten(input_shape=model.output_shape[1:]))
 
         # Add multiple layers
         for layer_num, layer_dim in enumerate(self.num_nodes):
-            top_model.add(Dense(layer_dim, activation=self.activation))
-            top_model.add(Dropout(self.dropouts[layer_num]))
+            top_model.add(keras.layers.Dense(layer_dim, activation=self.activation))
+            top_model.add(keras.layers.Dropout(self.dropouts[layer_num]))
         
-        top_model.add(Dense(self.n_classes, activation=self.output_act))
+        top_model.add(keras.layers.Dense(self.n_classes, activation=self.output_act))
         return top_model
