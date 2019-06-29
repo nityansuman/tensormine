@@ -30,7 +30,7 @@ class BahdanauAttention(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input tensor shape.
         """
-        self.W1 = self.add_variable("weight1", shape=(int(input_shape[-1]), self.num_outputs)))
+        self.W1 = self.add_variable("weight1", shape=(int(input_shape[-1]), self.num_outputs))
         self.W2 = self.add_variable("weight1", shape=(int(input_shape[-1], self.num_outputs))
         self.V = self.add_variable("weight1", shape=(1, int(input_shape[-1])))
 
