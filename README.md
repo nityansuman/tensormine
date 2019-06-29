@@ -2,7 +2,9 @@
 
 [![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
 
-<img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg?color=orange&style=for-the-badge"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg?style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=for-the-badge"> <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dw/tensorhub.svg?color=red&style=for-the-badge">
+<img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg?color=blue&style=for-the-badge"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg?style=for-the-badge">  <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dw/tensorhub.svg?color=red&style=for-the-badge"> <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/nityansuman/tensorhub.svg?style=for-the-badge">
+
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/nityansuman/tensorhub.svg?color=green&style=for-the-badge"> <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/nityansuman/tensorhub.svg?color=green&style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=for-the-badge">
 
 The open source library to help you develop and train ML models easy and fast as never before in TensorFlow.
 
