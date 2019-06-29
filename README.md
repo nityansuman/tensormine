@@ -30,7 +30,7 @@ Our aim is to provide you enough interlocking building blocks that you can build
 
 ## Coming in TensorHub v1.0
 + Cooked Models
-    + Image Classification
+    + Image Classification (Supports Transfer Learning with ImageNet Weights)
         + Xception
         + VGG16
         + VGG19
@@ -42,20 +42,18 @@ Our aim is to provide you enough interlocking building blocks that you can build
         + NASNet
 
     + Text Classification
-        + RNN, LSTM, GRU
+        + RNN, LSTM, GRU Based Model
         + Text-CNN
-        + *More to come...*
 
     + Neural Machine Translation
         + Encoder-Decoder Standard Sequence Model (Encoder, Decoder -> [RNN, LSTM, GRU])
         + Translation with Attention
 
     + Text Generation
-        + RNN, LSTM, GRU
-        + *Under Planning*
+        + RNN, LSTM, GRU Based Model
     
     + Named Entity Recogniton
-        + *More to come...*
+        + RNN, LSTM, GRU Based Model
 
 + Layers
     + Standard
