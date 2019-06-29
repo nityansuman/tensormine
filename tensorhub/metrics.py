@@ -22,24 +22,24 @@ def accuracy(y_true, y_pred):
     For example, if `y_true` is [1, 2, 3, 4] and `y_pred` is [0, 2, 3, 4] then the accuracy is 3/4 or 0.75.
     
     Arguments:
-        y_true {list} -- Original values.
-        y_pred {list} -- Predicted valued.
+        y_true {tensor} -- 1-D tensors containing the original values.
+        y_pred {tensor} -- 1-D tensors containing the predicted values.
     
     Returns:
-        float -- Accuracy computed on the given pair of values.
+        float -- Accuracy computed.
     """
     matches = [i for i, j in zip(y_true, y_pred) if i == j]
     total = len(y_true)
     return matches / total
 
 def mean(values):
-    """Computes the (weighted) mean of the given values.
+    """Computes the mean of the given 1-D tensor.
 
     Arguments:
-        values {list} -- A list of values.
+        values {tensor} -- 1-D tensors containing values for computation.
     
     Returns:
-        float -- Mean computed on the values.
+        float -- Mean computed.
     """
     count = len(values)
     total = np.sum(values)
