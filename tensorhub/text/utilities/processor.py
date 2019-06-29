@@ -14,7 +14,7 @@
 # ==============================================================================
 
 # Load packages
-import tensorflow as tf
+from tensorflow import keras
 
 
 def create_vocabulary(corpus, type_embedding="word", num_words=10000):
