@@ -12,3 +12,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
+# Load packages
+import numpy as np
+
+
+def accuracy(y_true, y_pred):
+    """Calculates how often predictions matches labels.
+    For example, if `y_true` is [1, 2, 3, 4] and `y_pred` is [0, 2, 3, 4] then the accuracy is 3/4 or 0.75.
+    
+    Arguments:
+        y_true {list} -- Original values.
+        y_pred {list} -- Predicted valued.
+    
+    Returns:
+        float -- Accuracy computed on the given pair of values.
+    """
+    matches = [i for i, j in zip(y_true, y_pred) if i == j]
+    total = len(y_true)
+    return matches / total
+
+def mean(values):
+    """Computes the (weighted) mean of the given values.
+
+    Arguments:
+        values {list} -- A list of values.
+    
+    Returns:
+        float -- Mean computed on the values.
+    """
+    count = len(values)
+    total = np.sum(values)
+    return total / count
