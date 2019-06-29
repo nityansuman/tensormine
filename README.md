@@ -1,4 +1,4 @@
-# TensorHub 
+# TensorHub [![Codacy Badge](https://api.codacy.com/project/badge/Grade/04448209352a4ad0a7c4e7fcf09977ef)](https://www.codacy.com/app/nityansuman/tensorhub?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nityansuman/tensorhub&amp;utm_campaign=Badge_Grade)
 
 [![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
 
