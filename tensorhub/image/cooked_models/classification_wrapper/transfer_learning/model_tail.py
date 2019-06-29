@@ -40,7 +40,7 @@ class ModelTail:
         self.activation = activation
 
         # Check if the length of "list of dense-layer dimensions" and "list of dropout values" is same
-        if (num_nodes != None): assert len(num_nodes) == len(self.dropouts)
+        assert len(num_nodes) == len(self.dropouts)
 
     def create_model_tail(self, model):
         """Method creates top model. This model will be added at the top of keras application model.
