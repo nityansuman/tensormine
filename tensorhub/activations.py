@@ -12,3 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
+# Load packages
+import tensorflow as tf
+
+
+def gelu(x):
+    """Gaussian Error Linear Unit. This is a smoother version of the RELU.
+
+    Arguments:
+        x {tensor} -- Input float Tensor to perform activation.
+    
+    Returns:
+        tensor -- Input float tesnor with the GELU activation applied.
+    """
+    return x *0.5 * (1.0 + tf.tanh((np.sqrt(2 / np.pi) * (x + 0.044715 * tf.pow(x, 3)))))
