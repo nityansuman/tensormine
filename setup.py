@@ -32,16 +32,24 @@ with open("README.md", mode="r") as fh:
 
 # Create setup
 setuptools.setup(
-    name="tensorhub",
+    name="TensorHub",
     version="1.0-alpha3",
     author="Kumar Nityan Suman",
     author_email="nityan.suman@gmail.com",
-    description="The core open source library to help you develop and train ML models easy and fast as never before.",
+    description="Deep Learning for Everybody.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/nityansuman/tensorhub",
+    license="MIT",
     packages=setuptools.find_packages(),
+    install_requires=[
+        "numpy>=1.16",
+        "tensorflow>=2.0.0a0"
+    ],
     classifiers=[
+        "Intended Audience :: Developers",
+        "Intended Audience :: Education",
+        "Intended Audience :: Science/Research",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.1",
         "Programming Language :: Python :: 3.2",
@@ -52,5 +60,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Software Development :: Libraries :: Python Modules"
     ],
 )
