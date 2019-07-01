@@ -6,7 +6,18 @@
 
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/nityansuman/tensorhub.svg?color=green&style=for-the-badge"> <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/nityansuman/tensorhub.svg?color=green&style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=for-the-badge">
 
-The open source library to help you develop and train ML models easy and fast as never before in TensorFlow.
+## You have just found TensorHub.
+The open source library to help you develop and train ML models easy and fast as never before with `TensorFlow 2.0` and `Keras`.
+`TensorHub` is a global collection of `blocks` and `ready to serve models`. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
+
+It is a wrapper library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research.
+
+Use `TensorHub` if you need a deep learning library that:
+
+    Allows for easy and fast prototyping.
+    Supports both Keras and TensorFlow 2.0.
+    Runs seamlessly on CPU and GPU.
+
 
 ![TensorHub](data/header.png)
 
@@ -16,14 +27,6 @@ The open source library to help you develop and train ML models easy and fast as
 ```
 pip install tensorhub
 ```
-
-## How to use TensorHub
-
-`TensorHub` is a global collection of `blocks` and `ready to serve models`. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
-
-`TensorHub or THub` for short, is a wrapper library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research with `TensorFlow 2.0`. 
-
-Our aim is to provide you enough interlocking building blocks that you can build any neural architecture from basic to advance with less code.
 
 **Tutorials**
 
