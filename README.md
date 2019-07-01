@@ -10,7 +10,7 @@ The open source library to help you develop and train ML models easy and fast as
 
 ![TensorHub](data/header.png)
 
-*Next Pre-Release: v1.0alpha3 --> 1st July 2019*
+*Next Pre-Release: v1.0alpha3 --> 7th July 2019*
 
 ## Available on PyPI
 ```
@@ -68,35 +68,6 @@ Our aim is to provide you enough interlocking building blocks that you can build
         + Luong Attention
         + Self-Attention
         + *More to come...*
-
-+ Losses
-    + Mean Squared Error
-    + Mean Absolute Error
-    + Mean Absolute Percentage Error
-    + Mean Squared Algorithmic Error
-    + Hige
-    + Squared Hinge
-    + Binary Cross Entropy
-    + Categorical Cross Entropy
-    + Sparse Categorical Cross Entropy
-    + Poisson
-    
-+ Metrics
-    + Binary Accuracy
-    + Categorical Accuracy
-    + Sparse Categorcial Accuracy
-    + Top-k Categorical Accuracy
-    + Sparse Top-K Categorical Accuracy
-    + Mean Prediction
-    + Precision
-    + Recall/Sensitivity
-    + F1-Score
-    + Matthews correlation coefficient (MCC)
-    + Specificity/Selectivity 
-    + False Discovery Rate
-    + False Omission Rate
-
-    (*All `Losses` can be used as a metric to evaluate the model performance.*)
 
 + Activations
     + RELU
