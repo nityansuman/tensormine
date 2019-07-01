@@ -6,27 +6,33 @@
 
 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/nityansuman/tensorhub.svg?color=green&style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=for-the-badge">
 
+
 ## You have just found TensorHub.
-The open source library to help you develop and train ML models easy and fast as never before with `TensorFlow 2.0` and `Keras`.
-`TensorHub` is a global collection of `blocks` and `ready to serve models`. You can use it as you like. Only your creativity can stop you from making your own master piece. `TensorHub` gives you the freedom to design your neural architecture / solution and not worry about it"s components.
+
+The open source library to help you develop and train ML models, easy and fast as never before with `TensorFlow 2.0`.
+`TensorHub` is a global collection of `building blocks` and `ready to serve models`.
 
 It is a wrapper library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research.
 
+
 Use `TensorHub` if you need a deep learning library that:
 
-    Allows for easy and fast prototyping.
-    Supports both Keras and TensorFlow 2.0.
-    Runs seamlessly on CPU and GPU.
++ Allows for easy and fast prototyping.
 
++ Supports both Keras and TensorFlow 2.0.
 
-![TensorHub](data/header.png)
++ Runs seamlessly on CPU and GPU.
 
-*Next Pre-Release: v1.0alpha3 --> 7th July 2019*
 
 ## Available on PyPI
 ```
 pip install tensorhub
 ```
+
+![TensorHub](data/header.png)
+
+*Next Pre-Release: v1.0alpha3 --> 7th July 2019*
+
 
 **Tutorials**
 
