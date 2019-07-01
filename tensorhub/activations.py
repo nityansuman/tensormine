@@ -24,6 +24,40 @@ def gelu(x):
         x {tensor} -- Input float Tensor to perform activation.
     
     Returns:
-        tensor -- Input float tesnor with the GELU activation applied.
+        tensor -- Input float tensor with the GELU activation applied.
     """
-    return x *0.5 * (1.0 + tf.tanh((np.sqrt(2 / np.pi) * (x + 0.044715 * tf.pow(x, 3)))))
+    return x *0.5 * (1.0 + tf.tanh((tf.math.sqrt(2 / np.pi) * (x + 0.044715 * tf.pow(x, 3)))))
+
+def linear(x):
+    """Linear activation function.
+
+    Arguments:
+        x {tensor} -- Input float tensor to perform activation.
+
+    Returns:
+        tensor -- Input float tensor with linear activation applied.
+    """
+    return x
+
+def exponential(x):
+    """Exponential activation function.
+
+    Arguments:
+        x {tensor} -- Input float tensor to perform activation.
+
+    Returns:
+        tensor -- Input float tensor with exponential activation applied.
+    """
+    return tf.math.exp(x)
+
+def tanh(x):
+    """Hyperbolic Tangent (tanh) activation function.
+
+    Arguments:
+        x {tensor} -- Input float tensor to perform activation.
+
+    Returns:
+        tensor -- Input float tensor with tanh activation applied.
+    """
+    return tf.math.sinh(x) / tf.math.cosh(x)
+
