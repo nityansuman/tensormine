@@ -61,3 +61,50 @@ def tanh(x):
     """
     return tf.math.sinh(x) / tf.math.cosh(x)
 
+def sigmoid(x):
+    """Sigmoid activation function. For small values
+    (<-5) the sigmoid returns a value close to zero and for larger values (>5)
+    the result of the function gets close to 1.
+    
+    Arguments:
+        x {tensor} -- Input float tensor to perform activation.
+
+    Returns:
+        tensor -- Input float tensor with sigmoid activation applied.
+    """
+    return 1.0 / (1.0 + tf.math.exp(-x))
+
+def hard_sigmoid(x):
+    """Hard-sigmoid activation function. For small values
+    (<-2.5) the sigmoid returns a value zero and for larger values (>+2.5)
+    the result of the function gets to 1. For values in between it returns a value `0.2 * x + 0.5`.
+    
+    Arguments:
+        x {tensor} -- Input float tensor to perform activation.
+
+    Returns:
+        tensor -- Input float tensor with sigmoid activation applied.
+    """
+    return tf.clip_by_value(0.2 * x + 0.5, 0., 1.)
+
+def softsign(x):
+    """Softsign activation function.
+    
+    Arguments:
+        x {tensor} -- Input float tensor to perform activation.
+    
+    Returns:
+        tensor -- Input float tensor with softsign activation applied.
+    """
+    return x / (tf.abs(x) + 1)
+
+def softplus(x):
+    """Softplus activation function.
+    
+    Arguments:
+        x {tensor} -- Input float tensor to perform activation.
+    
+    Returns:
+        tensor -- Input float tensor with softplus activation applied.
+    """
+    return tf.math.log(tf.math.exp(x) + 1)
