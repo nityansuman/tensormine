@@ -1,6 +1,6 @@
 # TensorHub [![Codacy Badge](https://api.codacy.com/project/badge/Grade/04448209352a4ad0a7c4e7fcf09977ef)](https://www.codacy.com/app/nityansuman/tensorhub?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nityansuman/tensorhub&amp;utm_campaign=Badge_Grade)
 
-<img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg?color=blue&style=for-the-badge"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg?style=for-the-badge">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/nityansuman/tensorhub.svg?color=blue&style=for-the-badge"> <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/nityansuman/tensorhub.svg?color=green&style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=for-the-badge">
+<img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg?color=blue&style=for-the-badge"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg?style=for-the-badge">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/nityansuman/tensorhub.svg?color=blue&style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=for-the-badge">
 
 [![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/) 
 
