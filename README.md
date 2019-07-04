@@ -14,11 +14,13 @@ It is a wrapper library of deep learning models and neural lego blocks designed 
 
 Use `TensorHub` if you need a deep learning library that:
 
-+ Allows for easy and fast prototyping.
++ **Reproducibility** - Reproduce the results of existing pre-training models (such as Google BERT, XLNet)
 
-+ Supports both Keras and TensorFlow 2.0.
++ **Model modularity** - TensorHub divided into multiple components: ready-to-serve models, layers, neural-blocks etc. Ample modules are implemented in each component. Clear and robust interface allows users to combine modules with as few restrictions as possible.
 
-+ Runs seamlessly on CPU and GPU.
++ **Prototyping** - Code less build more. Apply `TensorHub` to create fast prototypes with the help of modulear blocks, custom layers, custom activation support.
+
++ **Platform Independent** - Supports both `Keras` and `TensorFlow 2.0`. Run your model on CPU, single GPU or using a distributed training strategy.
 
 
 ## Available on PyPI
@@ -31,7 +33,7 @@ pip install tensorhub
 *Next Pre-Release: v1.0alpha3 --> 7th July 2019*
 
 
-**Tutorials**
+**Quickstart Guide**
 
 + [Learn TensorFlow 2.0](examples/)
 + [Text Classifier Example](examples/run_text_classifiers.py)
