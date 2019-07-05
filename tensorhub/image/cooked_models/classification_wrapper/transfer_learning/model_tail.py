@@ -1,3 +1,4 @@
+
 # Copyright 2019 The TensorHub Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +41,8 @@ class ModelTail:
         self.activation = activation
 
         # Check if number of layers and number of dropouts have same dimension
-        if not len(num_nodes) == len(self.dropouts):
+        if not len(self.num_nodes) == len(self.dropouts):
+	    print("Length of num_nodes and dropouts not equal")
             raise AssertionError()
 
     def create_model_tail(self, model):
