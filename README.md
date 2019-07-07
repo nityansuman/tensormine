@@ -56,7 +56,7 @@ pip install tensorhub
         + *More under planning...*
 
     + Neural Machine Translation
-        + Encoder-Decoder Standard Sequence Model (Encoder, Decoder -> [RNN, LSTM, GRU])
+        + Encoder-Decoder Sequence Translation Model
         + Translation with Attention
 
     + Text Generation
