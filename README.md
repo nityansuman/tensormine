@@ -2,7 +2,6 @@
 
 <img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg?color=blue&style=for-the-badge"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg?style=for-the-badge">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/nityansuman/tensorhub.svg?color=blue&style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=for-the-badge">
 
-[![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/) 
 
 ## You have just found TensorHub.
 
@@ -38,8 +37,6 @@ pip install tensorhub
 + [Learn TensorFlow 2.0](examples/)
 + [Text Classifier Example](examples/run_text_classifiers.py)
 
-`More examples coming soon. Stay put.`
-
 ## Coming in TensorHub v1.0
 + Cooked Models
     + Image Classification (Supports Transfer Learning with ImageNet Weights)
@@ -56,6 +53,7 @@ pip install tensorhub
     + Text Classification
         + RNN, LSTM, GRU Based Model
         + Text-CNN
+        + *More under planning...*
 
     + Neural Machine Translation
         + Encoder-Decoder Standard Sequence Model (Encoder, Decoder -> [RNN, LSTM, GRU])
@@ -70,12 +68,11 @@ pip install tensorhub
 + Layers
     + Standard
         + Linear
-        + *Under planning*
+        + *More under planning...*
     + Attention
         + Bahdanau Attention
         + Luong Attention
         + Self-Attention
-        + *More to come...*
 
 + Activations
     + RELU
@@ -95,9 +92,10 @@ pip install tensorhub
     + Text
         + Custom Tokenizer
         + Load Embeddings
-        + *More to come...*
+        + *More under planning...*
     + Image
-        + *More to come...*
+        + *Under planning...*
+
 
 ## Why TensorFlow
 TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.
@@ -115,13 +113,10 @@ A simple and flexible architecture to take new ideas from concept to code, to st
 
 **[Build, deploy, and experiment easily with TensorFlow](https://www.tensorflow.org/)**
 
+
 ## Let's Work Together
 
-```
-We're eager to collaborate with you.
-Feel free to open an issue on or send along a pull request.
-```
+We are eager to collaborate with you. Feel free to open an issue on or send along a pull request.
+If you like the work, show your appreciation by "FORK", "STAR", or "SHARE".
 
-Drop me an e-mail (nityan.suman@gmail.com) or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/) to work together.
-
-If you like the work I do, show your appreciation by "FORK", "STAR", or "SHARE".
+[![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
