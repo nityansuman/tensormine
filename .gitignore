@@ -18,6 +18,7 @@ dist/
 
 *.idea
 *.pyc
+*.png
 
 # Ignore jupyter cheskpoints
 *.ipynb_checkpoints
