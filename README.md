@@ -29,7 +29,7 @@ pip install tensorhub
 
 ![TensorHub](data/logo_head.png)
 
-*Next Pre-Release: v1.0alpha3 --> 7th July 2019*
+*Next Pre-Release: v1.0alpha3 --> 14th July 2019*
 
 
 **Quickstart Guide**
