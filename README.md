@@ -27,7 +27,7 @@ Use `TensorHub` if you need a deep learning library that:
 pip install tensorhub
 ```
 
-![TensorHub](data/header.png)
+![TensorHub](data/logo_head.png)
 
 *Next Pre-Release: v1.0alpha3 --> 7th July 2019*
 
