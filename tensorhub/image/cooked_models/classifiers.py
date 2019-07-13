@@ -13,8 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 
-# Load modules
-from classification_wrapper.basic_classifiers import CNNClassifier
+# Import modules
+from classification_wrapper.cnn_classifier import CNNClassifier
 from classification_wrapper.transfer_learning.transfer_learning import VGG16
 from classification_wrapper.transfer_learning.transfer_learning import VGG19
 from classification_wrapper.transfer_learning.transfer_learning import MobileNet
