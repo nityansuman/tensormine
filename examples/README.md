@@ -17,7 +17,7 @@ A simple and flexible architecture to take new ideas from concept to code, to st
 
 ## How To Code in TensorFlow - The Experienced Way
 
-**Sequential Interface**
+### Sequential Interface
 
 The best place to start is with the user-friendly Sequential API. You can create simple models by plugging together building blocks. Run the “Hello World” example below, then visit the tutorials to learn more.
 ```
@@ -35,7 +35,7 @@ model.compile(optimizer="rmsprop", loss="categorical_crossentropy", metrics=["ac
 model.fit(data, labels)
 ```
 
-**Functional Interface**
+### Functional Interface
 ```
 # Input to the model
 inputs = Input(shape=(784,))
@@ -57,7 +57,7 @@ model.compile(optimizer="rmsprop", loss="categorical_crossentropy", metrics=["ac
 model.fit(data, labels)
 ```
 
-**Subclassing Interface**
+### Subclassing Interface
 
 The Subclassing API provides a define-by-run interface for advanced research. Create a class for your model, then write the forward pass imperatively. Easily **author custom layers**, **activations**, **training loop** and much more.
 ```
@@ -79,7 +79,7 @@ class MyModel(tf.keras.Model):
 model = MyModel()
 ```
 
-**Implementing Custom Layers**
+### Implementing Custom Layers
 
 The best way to implement your own layer is extending the tf.keras.Layer class and implementing: * __init__ , where you can do all input-independent initialization * build, where you know the shapes of the input tensors and can do the rest of the initialization * call, where you do the forward computation
 ```
@@ -98,7 +98,7 @@ class MyDenseLayer(tf.keras.layers.Layer):
 layer = MyDenseLayer(10)
 ```
 
-**Or Like This**
+### Another of Implementing a Custom Layer
 ```
 class Linear(Layer):
     """y = w.x + b"""
