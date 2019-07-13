@@ -83,14 +83,14 @@ pip install tensorhub
     + Image *
         + Image Augmentation
     + Activations
-        + RELU *
-        + SELU *
+        + RELU
+        + SELU
         + GELU
-        + ELU *
+        + ELU
         + Tanh
         + Sigmoid
         + Hard Sigmoid
-        + Softmax *
+        + Softmax
         + Softplus
         + Softsign
         + Exponential
