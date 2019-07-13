@@ -37,7 +37,7 @@ pip install tensorhub
 + [Text Classifier Example](examples/run_text_classifiers.py)
 
 ## Coming in TensorHub v1.0
-+ Cooked Models
++ Cooked models
     + Image Classification (Supports Transfer Learning with ImageNet Weights)
         + Xception
         + VGG16
@@ -48,53 +48,56 @@ pip install tensorhub
         + MobileNet
         + DenseNet
         + NASNet
+        + SqueezeNet (Without Transfer Learning) *
 
     + Text Classification
-        + RNN, LSTM, GRU Based Model
+        + RNN Model
+        + LSTM Model
+        + GRU Model
         + Text-CNN
-        + *More under planning...*
 
-    + Neural Machine Translation
+    + Neural Machine Translation *
         + Encoder-Decoder Sequence Translation Model
         + Translation with Attention
 
-    + Text Generation
+    + Text Generation *
         + RNN, LSTM, GRU Based Model
-    
-    + Named Entity Recogniton
+        
+    + Named Entity Recogniton *
         + RNN, LSTM, GRU Based Model
 
-+ Layers
-    + Standard
++ Custom Blocks
+    + Standard Layers
         + Linear
-        + *More under planning...*
-    + Attention
+        + Inception Modules (v1, v2, v3) *
+    + Attention layers
         + Bahdanau Attention
         + Luong Attention
-        + Self-Attention
-
-+ Activations
-    + RELU
-    + SELU
-    + GELU
-    + ELU
-    + Tanh
-    + Sigmoid
-    + Hard Sigmoid
-    + Softmax
-    + Softplus
-    + Softsign
-    + Exponential
-    + Linear
+        + Self-Attention *
 
 + Utilities
     + Text
-        + Custom Tokenizer
-        + Load Embeddings
-        + *More under planning...*
-    + Image
-        + *Under planning...*
+        + Custom Word and Character Tokenizer
+        + Load Pre-trained Embeddings
+        + Create Vocabulary Matrix
+    + Image *
+        + Image Augmentation
+    + Activations
+        + RELU *
+        + SELU *
+        + GELU
+        + ELU *
+        + Tanh
+        + Sigmoid
+        + Hard Sigmoid
+        + Softmax *
+        + Softplus
+        + Softsign
+        + Exponential
+        + Linear
+    + Trainer (Generic TF2.0 train and validation pipelines) *
 
+Note: `*` - Support coming soon
 
 ## Why TensorFlow
 TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.
