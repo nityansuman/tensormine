@@ -13,9 +13,9 @@
 # limitations under the License.
 # ==============================================================================
 
-# Load transformation layers
-from blocks.layer_wrapper.basic_layers import Linear
+# Import transformation modules
+from layer_wrapper.basic_layers import Linear
 
-# Load attention layers
-from blocks.attention_wrapper.bahdanau_attention import BahdanauAttention
-from blocks.attention_wrapper.luong_attention import LuongAttention
+# Import attention modules
+from attention_wrapper.bahdanau_attention import BahdanauAttention
+from attention_wrapper.luong_attention import LuongAttention
