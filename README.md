@@ -5,6 +5,9 @@
 
 ## You have just found TensorHub.
 
+![TensorHub](data/logo_head.png)
+
+
 The open source library to help you develop and train ML models, easy and fast as never before with `TensorFlow 2.0`.
 `TensorHub` is a global collection of `building blocks` and `ready to serve models`.
 
@@ -26,8 +29,6 @@ Use `TensorHub` if you need a deep learning library that:
 ```
 pip install tensorhub
 ```
-
-![TensorHub](data/logo_head.png)
 
 *Next Pre-Release: v1.0alpha3 --> 14th July 2019*
 
