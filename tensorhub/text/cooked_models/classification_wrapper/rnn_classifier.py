@@ -52,7 +52,7 @@ class RNNClassifier:
         self.units = units if units != None else [self.max_seq_length]*(self.num_rnn_layers)
         # Assertion check
         if len(self.units) != self.num_rnn_layers:
-            raise AssertionError("Length of `units`: {} and `dp_rate`: {} should be same as `num_rnn_layers`: {}".format(len(self.units), len(self.num_rnn_layers)))
+            raise AssertionError("Length of `units`: {} should be same as `num_rnn_layers`: {}".format(len(self.units), len(self.num_rnn_layers)))
         # Set embeding parameters
         self.learn_embedding = learn_embedding
         self.embedding_dim = embedding_dim
@@ -67,13 +67,13 @@ class RNNClassifier:
         Returns:
             keras.models.Sequential -- Instance of keras sequential model.
         """
+        stacked_layers = list()
         # Embedding layer
         if self.learn_embedding == True:
             stacked_layers.append(keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, input_length=self.max_seq_length))
         elif self.learn_embedding == False:
             stacked_layers.append(keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, weights=[self.embedding_matrix], trainable=False, input_length=self.max_seq_length))
         # Stacked rnn hidden layer
-        stacked_layers = list()
         if self.bidir == False:
             # Unidirectional rnn layers
             if self.model_name == "lstm":
