@@ -13,6 +13,6 @@
 # limitations under the License.
 # ==============================================================================
 
-# Load modules
-from classification_wrapper.basic_classifier import SequenceClassifier
-from classification_wrapper.basic_classifier import PerceptronClassifier
+# Import modules
+from classification_wrapper.perceptron_classifier import PerceptronClassifier
+from classification_wrapper.rnn_classifier import RNNClassifier
