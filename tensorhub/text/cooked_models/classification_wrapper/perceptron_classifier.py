@@ -50,7 +50,7 @@ class PerceptronClassifier:
         self.dp_rate = dp_rate if dp_rate != None else [0.3]*(self.num_rnn_layers)
         # Assertion check
         if len(self.units) != self.num_rnn_layers or len(self.dp_rate) != self.num_rnn_layers:
-            raise AssertionError("Length of `units`: {} and `dp_rate`: {} should be same as `num_rnn_layers`: {}".format(len(self.units), len(self.dp_rate), len(self.num_rnn_layers)))
+            raise AssertionError("Assertion Error: Length of `units`: {} and `dp_rate`: {} should be same as `num_rnn_layers`: {}".format(len(self.units), len(self.dp_rate), len(self.num_rnn_layers)))
         # Set embeding parameters
         self.learn_embedding = learn_embedding
         self.embedding_dim = embedding_dim
@@ -71,7 +71,7 @@ class PerceptronClassifier:
         elif self.learn_embedding == False:
             stacked_layers.append(keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, weights=[self.embedding_matrix], trainable=False, input_length=self.max_seq_length))
         else:
-            raise ValueError("Wrong Boolean Defined! {}".format(self.learn_embedding, self.embedding_matrix))
+            raise ValueError("Value Error: Wrong Boolean Defined! {}".format(self.learn_embedding, self.embedding_matrix))
         # Stacked hidden layers
         stacked_layers = list()
         for i in range(self.num_rnn_layers):
