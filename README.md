@@ -180,6 +180,8 @@ You may also consider installing the following **optional dependencies**:
 
 Then, you can install TensorHub itself.
 
+<p align="center"><img src="data/pip_install.png?raw=true" alt="PIP-INSTALL"/></p>
+
 ```sh
 sudo pip install tensorhub
 ```
