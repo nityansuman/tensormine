@@ -20,8 +20,10 @@ Use `TensorHub` if you need a deep learning library that:
 
 + **Platform Independent** - Supports both `Keras` and `TensorFlow 2.0`. Run your model on CPU, single GPU or using a distributed training strategy.
 
+------------------
 
-## Getting started: 30 seconds to TensorHub with Keras/TensorFlow
+
+## Getting started: 30 seconds to TensorHub
 
 **Here is the `Sequential` model for Image `Classification`:**
 
@@ -88,6 +90,8 @@ For a more in-depth tutorial about Keras, you can check out:
 + [Getting started with Custom Layers](https://github.com/nityansuman/tensorhub/tree/master/examples)
 
 In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/examples) of this repository, you will find much more advanced examples coming your way very soon.
+
+------------------
 
 
 ## What's coming in V1.0
@@ -156,29 +160,54 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
 
 Note: `*` - Support coming soon
 
-
-## Why TensorFlow
-TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.
-
-**Easy model building**
-Build and train ML models easily using intuitive high-level APIs like Keras with eager execution, which makes for immediate model iteration and easy debugging.
-
-**Robust ML production anywhere**
-Easily train and deploy models in the cloud, on-prem, in the browser, or on-device no matter what language you use.
-
-**Powerful experimentation for research**
-A simple and flexible architecture to take new ideas from concept to code, to state-of-the-art models, and to publication faster.
-
-**[Install TensorFlow and Get Started!](https://www.tensorflow.org/install)**
-
-**[Build, deploy, and experiment easily with TensorFlow](https://www.tensorflow.org/)**
-
-**[`Sequential`](https://keras.io/getting-started/sequential-model-guide)**
-
-**[Keras functional API](https://keras.io/getting-started/functional-api-guide)**
+------------------
 
 
-## Let's Work Together
+## Installation
+
+Before installing `TensorHub`, please install its backend engines: TensorFlow (*TensorFlow 2.0 is Recommended*).
+
++ [Install TensorFlow and Get Started!](https://www.tensorflow.org/install)
+
++ [Build, deploy, and experiment easily with TensorFlow](https://www.tensorflow.org/)
+
+You may also consider installing the following **optional dependencies**:
+
++ [cuDNN](https://docs.nvidia.com/deeplearning/sdk/cudnn-install/) (*Recommended if you plan on running Keras on GPU*).
++ HDF5 and [h5py](http://docs.h5py.org/en/latest/build.html) (*Required if you plan on saving Keras models to disk*).
+
+Then, you can install TensorHub itself.
+
+```sh
+sudo pip install tensorhub
+```
+
+If you are using a virtualenv, you may want to avoid using sudo:
+
+```sh
+pip install tensorhub
+```
+
++ **Alternatively: Install TensorHub from the GitHub source:**
+
+First, clone TensorHub using `git`:
+
+```sh
+git clone https://github.com/nityansuman/tensorhub.git
+```
+
+Then, `cd` to the TensroHub folder and run the install command:
+```sh
+cd tensorhub
+sudo python setup.py install
+```
+
+------------------
+
+
+## Support
+
+You can also post **bug reports and feature requests** (only) in [GitHub issues](https://github.com/nityansuman/tensorhub/issues). Make sure to read [our guidelines](https://github.com/nityansuman/tensorhub/blob/master/CONTRIBUTING.md) first.
 
 We are eager to collaborate with you. Feel free to open an issue on or send along a pull request.
 If you like the work, show your appreciation by "FORK", "STAR", or "SHARE".
