@@ -12,3 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
+# Import modules
+from classification_wrapper import PerceptronClassifier, RNNClassifier

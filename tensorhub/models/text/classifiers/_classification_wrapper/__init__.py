@@ -12,3 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
+# Import modules
+from perceptron_classifier import PerceptronClassifier
+from rnn_classifier import RNNClassifier

@@ -13,9 +13,12 @@
 # limitations under the License.
 # ==============================================================================
 
-# Import transformation modules
-from layer_wrapper.basic_layers import Linear
-
-# Import attention modules
-from attention_wrapper.bahdanau_attention import BahdanauAttention
-from attention_wrapper.luong_attention import LuongAttention
+# Import modules
+from _classification_wrapper import CNNClassifier
+from _classification_wrapper import VGG16, VGG19
+from _classification_wrapper import InceptionV3, InceptionResNetV2
+from _classification_wrapper import MobileNet
+from _classification_wrapper import NASNetMobile, NASNetLarge
+from _classification_wrapper import ResNet50
+from _classification_wrapper import Xception
+from _classification_wrapper import DenseNet121, DenseNet169, DenseNet201

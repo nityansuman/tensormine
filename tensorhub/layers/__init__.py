@@ -12,3 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
+# Import modules
+from layer_wrapper import Linear
+from layer_wrapper import BahdanauAttention, LuongAttention
+from layer_wrapper import InceptionV1, InceptionV1Reduction

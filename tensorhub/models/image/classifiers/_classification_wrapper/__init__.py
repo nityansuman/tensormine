@@ -12,3 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
+# Import modules
+from cnn_classifier import CNNClassifier
+from transfer_learning import VGG16, VGG19
+from transfer_learning import InceptionV3, InceptionResNetV2
+from transfer_learning import MobileNet
+from transfer_learning import NASNetMobile, NASNetLarge
+from transfer_learning import ResNet50
+from transfer_learning import Xception
+from transfer_learning import DenseNet121, DenseNet169, DenseNet201
