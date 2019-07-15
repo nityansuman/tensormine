@@ -25,28 +25,31 @@ Use `TensorHub` if you need a deep learning library that:
 
 ## Getting started: 30 seconds to TensorHub
 
-**Here is the `Sequential` model for Image `Classification`:**
+**Here is the `Sequential` model for `Image Classification`:**
 
 ```python
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, Dense
-from tensorhub.layers import InceptionV1 # Custom Inception layer
-from tensorhub.models.image.classifiers import CNNClassifier, VGG16 # Pre-cooked models
+
+# Use Tensorhub to accelerate your prototyping
+from tensorhub.layers import InceptionV1 # Custom Inception Layer
+from tensorhub.models.image.classifiers import CNNClassifier, VGG16 # Cooked Models
+from tensorhub.utilities.activations import gelu, softmax # Custom Activations Supported
 
 ## Initiate a sequential model
 model = Sequential()
 
 ## Stacking layers is as easy as `.add()`
-model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(100, 100, 3)))
-model.add(Conv2D(32, (3, 3), activation='relu'))
+model.add(Conv2D(32, (3, 3), activation=gelu, input_shape=(100, 100, 3)))
+model.add(Conv2D(32, (3, 3), activation=gelu))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(0.25))
 
 ## Add custom layer like any other standard layer
 model.add(InceptionV1(32)) 
 
-model.add(Dense(units=64, activation='relu', input_dim=100))
-model.add(Dense(units=10, activation='softmax'))
+model.add(Dense(units=64, activation=gelu, input_dim=100))
+model.add(Dense(units=10, activation=softmax))
 
 # Or
 ## Use one of our pre-cooked models
@@ -61,8 +64,8 @@ model.compile(
 
 ## Alternatively, if you need to, you can further configure your compile configuration
 model.compile(
-    loss=keras.losses.categorical_crossentropy,
-    optimizer=keras.optimizers.SGD(lr=0.01, momentum=0.9, nesterov=True),
+    loss=tensorflow.keras.losses.categorical_crossentropy,
+    optimizer=tensorflow.keras.optimizers.SGD(lr=0.01, momentum=0.9, nesterov=True),
     metrics=['acc']
 )
 
@@ -86,8 +89,7 @@ Building a question answering system, an image classification model, a Neural Tu
 For a more in-depth tutorial about Keras, you can check out:
 
 + [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/training-a-text-classifier-using-tensorhub-models.ipynb)
-+ [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples)
-+ [Getting started with Custom Layers](https://github.com/nityansuman/tensorhub/tree/master/examples)
++ [Getting started with Custom Layers](https://github.com/nityansuman/tensorhub/tree/master/examples/creating-custom-models.ipynb)
 
 In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/examples) of this repository, you will find much more advanced examples coming your way very soon.
 
