@@ -69,7 +69,10 @@ pip install tensorhub
 + Custom Blocks
     + Standard Layers
         + Linear
-        + Inception Modules (v1, v2, v3) *
+        + Inception V1 Layer
+        + Inception V1 with Reduction Layer
+        + Inception V2 Layer *
+        + Inception V3 Layer *
     + Attention layers
         + Bahdanau Attention
         + Luong Attention
