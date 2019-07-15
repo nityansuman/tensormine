@@ -57,7 +57,7 @@ model.compile(
     metrics=['accuracy']
 )
 
-## If you need to, you can further configure your optimizer. A core principle of Keras is to make things reasonably simple, while allowing the user to be fully in control when they need to (the ultimate control being the easy extensibility of the source code).
+## Alternatively, if you need to, you can further configure your compile configuration
 model.compile(
     loss=keras.losses.categorical_crossentropy,
     optimizer=keras.optimizers.SGD(lr=0.01, momentum=0.9, nesterov=True),
