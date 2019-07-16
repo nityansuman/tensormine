@@ -181,16 +181,16 @@ You may also consider installing the following **optional dependencies**:
 Then, you can install TensorHub itself.
 
 ```sh
-sudo pip install tensorhub==1.0.0a3
+sudo pip install -U tensorhub
 ```
 
 If you are using a virtualenv, you may want to avoid using sudo:
 
 ```sh
-pip install tensorhub==1.0.0a3
+pip install -U tensorhub
 ```
 
-+ **Alternatively: Install TensorHub from the GitHub source:**
+<!-- + **Alternatively: Install TensorHub from the GitHub source:**
 
 First, clone TensorHub using `git`:
 
@@ -202,7 +202,7 @@ Then, `cd` to the TensroHub folder and run the install command:
 ```sh
 cd tensorhub
 sudo python setup.py install
-```
+``` -->
 
 ------------------
 
