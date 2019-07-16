@@ -45,7 +45,7 @@ class PerceptronClassifier:
         else:
             self.output_activation = "softmax"
         self.max_seq_length = max_seq_length
-        self.num_rnn_layers num_rnn_layers
+        self.num_rnn_layers = num_rnn_layers
         self.units = units if units != None else [self.max_seq_length]*(self.num_rnn_layers)
         self.dp_rate = dp_rate if dp_rate != None else [0.3]*(self.num_rnn_layers)
         # Assertion check

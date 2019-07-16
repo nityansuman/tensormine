@@ -42,7 +42,6 @@ class ModelTail:
 
         # Check if number of layers and number of dropouts have same dimension
         if not len(self.num_nodes) == len(self.dropouts):
-	    print("Length of num_nodes and dropouts not equal")
             raise AssertionError()
 
     def create_model_tail(self, model):

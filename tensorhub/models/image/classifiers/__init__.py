@@ -14,11 +14,11 @@
 # ==============================================================================
 
 # Import modules
-from _classification_wrapper import CNNClassifier
-from _classification_wrapper import VGG16, VGG19
-from _classification_wrapper import InceptionV3, InceptionResNetV2
-from _classification_wrapper import MobileNet
-from _classification_wrapper import NASNetMobile, NASNetLarge
-from _classification_wrapper import ResNet50
-from _classification_wrapper import Xception
-from _classification_wrapper import DenseNet121, DenseNet169, DenseNet201
+from tensorhub.models.image.classifiers.classification_wrapper.cnn_classifier import CNNClassifier
+from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import VGG16, VGG19
+from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import InceptionV3, InceptionResNetV2
+from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import MobileNet
+from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import NASNetMobile, NASNetLarge
+from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import ResNet50
+from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import Xception
+from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import DenseNet121, DenseNet169, DenseNet201

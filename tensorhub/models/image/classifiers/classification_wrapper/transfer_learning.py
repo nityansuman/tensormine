@@ -15,7 +15,7 @@
 
 # Load packages
 from tensorflow import keras
-from model_tail import ModelTail
+from tensorhub.models.image.classifiers.classification_wrapper.model_tail import ModelTail
 
 
 class VGG16(ModelTail):

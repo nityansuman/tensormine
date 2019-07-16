@@ -14,6 +14,7 @@
 # ==============================================================================
 
 # Import modules
-from layer_wrapper import Linear
-from layer_wrapper import BahdanauAttention, LuongAttention
-from layer_wrapper import InceptionV1, InceptionV1Reduction
+from tensorhub.layers._layer_wrapper.basic_layers import Linear
+from tensorhub.layers._layer_wrapper.bahdanau_attention import BahdanauAttention
+from tensorhub.layers._layer_wrapper.luong_attention import LuongAttention
+from tensorhub.layers._layer_wrapper.inception_layers import InceptionV1, InceptionV1Reduction
