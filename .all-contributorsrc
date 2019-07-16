@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Sanjyot22",
+      "name": "Sanjyot",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14342494?v=4",
+      "profile": "https://www.linkedin.com/in/sanjyot-zade",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "tensorhub",
+  "projectOwner": "nityansuman",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
