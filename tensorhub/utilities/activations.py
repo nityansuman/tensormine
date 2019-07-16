@@ -15,6 +15,7 @@
 
 # Load packages
 import tensorflow as tf
+import numpy as np
 
 
 def relu(x, alpha=0., max_value=None, threshold=0.):
