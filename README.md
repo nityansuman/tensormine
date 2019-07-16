@@ -53,7 +53,7 @@ model.add(Dense(units=10, activation=softmax))
 
 # Or
 ## Use one of our pre-cooked models
-model = VGG16(n_classes=10, num_nodes=64, img_height=100, img_width=100)
+model = VGG16(n_classes=10, num_nodes=64, img_height=100, img_width=100).model()
 
 ## Once your model looks good, configure its learning process with `.compile()`
 model.compile(
