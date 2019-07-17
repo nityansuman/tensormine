@@ -17,4 +17,5 @@
 from tensorhub.layers.layer_wrapper.basic_layers import Linear
 from tensorhub.layers.layer_wrapper.bahdanau_attention import BahdanauAttention
 from tensorhub.layers.layer_wrapper.luong_attention import LuongAttention
-from tensorhub.layers.layer_wrapper.inception_layers import InceptionV1, InceptionV1Reduction
+from tensorhub.layers.layer_wrapper import inception_v2
+from tensorhub.layers.layer_wrapper import inception_v1

@@ -18,17 +18,17 @@
 from tensorflow import keras
 
 
-class InceptionV1(keras.layers.Layer):
+class BasicLayer(keras.layers.Layer):
     """Inception V1 module implemented as a feature extraction layer."""
 
     def __init__(self, num_filters=28, activation="relu"):
         """Class constructor to initialize variables.
-        
+
         Keyword Arguments:
             num_filters {int} -- Number of filters for convolution. (default: {28})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(InceptionV1, self).__init__()
+        super(BasicLayer, self).__init__()
         self.num_filters = num_filters
         self.activation = activation
         self.strides = 1
@@ -36,7 +36,7 @@ class InceptionV1(keras.layers.Layer):
 
     def build(self, input_shape):
         """Lazing building of a layer.
-        
+
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
@@ -44,13 +44,13 @@ class InceptionV1(keras.layers.Layer):
         self.conv_block_b = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
         self.conv_block_c = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.activation, strides=self.strides, padding=self.padding)
         self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
-    
+
     def call(self, x):
         """Forward pass of the layer.
-        
+
         Arguments:
             x {tensor} -- Input tensor to the layer.
-        
+
         Returns:
             tensor -- Output tensor from the layer.
         """
@@ -66,17 +66,17 @@ class InceptionV1(keras.layers.Layer):
         output = keras.layers.concatenate([out_a, out_b, out_c, out_d], axis=-1)
         return output
 
-class InceptionV1Reduction(keras.layers.Layer):
+class ReductionLayer:
     """Inception V1 with reduction module implemented as a feature extraction layer."""
 
     def __init__(self, num_filters=28, activation="relu"):
         """Class constructor to initialize variables.
-        
+
         Keyword Arguments:
             num_filters {int} -- Number of filters for convolution. (default: {28})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(InceptionV1, self).__init__()
+        super(ReductionLayer, self).__init__()
         self.num_filters = num_filters
         self.activation = activation
         self.strides = 1
@@ -84,7 +84,7 @@ class InceptionV1Reduction(keras.layers.Layer):
 
     def build(self, input_shape):
         """Lazing building of a layer.
-        
+
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
@@ -95,13 +95,13 @@ class InceptionV1Reduction(keras.layers.Layer):
         self.conv_3 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
         self.conv_5 = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.activation, strides=self.strides, padding=self.padding)
         self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
-    
+
     def call(self, x):
         """Forward pass of the layer.
-        
+
         Arguments:
             x {tensor} -- Input tensor to the layer.
-        
+
         Returns:
             tensor -- Output tensor from the layer.
         """
@@ -119,3 +119,5 @@ class InceptionV1Reduction(keras.layers.Layer):
         # Combine results from each block
         output = keras.layers.concatenate([out_a, out_b, out_c, out_d], axis=-1)
         return output
+
+
