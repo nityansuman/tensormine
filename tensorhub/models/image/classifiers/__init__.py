@@ -14,7 +14,7 @@
 # ==============================================================================
 
 # Import modules
-from tensorhub.models.image.classifiers.classification_wrapper.cnn_classifier import CNNClassifier
+from tensorhub.models.image.classifiers.classification_wrapper.basic_classifiers import SmallVGG
 from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import VGG16, VGG19
 from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import InceptionV3, InceptionResNetV2
 from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import MobileNet
