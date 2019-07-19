@@ -16,20 +16,20 @@
 
 # Load packages
 from tensorflow import keras
+from tensorhub.utilities.activations import relu, gelu
 
 
 class BasicLayer(keras.layers.Layer):
     """Inception V1 module implemented as a feature extraction layer."""
 
-    def __init__(self, num_filters=28, activation="relu"):
+    def __init__(self, activation=relu):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
-            num_filters {int} -- Number of filters for convolution. (default: {28})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
         super(BasicLayer, self).__init__()
-        self.num_filters = num_filters
+        self.num_filters = 64
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -69,15 +69,14 @@ class BasicLayer(keras.layers.Layer):
 class ReductionLayer:
     """Inception V1 with reduction module implemented as a feature extraction layer."""
 
-    def __init__(self, num_filters=28, activation="relu"):
+    def __init__(self, activation=relu):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
-            num_filters {int} -- Number of filters for convolution. (default: {28})
-            activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
+            activation {str} -- Activation to be applied on each convolution. (default: {relu})
         """
         super(ReductionLayer, self).__init__()
-        self.num_filters = num_filters
+        self.num_filters = 64
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -119,5 +118,3 @@ class ReductionLayer:
         # Combine results from each block
         output = keras.layers.concatenate([out_a, out_b, out_c, out_d], axis=-1)
         return output
-
-
