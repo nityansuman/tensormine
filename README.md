@@ -6,18 +6,19 @@
 
 ## You have just found TensorHub.
 
-The open source library to help you develop and train ML models, easy and fast as never before with `TensorFlow 2.0`.
-`TensorHub` is a global collection of `building blocks` and `ready to serve models`.
+The open source library to help you develop and train models, easy and fast as never before with `TensorFlow 2.0`.
+`TensorHub` is a global hub of `building blocks` and `ready to serve models`.
 
-It is a wrapper library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research.
+`TensorHub` is a library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research.
 
 Use `TensorHub` if you need a deep learning library that:
++ **Reproducibility** - Reproduce the results of existing pre-training models (such as Google BERT, XLNet).
 
-+ **Reproducibility** - Reproduce the results of existing pre-training models (such as Google BERT, XLNet)
++ **Model modularity** - TensorHub is divided into multiple components: ready-to-serve models, layers, neural-blocks etc. Ample modules are implemented in each component. Clear and robust interface allows users to combine modules with as few restrictions as possible.
 
-+ **Model modularity** - TensorHub divided into multiple components: ready-to-serve models, layers, neural-blocks etc. Ample modules are implemented in each component. Clear and robust interface allows users to combine modules with as few restrictions as possible.
++ **Fast** - Our custom utilities and layers are made from the ground up to support pre-existing standard frameworks like TensorFlow and Keras with efficiency in mind.
 
-+ **Prototyping** - Code less build more. Apply `TensorHub` to create fast prototypes with the help of modulear blocks, custom layers, custom activation support.
++ **Prototyping** - Code less build more. Apply `TensorHub` to create fast prototypes with the help of pre-cooked models, custom layers and utilities support.
 
 + **Platform Independent** - Supports both `Keras` and `TensorFlow 2.0`. Run your model on CPU, single GPU or using a distributed training strategy.
 
@@ -32,8 +33,9 @@ Building a question answering system, an image classification model, a Neural Tu
 
 For a more in-depth tutorial about Keras, you can check out:
 
-+ [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/training-a-text-classifier-using-tensorhub-models.ipynb)
-+ [Getting started with Custom Layers](https://github.com/nityansuman/tensorhub/tree/master/examples/creating-custom-models.ipynb)
++ [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/text-classifier-using-tensorhub-models.ipynb)
++ [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/image-classifier-using-tensorhub-models.ipynb)
++ [Build your own custom Model](https://github.com/nityansuman/tensorhub/tree/master/examples/working-with-custom-layers.ipynb)
 
 In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/examples) of this repository, you will find much more advanced examples coming your way very soon.
 
@@ -41,8 +43,8 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
 
 
 ## What's coming in V1.0
-+ Cooked Models
-    + Image Classification (Supports Transfer Learning with ImageNet Weights)
++ Pre-built Models
+    + Image Classification
         + Xception
         + VGG16
         + VGG19
@@ -52,13 +54,15 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
         + MobileNet
         + DenseNet
         + NASNet
-        + SqueezeNet (Without Transfer Learning) *
+        + SqueezeNet
+        + Inception V4
 
     + Text Classification
-        + RNN Model
-        + LSTM Model
-        + GRU Model
-        + Text-CNN
+        + Stacked RNN Models
+            + LSTM - BiLSTM Model
+            + GRU - BiGRU Model
+        + Custom Models
+            + Text-CNN
 
     + Neural Machine Translation *
         + Encoder-Decoder Sequence Translation Model
@@ -71,12 +75,10 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
         + RNN, LSTM, GRU Based Model
 
 + Custom Modules/Layers
-    + Standard Layers
-        + Linear
-        + Inception V1 Layer
-        + Inception V1 with Reduction Layer
-        + Inception V2 Layer *
-        + Inception V3 Layer *
+    + Linear Transformation Layer
+    + Inception V1 Layers
+    + Inception V2 Layers
+    + Inception V4 Layers
     + Attention layers
         + Bahdanau Attention
         + Luong Attention
@@ -90,9 +92,9 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
     + Image *
         + Image Augmentation
     + Activations
+        + GELU
         + RELU
         + SELU
-        + GELU
         + ELU
         + Tanh
         + Sigmoid
