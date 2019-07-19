@@ -110,7 +110,3 @@ class SqueezeNet:
         model = keras.models.Model(inputs=input_tensor, outputs=final_output)
         return model
 
-
-if __name__ == "__main__":
-    model = SqueezeNet(5).model()
-    model.summary()
