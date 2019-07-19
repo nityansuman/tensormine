@@ -19,7 +19,7 @@ from tensorhub.utilities.activations import relu, sigmoid, softmax
 
 
 class PerceptronClassifier(keras.models.Model):
-    """Multi-layer perceptron based text classifier."""
+    """Text sequence classification with Multi-layer perceptron."""
 
     def __init__(self, vocab_size, num_classes, max_seq_length=256, dp_rate=0.4, act=relu, output_act=softmax, embedding_dim=100, learn_embedding=True, embedding_matrix=None):
         """Class constructor to initialize member variables.
