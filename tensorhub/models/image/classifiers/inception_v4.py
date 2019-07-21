@@ -16,11 +16,7 @@
 # Load packages
 from tensorflow import keras
 from tensorhub.utilities.activations import relu, softmax
-from tensorhub.layers.layer_wrapper.inception_v4 import LayerA
-from tensorhub.layers.layer_wrapper.inception_v4 import LayerB
-from tensorhub.layers.layer_wrapper.inception_v4 import LayerC
-from tensorhub.layers.layer_wrapper.inception_v4 import ReductionLayerA
-from tensorhub.layers.layer_wrapper.inception_v4 import ReductionLayerB
+from tensorhub.layers.inception_v4 import LayerA, LayerB, LayerC, ReductionLayerA, ReductionLayerB
 
 
 class InceptionV4(keras.models.Model):
