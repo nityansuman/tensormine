@@ -14,5 +14,5 @@
 # ==============================================================================
 
 # Import modules
-from tensorhub.models.text.classifiers.classification_wrapper.perceptron_classifier import PerceptronClassifier
-from tensorhub.models.text.classifiers.classification_wrapper.rnn_classifier import LSTMClassifier, GRUClassifier
+from tensorhub.models.text.classifiers.perceptron_classifier import PerceptronClassifier
+from tensorhub.models.text.classifiers.rnn_classifier import LSTMClassifier, GRUClassifier
