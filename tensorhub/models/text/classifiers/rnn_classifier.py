@@ -51,9 +51,9 @@ class LSTMClassifier(keras.models.Model):
         self.embedding_matrix = embedding_matrix
         # Define layers
         if self.learn_embedding == True:
-            self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, input_length=self.max_seq_length))
+            self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, input_length=self.max_seq_length)
         elif self.learn_embedding == False:
-            self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, weights=[self.embedding_matrix], trainable=False, input_length=self.max_seq_length))
+            self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, weights=[self.embedding_matrix], trainable=False, input_length=self.max_seq_length)
         if self.bidir == False:
             self.lstm1 = keras.layers.LSTM(units=self.max_seq_length, return_sequences=True, activation=self.act)
             self.lstm2 = keras.layers.LSTM(units=self.max_seq_length, activation=self.act)
@@ -117,9 +117,9 @@ class GRUClassifier(keras.models.Model):
         self.embedding_matrix = embedding_matrix
         # Define layers
         if self.learn_embedding == True:
-            self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, input_length=self.max_seq_length))
+            self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, input_length=self.max_seq_length)
         elif self.learn_embedding == False:
-            self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, weights=[self.embedding_matrix], trainable=False, input_length=self.max_seq_length))
+            self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, weights=[self.embedding_matrix], trainable=False, input_length=self.max_seq_length)
         
         if self.bidir == False:
             self.gru1 = keras.layers.GRU(units=self.max_seq_length, return_sequences=True, activation=self.act)
