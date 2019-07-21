@@ -22,3 +22,4 @@ from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning
 from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import ResNet50
 from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import Xception
 from tensorhub.models.image.classifiers.classification_wrapper.transfer_learning import DenseNet121, DenseNet169, DenseNet201
+from tensorhub.models.image.classifiers.classification_wrapper.inception_v4 import InceptionV4

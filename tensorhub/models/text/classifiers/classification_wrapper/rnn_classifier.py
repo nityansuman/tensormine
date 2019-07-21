@@ -83,6 +83,7 @@ class LSTMClassifier(keras.models.Model):
         x = self.d3(x)
         return x
 
+
 class GRUClassifier(keras.models.Model):
     """Text sequence classification with `Gated Reccurent Units`."""
 
@@ -119,12 +120,14 @@ class GRUClassifier(keras.models.Model):
             self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, input_length=self.max_seq_length))
         elif self.learn_embedding == False:
             self.embedding_layer = keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_dim, weights=[self.embedding_matrix], trainable=False, input_length=self.max_seq_length))
+        
         if self.bidir == False:
             self.gru1 = keras.layers.GRU(units=self.max_seq_length, return_sequences=True, activation=self.act)
             self.gru2 = keras.layers.GRU(units=self.max_seq_length, activation=self.act)
         else:
             self.gru1 = keras.layers.Bidirectional(keras.layers.GRU(units=self.max_seq_length, return_sequences=True, activation=self.act))
             self.gru2 = keras.layers.Bidirectional(keras.layers.GRU(units=self.max_seq_length, activation=self.act))
+        
         self.d1 = keras.layers.Dense(units=self.dense_layer_size)
         self.d2 = keras.layers.Dense(units=self.dense_layer_size)
         self.d3 = keras.layers.Dense(units=self.num_classes, activation=self.output_act)
