@@ -1,4 +1,5 @@
 # Test
+import tensorflow as tf
 from tensorflow import keras
 
 
@@ -7,6 +8,12 @@ from tensorhub.models.image.classifiers import InceptionResNetV2, VGG16, SmallVG
 
 # Import text model
 from tensorhub.models.text.classifiers import PerceptronClassifier, LSTMClassifier, GRUClassifier
+
+# Import layers
+from tensorhub.layers import Linear, LuongAttention
+from tensorhub.layers.inception_v1 import *
+from tensorhub.layers.inception_v2 import BasicLayer, DeepLayer
+# from tensorhub.layers.bert.model import BertEmbeddingLayer
 
 # Import utilities
 from tensorhub.utilities.activations import relu, gelu, softmax
