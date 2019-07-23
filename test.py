@@ -14,6 +14,8 @@ from tensorhub.layers import Linear, LuongAttention
 from tensorhub.layers.inception_v1 import *
 from tensorhub.layers.inception_v2 import BasicLayer, DeepLayer
 # from tensorhub.layers.bert.model import BertEmbeddingLayer
+from tensorhub.layers.bert.config import BertConfig
+
 
 # Import utilities
 from tensorhub.utilities.activations import relu, gelu, softmax
