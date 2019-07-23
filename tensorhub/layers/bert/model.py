@@ -32,7 +32,7 @@ from tensorhub.layers.bert.transformer import transformer_model
 from tensorhub.layers.bert.utils import *
 
 
-class BertLayer(Layer):
+class BertEmbeddingLayer(Layer):
   """BERT model ("Bidirectional Embedding Representations from a Transformer").
   Example usage:
   ```python
@@ -61,7 +61,7 @@ class BertLayer(Layer):
         is invalid.
     """
   
-    super(BertLayer, self).__init__(name=name)
+    super(BertEmbeddingLayer, self).__init__(name=name)
     config = copy.deepcopy(config)
     if not is_training:
       config.hidden_dropout_prob = 0.0
