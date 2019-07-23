@@ -50,7 +50,8 @@ def gelu(x):
     Returns:
         tensor -- Output of GELU activation.
     """
-    return x * 0.5 * (1.0 + np.tanh((np.sqrt(2 / np.pi) * (x + 0.044715 * np.pow(x, 3)))))
+    cdf = x * 0.5 * (1.0 + tf.math.erf(x / tf.math.sqrt(2.0)))
+    return cdf
 
 def linear(x):
     """Linear activation function.
