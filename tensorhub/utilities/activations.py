@@ -21,10 +21,6 @@ import numpy as np
 def relu(x, alpha=0., max_value=None, threshold=0.):
     """Rectified Linear Unit.
     With default values, it returns element-wise `max(x, 0)`.
-    Otherwise, it follows:
-    `f(x) = max_value` for `x >= max_value`,
-    `f(x) = x` for `threshold <= x < max_value`,
-    `f(x) = alpha * (x - threshold)` otherwise.
 
     Arguments:
         x {tensor} -- Input float tensor to perform activation.
@@ -37,7 +33,7 @@ def relu(x, alpha=0., max_value=None, threshold=0.):
     if max_value is None:
         max_value = np.inf
     above_threshold = x * (x >= threshold)
-    above_threshold = np.clip(above_threshold, 0.0, max_value)
+    above_threshold = tf.clip_by_value(above_threshold, 0.0, max_value)
     below_threshold = alpha * (x - threshold) * (x < threshold)
     return below_threshold + above_threshold
 
@@ -73,7 +69,7 @@ def exponential(x):
     Returns:
         tensor -- Output of exponential activation.
     """
-    return np.exp(x)
+    return tf.math.exp(x)
 
 def tanh(x):
     """Hyperbolic Tangent (tanh) activation function.
@@ -84,7 +80,7 @@ def tanh(x):
     Returns:
         tensor -- Output of tanh activation.
     """
-    return np.sinh(x) / np.cosh(x)
+    return tf.math.sinh(x) / tf.math.cosh(x)
 
 def sigmoid(x):
     """Sigmoid activation function. For small values
@@ -97,7 +93,7 @@ def sigmoid(x):
     Returns:
         tensor -- Output of sigmoid activation.
     """
-    return 1.0 / (1.0 + np.exp(-x))
+    return 1.0 / (1.0 + tf.math.exp(-x))
 
 def hard_sigmoid(x):
     """Hard-sigmoid activation function. For small values
@@ -111,7 +107,7 @@ def hard_sigmoid(x):
         tensor -- Output of sigmoid activation.
     """
     y = 0.2 * x + 0.5
-    return np.clip(y, 0, 1)
+    return tf.clip_by_value(y, 0, 1)
 
 def softsign(x):
     """Softsign activation function.
@@ -122,7 +118,7 @@ def softsign(x):
     Returns:
         tensor -- Output of softsign activation.
     """
-    return x / (np.abs(x) + 1)
+    return x / (tf.math.abs(x) + 1)
 
 def softplus(x):
     """Softplus activation function.
@@ -133,7 +129,7 @@ def softplus(x):
     Returns:
         tensor -- Output of softplus activation.
     """
-    return np.log(np.exp(x) + 1)
+    return tf.math.log(tf.math.exp(x) + 1)
 
 def softmax(x, axis=-1):
     """Softmax activation function.
@@ -151,7 +147,7 @@ def softmax(x, axis=-1):
     # Dimension of the input tensor
     ndim = x.ndim
     if ndim >= 2:
-        y = np.exp(x - np.max(x, axis=axis, keepdims=True))
+        y = tf.math.exp(x - np.max(x, axis=axis, keepdims=True))
         return y / np.sum(y, axis=axis, keepdims=True)
     else:
         raise ValueError("Cannot apply softmax to a tensor that is 1D. Received input shape: {}".format(x.shape))
@@ -166,7 +162,7 @@ def elu(x, alpha=1.):
     Returns:
         tensor -- Output of exponential linear activation
     """
-    return x * (x > 0) + alpha * (np.exp(x) - 1.) * (x < 0)
+    return x * (x > 0) + alpha * (tf.math.exp(x) - 1.) * (x < 0)
 
 def selu(x):
     """Scaled Exponential Linear Unit (SELU).
