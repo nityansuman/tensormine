@@ -20,13 +20,16 @@ from tensorflow import keras
 class LayerA(keras.layers.Layer):
     """Inception V4 block A layer implemented as a feature extraction layer."""
 
-    def __init__(self, activation="relu"):
+    def __init__(self, activation="relu", name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(LayerA, self).__init__()
+        if name:
+            super(LayerA, self).__init__(name=name)
+        else:
+            super(LayerA, self).__init__()
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -91,13 +94,16 @@ class LayerA(keras.layers.Layer):
 class LayerB(keras.layers.Layer):
     """Inception V4 block B layer implemented as a feature extraction layer."""
 
-    def __init__(self, activation="relu"):
+    def __init__(self, activation="relu", name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(LayerB, self).__init__()
+        if name:
+            super(LayerB, self).__init__(name=name)
+        else:
+            super(LayerB, self).__init__()
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -171,13 +177,16 @@ class LayerB(keras.layers.Layer):
 class LayerC(keras.layers.Layer):
     """Inception V4 block C layer implemented as a feature extraction layer."""
 
-    def __init__(self, activation="relu"):
+    def __init__(self, activation="relu", name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(LayerC, self).__init__()
+        if name:
+            super(LayerC, self).__init__(name=name)
+        else:
+            super(LayerC, self).__init__()
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -252,13 +261,16 @@ class LayerC(keras.layers.Layer):
 class ReductionLayerA(keras.layers.Layer):
     """Inception V4 Reduction-A layer implemented as a feature extraction layer."""
 
-    def __init__(self, activation="relu"):
+    def __init__(self, activation="relu", name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(ReductionLayerA, self).__init__()
+        if name:
+            super(ReductionLayerA, self).__init__(name=name)
+        else:
+            super(ReductionLayerA, self).__init__()
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -313,13 +325,16 @@ class ReductionLayerA(keras.layers.Layer):
 class ReductionLayerB(keras.layers.Layer):
     """Inception V4 Reduction-B layer implemented as a feature extraction layer."""
 
-    def __init__(self, activation="relu"):
+    def __init__(self, activation="relu", name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(ReductionLayerB, self).__init__()
+        if name:
+            super(ReductionLayerB, self).__init__(name=name)
+        else:
+            super(ReductionLayerB, self).__init__()
         self.activation = activation
         self.strides = 1
         self.padding = "same"
