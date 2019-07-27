@@ -13,23 +13,27 @@
 # limitations under the License.
 # ==============================================================================
 
-
 # Load packages
 from tensorflow import keras
-from tensorhub.utilities.activations import relu, gelu
+from tensorhub.utilities.activations import relu
+
 
 class BasicLayer(keras.layers.Layer):
-    """Inception V1 module implemented as a feature extraction layer."""
+    """Inception V1 module implemented as a keras layer for feature creation."""
 
-    def __init__(self, activation=relu):
+    def __init__(self, activation=relu, name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
+            name {str} -- Name associated with this layer. (default: {None})
         """
-        super(BasicLayer, self).__init__()
+        if name:
+            super(BasicLayer, self).__init__(name=name)
+        else:
+            super(BasicLayer, self).__init__()
         self.num_filters = 64
-        self.activation = activation
+        self.act = activation
         self.strides = 1
         self.padding = "same"
 
@@ -39,9 +43,9 @@ class BasicLayer(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_block_a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_block_b = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_block_c = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.activation, strides=self.strides, padding=self.padding)
+        self.conv_block_a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_block_b = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_block_c = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.act, strides=self.strides, padding=self.padding)
         self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
         self.concatenate = keras.layers.concatenate(axis=-1)
 
@@ -66,18 +70,23 @@ class BasicLayer(keras.layers.Layer):
         output = self.concatenate([out_a, out_b, out_c, out_d])
         return output
 
-class ReductionLayer:
-    """Inception V1 with reduction module implemented as a feature extraction layer."""
 
-    def __init__(self, activation=relu):
+class ReductionLayer:
+    """Inception V1 with reduction module implemented as a keras layer for feature creation."""
+
+    def __init__(self, activation=relu, name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {relu})
+            name {str} -- Name associated with this layer. (default: {None})
         """
-        super(ReductionLayer, self).__init__()
+        if name:
+            super(ReductionLayer, self).__init__(name=name)
+        else:
+            super(ReductionLayer, self).__init__()
         self.num_filters = 64
-        self.activation = activation
+        self.act = activation
         self.strides = 1
         self.padding = "same"
 
@@ -87,12 +96,12 @@ class ReductionLayer:
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=self.strides*self.strides, padding=self.padding)
-        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_3 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_5 = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.activation, strides=self.strides, padding=self.padding)
+        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides*self.strides, padding=self.padding)
+        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_3 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_5 = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.act, strides=self.strides, padding=self.padding)
         self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
         self.concatenate = keras.layers.concatenate(axis=-1)
 

@@ -15,27 +15,24 @@
 
 # Load packages
 from tensorflow import keras
-from tensorhub.utilities.activations import relu, gelu
+from tensorhub.utilities.activations import relu
 
 
 class LayerA(keras.layers.Layer):
     """Inception V4 block A layer implemented as a feature extraction layer."""
 
-<<<<<<< HEAD:tensorhub/layers/inception_v4.py
-    def __init__(self, activation=relu):
-=======
-    def __init__(self, activation="relu", name=None):
->>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
+    def __init__(self, activation=relu, name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
-            activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
+            activation {str} -- Activation to be applied on each convolution. (default: {relu})
+            name {str} -- Name associated with this layer. (default: {None})
         """
         if name:
             super(LayerA, self).__init__(name=name)
         else:
             super(LayerA, self).__init__()
-        self.activation = activation
+        self.act = activation
         self.strides = 1
         self.padding = "same"
 
@@ -45,13 +42,13 @@ class LayerA(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_1a = keras.layers.Conv2D(96, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1b = keras.layers.Conv2D(96, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1c = keras.layers.Conv2D(64, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_3c = keras.layers.Conv2D(96, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1d = keras.layers.Conv2D(64, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_3d1 = keras.layers.Conv2D(96, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_3d2 = keras.layers.Conv2D(96, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
+        self.conv_1a = keras.layers.Conv2D(96, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1b = keras.layers.Conv2D(96, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1c = keras.layers.Conv2D(64, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_3c = keras.layers.Conv2D(96, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1d = keras.layers.Conv2D(64, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_3d1 = keras.layers.Conv2D(96, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_3d2 = keras.layers.Conv2D(96, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
         self.average_pool_a = keras.layers.AveragePooling2D((2, 2), strides=self.strides, padding=self.padding)
 
     def call(self, x):
@@ -83,21 +80,18 @@ class LayerA(keras.layers.Layer):
 class LayerB(keras.layers.Layer):
     """Inception V4 block B layer implemented as a feature extraction layer."""
 
-<<<<<<< HEAD:tensorhub/layers/inception_v4.py
-    def __init__(self, activation=relu):
-=======
-    def __init__(self, activation="relu", name=None):
->>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
+    def __init__(self, activation=relu, name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
-            activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
+            activation {str} -- Activation to be applied on each convolution. (default: {relu})
+            name {str} -- Name associated with this layer. (default: {None})
         """
         if name:
             super(LayerB, self).__init__(name=name)
         else:
             super(LayerB, self).__init__()
-        self.activation = activation
+        self.act = activation
         self.strides = 1
         self.padding = "same"
 
@@ -107,16 +101,16 @@ class LayerB(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_1a = keras.layers.Conv2D(128, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1b = keras.layers.Conv2D(384, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1c = keras.layers.Conv2D(192, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1d = keras.layers.Conv2D(192, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1_7c1 = keras.layers.Conv2D(224, (1, 7), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1_7c2 = keras.layers.Conv2D(256, (1, 7), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1_7d1 = keras.layers.Conv2D(192, (1, 7), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_7_1d1 = keras.layers.Conv2D(224, (7, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1_7d2 = keras.layers.Conv2D(224, (1, 7), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_7_1d2 = keras.layers.Conv2D(256, (7, 1), activation=self.activation, strides=self.strides, padding=self.padding)
+        self.conv_1a = keras.layers.Conv2D(128, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1b = keras.layers.Conv2D(384, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1c = keras.layers.Conv2D(192, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1d = keras.layers.Conv2D(192, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1_7c1 = keras.layers.Conv2D(224, (1, 7), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1_7c2 = keras.layers.Conv2D(256, (1, 7), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1_7d1 = keras.layers.Conv2D(192, (1, 7), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_7_1d1 = keras.layers.Conv2D(224, (7, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1_7d2 = keras.layers.Conv2D(224, (1, 7), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_7_1d2 = keras.layers.Conv2D(256, (7, 1), activation=self.act, strides=self.strides, padding=self.padding)
         self.average_pool_a = keras.layers.AveragePooling2D((2, 2), strides=self.strides, padding=self.padding)
 
     def call(self, x):
@@ -151,21 +145,18 @@ class LayerB(keras.layers.Layer):
 class LayerC(keras.layers.Layer):
     """Inception V4 block C layer implemented as a feature extraction layer."""
 
-<<<<<<< HEAD:tensorhub/layers/inception_v4.py
-    def __init__(self, activation=relu):
-=======
-    def __init__(self, activation="relu", name=None):
->>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
+    def __init__(self, activation=relu, name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
-            activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
+            activation {str} -- Activation to be applied on each convolution. (default: {relu})
+            name {str} -- Name associated with this layer. (default: {None})
         """
         if name:
             super(LayerC, self).__init__(name=name)
         else:
             super(LayerC, self).__init__()
-        self.activation = activation
+        self.act = activation
         self.strides = 1
         self.padding = "same"
 
@@ -175,18 +166,17 @@ class LayerC(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_1a = keras.layers.Conv2D(256, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1b = keras.layers.Conv2D(256, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1c = keras.layers.Conv2D(384, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1d = keras.layers.Conv2D(384, (1, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1_3c = keras.layers.Conv2D(256, (1, 3), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1_3d1 = keras.layers.Conv2D(448, (1, 3), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_1_3d2 = keras.layers.Conv2D(256, (1, 3), activation=self.activation, strides=self.strides,padding=self.padding)
-        self.conv_3_1c = keras.layers.Conv2D(256, (3, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_3_1d1 = keras.layers.Conv2D(512, (3, 1), activation=self.activation, strides=self.strides, padding=self.padding)
-        self.conv_3_1d2 = keras.layers.Conv2D(256, (3, 1), activation=self.activation, strides=self.strides, padding=self.padding)
+        self.conv_1a = keras.layers.Conv2D(256, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1b = keras.layers.Conv2D(256, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1c = keras.layers.Conv2D(384, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1d = keras.layers.Conv2D(384, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1_3c = keras.layers.Conv2D(256, (1, 3), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1_3d1 = keras.layers.Conv2D(448, (1, 3), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_1_3d2 = keras.layers.Conv2D(256, (1, 3), activation=self.act, strides=self.strides,padding=self.padding)
+        self.conv_3_1c = keras.layers.Conv2D(256, (3, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_3_1d1 = keras.layers.Conv2D(512, (3, 1), activation=self.act, strides=self.strides, padding=self.padding)
+        self.conv_3_1d2 = keras.layers.Conv2D(256, (3, 1), activation=self.act, strides=self.strides, padding=self.padding)
         self.average_pool_a = keras.layers.AveragePooling2D((2, 2), strides=self.strides, padding=self.padding)
-
 
     def call(self, x):
         """Forward pass of the layer.
@@ -220,21 +210,18 @@ class LayerC(keras.layers.Layer):
 class ReductionLayerA(keras.layers.Layer):
     """Inception V4 Reduction-A layer implemented as a feature extraction layer."""
 
-<<<<<<< HEAD:tensorhub/layers/inception_v4.py
-    def __init__(self, activation=relu):
-=======
-    def __init__(self, activation="relu", name=None):
->>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
+    def __init__(self, activation=relu, name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
-            activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
+            activation {str} -- Activation to be applied on each convolution. (default: {relu})
+            name {str} -- Name associated with this layer. (default: {None})
         """
         if name:
             super(ReductionLayerA, self).__init__(name=name)
         else:
             super(ReductionLayerA, self).__init__()
-        self.activation = activation
+        self.act = activation
         self.s1 = 1
         self.s2 = 2
         self.pad_same = "same"
@@ -246,10 +233,10 @@ class ReductionLayerA(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv3_b = keras.layers.Conv2D(384, (3, 3), activation=self.activation, strides=self.s2, padding=self.pad_valid)
-        self.conv1_c = keras.layers.Conv2D(192, (1, 1), activation=self.activation, strides=self.s1, padding=self.pad_same)
-        self.conv3_c1 = keras.layers.Conv2D(224, (3, 3), activation=self.activation, strides=self.s1, padding=self.pad_same)
-        self.conv3_c2 = keras.layers.Conv2D(256, (3, 3), activation=self.activation, strides=self.s2, padding=self.pad_valid)
+        self.conv3_b = keras.layers.Conv2D(384, (3, 3), activation=self.act, strides=self.s2, padding=self.pad_valid)
+        self.conv1_c = keras.layers.Conv2D(192, (1, 1), activation=self.act, strides=self.s1, padding=self.pad_same)
+        self.conv3_c1 = keras.layers.Conv2D(224, (3, 3), activation=self.act, strides=self.s1, padding=self.pad_same)
+        self.conv3_c2 = keras.layers.Conv2D(256, (3, 3), activation=self.act, strides=self.s2, padding=self.pad_valid)
         self.max_pool_a = keras.layers.MaxPooling2D((3, 3), strides=self.s2, padding=self.pad_valid)
 
     def call(self, x):
@@ -277,21 +264,18 @@ class ReductionLayerA(keras.layers.Layer):
 class ReductionLayerB(keras.layers.Layer):
     """Inception V4 Reduction-B layer implemented as a feature extraction layer."""
 
-<<<<<<< HEAD:tensorhub/layers/inception_v4.py
-    def __init__(self, activation=relu):
-=======
-    def __init__(self, activation="relu", name=None):
->>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
+    def __init__(self, activation=relu, name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
-            activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
+            activation {str} -- Activation to be applied on each convolution. (default: {relu})
+            name {str} -- Name associated with this layer. (default: {None})
         """
         if name:
             super(ReductionLayerB, self).__init__(name=name)
         else:
             super(ReductionLayerB, self).__init__()
-        self.activation = activation
+        self.act = activation
         self.s1 = 1
         self.s2 = 2
         self.pad_same = "same"
@@ -304,12 +288,12 @@ class ReductionLayerB(keras.layers.Layer):
             input_shape {tensor} -- Input shape tensor.
         """
         self.max_pool_a = keras.layers.MaxPooling2D((3, 3), strides=self.s2, padding=self.pad_valid)
-        self.conv1_b = keras.layers.Conv2D(192, (1, 1), activation=self.activation, strides=self.s1, padding=self.pad_same)
-        self.conv3_b = keras.layers.Conv2D(192, (3, 3), activation=self.activation, strides=self.s2, padding=self.pad_valid)
-        self.conv1_c = keras.layers.Conv2D(256, (1, 1), activation=self.activation, strides=self.s1, padding=self.pad_same)
-        self.conv1_7_c1 = keras.layers.Conv2D(256, (1, 7), activation=self.activation, strides=self.s1, padding=self.pad_same)
-        self.conv7_1_c2 = keras.layers.Conv2D(320, (7, 1), activation=self.activation, strides=self.s1, padding=self.pad_same)
-        self.conv3_c = keras.layers.Conv2D(320, (3, 3), activation=self.activation, strides=self.s2, padding=self.pad_valid)
+        self.conv1_b = keras.layers.Conv2D(192, (1, 1), activation=self.act, strides=self.s1, padding=self.pad_same)
+        self.conv3_b = keras.layers.Conv2D(192, (3, 3), activation=self.act, strides=self.s2, padding=self.pad_valid)
+        self.conv1_c = keras.layers.Conv2D(256, (1, 1), activation=self.act, strides=self.s1, padding=self.pad_same)
+        self.conv1_7_c1 = keras.layers.Conv2D(256, (1, 7), activation=self.act, strides=self.s1, padding=self.pad_same)
+        self.conv7_1_c2 = keras.layers.Conv2D(320, (7, 1), activation=self.act, strides=self.s1, padding=self.pad_same)
+        self.conv3_c = keras.layers.Conv2D(320, (3, 3), activation=self.act, strides=self.s2, padding=self.pad_valid)
 
     def call(self, x):
         """Forward pass of the layer.
