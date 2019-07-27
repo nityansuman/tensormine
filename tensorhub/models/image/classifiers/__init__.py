@@ -14,7 +14,8 @@
 # ==============================================================================
 
 # Import modules
-from tensorhub.models.image.classifiers.basic_classifiers import SmallVGG
+
+# SOTA models support transfer learning
 from tensorhub.models.image.classifiers.transfer_learning import VGG16, VGG19
 from tensorhub.models.image.classifiers.transfer_learning import InceptionV3, InceptionResNetV2
 from tensorhub.models.image.classifiers.transfer_learning import MobileNet
@@ -22,4 +23,9 @@ from tensorhub.models.image.classifiers.transfer_learning import NASNetMobile, N
 from tensorhub.models.image.classifiers.transfer_learning import ResNet50
 from tensorhub.models.image.classifiers.transfer_learning import Xception
 from tensorhub.models.image.classifiers.transfer_learning import DenseNet121, DenseNet169, DenseNet201
+
+# Basic models
+from tensorhub.models.image.classifiers.basic_classifiers import SmallVGG
+
+# Advance models
 from tensorhub.models.image.classifiers.inception_v4 import InceptionV4

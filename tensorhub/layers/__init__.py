@@ -22,3 +22,5 @@ from tensorhub.layers import inception_v1, inception_v2, inception_v4
 
 from tensorhub.layers.bert.model import BertLayer
 from tensorhub.layers.bert.config import BertConfig
+
+from tensorhub.layers.squeeze_fire_module import SqueezeFire
