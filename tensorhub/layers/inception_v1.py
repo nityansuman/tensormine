@@ -18,7 +18,6 @@
 from tensorflow import keras
 from tensorhub.utilities.activations import relu, gelu
 
-
 class BasicLayer(keras.layers.Layer):
     """Inception V1 module implemented as a feature extraction layer."""
 
@@ -44,6 +43,7 @@ class BasicLayer(keras.layers.Layer):
         self.conv_block_b = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
         self.conv_block_c = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.activation, strides=self.strides, padding=self.padding)
         self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
+        self.concatenate = keras.layers.concatenate(axis=-1)
 
     def call(self, x):
         """Forward pass of the layer.
@@ -63,7 +63,7 @@ class BasicLayer(keras.layers.Layer):
         # Block 4
         out_d = self.maxpool_block(x)
         # Combine results from each block
-        output = keras.layers.concatenate([out_a, out_b, out_c, out_d], axis=-1)
+        output = self.concatenate([out_a, out_b, out_c, out_d])
         return output
 
 class ReductionLayer:
@@ -94,6 +94,7 @@ class ReductionLayer:
         self.conv_3 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=self.strides, padding=self.padding)
         self.conv_5 = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.activation, strides=self.strides, padding=self.padding)
         self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
+        self.concatenate = keras.layers.concatenate(axis=-1)
 
     def call(self, x):
         """Forward pass of the layer.
@@ -116,5 +117,5 @@ class ReductionLayer:
         out_d_inter = self.maxpool_block(x)
         out_d = self.conv_1d(out_d_inter)
         # Combine results from each block
-        output = keras.layers.concatenate([out_a, out_b, out_c, out_d], axis=-1)
+        output = self.concatenate([out_a, out_b, out_c, out_d])
         return output

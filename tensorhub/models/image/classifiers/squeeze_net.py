@@ -1,16 +1,31 @@
+# Copyright 2019 The TensorHub Authors. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ==============================================================================
+
+# Load packages
 from tensorflow import keras
 
 
 class SqueezeNet:
-    """SqueezeNet is a convolution neural network architecture that produces very small models.
-    """
+    """SqueezeNet is a convolution neural network architecture that produces very small models."""
 
     def __init__(self, n_classes, img_width=256, img_height=256, fire_nodes=None):
         """Class constructor.
 
         Arguments:
             n_classes {int} -- Number of classes for classification.
-
+        
         Keyword Arguments:
             img_height {int} -- Height of the input image.
             img_width {int} -- Width of the input image.
@@ -25,15 +40,15 @@ class SqueezeNet:
     def fire_module(self, name, fire_input, fire_nodes, skip_connection=False):
         """
         This function creates fire module block as per squeezenet network
-
+        
         Arguments:
             name: Name of the fire module.
             fire_input: Keras input layer to this fire-module block.
             fire_nodes: Nodes representing the outputs intermediate layers in fire module.
-
+        
         Keyword Arguments:
             skip_connection: weather to merge input with the output of fire-module
-
+        
         return:
             output layer to current fire-module
         """
@@ -60,6 +75,7 @@ class SqueezeNet:
 
     def model(self):
         """Creates squeeze-net CNN architecture.
+        
         Returns:
             keras-model -- Build squeeze-net model with specified number of  fire modules.
         """
@@ -109,4 +125,3 @@ class SqueezeNet:
         final_output = keras.layers.Flatten(name="final_reshape")(batch2_activated_pooled)
         model = keras.models.Model(inputs=input_tensor, outputs=final_output)
         return model
-

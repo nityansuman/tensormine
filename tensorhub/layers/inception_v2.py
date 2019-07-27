@@ -17,17 +17,21 @@
 # Load packages
 from tensorflow import keras
 
+
 class BasicLayer(keras.layers.Layer):
     """Inception V2 layer with 3x3 convolution(replacing 5x5) implemented as a feature extraction layer."""
 
-    def __init__(self, num_filters=28, activation="relu"):
+    def __init__(self, num_filters=28, activation="relu", name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             num_filters {int} -- Number of filters for convolution. (default: {28})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(BasicLayer, self).__init__()
+        if name:
+            super(BasicLayer, self).__init__(name=name)
+        else:
+            super(BasicLayer, self).__init__()
         self.num_filters = num_filters
         self.activation = activation
         self.strides = 1
@@ -91,14 +95,17 @@ class DeepLayer(keras.layers.Layer):
     implemented as a feature extraction layer.
     """
 
-    def __init__(self, num_filters=28, activation="relu"):
+    def __init__(self, num_filters=28, activation="relu", name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             num_filters {int} -- Number of filters for convolution. (default: {28})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(DeepLayer, self).__init__()
+        if name:
+            super(DeepLayer, self).__init__(name=name)
+        else:
+            super(DeepLayer, self).__init__()
         self.num_filters = num_filters
         self.activation = activation
         self.strides = 1
@@ -176,14 +183,17 @@ class WideLayer(keras.layers.Layer):
     """
 
 
-    def __init__(self, num_filters=28, activation="relu"):
+    def __init__(self, num_filters=28, activation="relu", name=None):
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             num_filters {int} -- Number of filters for convolution. (default: {28})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(WideLayer, self).__init__()
+        if name:
+            super(WideLayer, self).__init__(name=name)
+        else:
+            super(WideLayer, self).__init__()
         self.num_filters = num_filters
         self.activation = activation
         self.strides = 1
