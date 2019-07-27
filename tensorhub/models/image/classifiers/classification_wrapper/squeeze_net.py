@@ -7,10 +7,8 @@ class SqueezeNet:
 
     def __init__(self, n_classes, img_width=256, img_height=256, fire_nodes=None):
         """Class constructor.
-
         Arguments:
             n_classes {int} -- Number of classes for classification.
-
         Keyword Arguments:
             img_height {int} -- Height of the input image.
             img_width {int} -- Width of the input image.
@@ -25,15 +23,12 @@ class SqueezeNet:
     def fire_module(self, name, fire_input, fire_nodes, skip_connection=False):
         """
         This function creates fire module block as per squeezenet network
-
         Arguments:
             name: Name of the fire module.
             fire_input: Keras input layer to this fire-module block.
             fire_nodes: Nodes representing the outputs intermediate layers in fire module.
-
         Keyword Arguments:
             skip_connection: weather to merge input with the output of fire-module
-
         return:
             output layer to current fire-module
         """
@@ -109,4 +104,3 @@ class SqueezeNet:
         final_output = keras.layers.Flatten(name="final_reshape")(batch2_activated_pooled)
         model = keras.models.Model(inputs=input_tensor, outputs=final_output)
         return model
-
