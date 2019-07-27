@@ -21,13 +21,20 @@ from tensorhub.utilities.activations import relu, gelu
 class LayerA(keras.layers.Layer):
     """Inception V4 block A layer implemented as a feature extraction layer."""
 
+<<<<<<< HEAD:tensorhub/layers/inception_v4.py
     def __init__(self, activation=relu):
+=======
+    def __init__(self, activation="relu", name=None):
+>>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(LayerA, self).__init__()
+        if name:
+            super(LayerA, self).__init__(name=name)
+        else:
+            super(LayerA, self).__init__()
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -76,13 +83,20 @@ class LayerA(keras.layers.Layer):
 class LayerB(keras.layers.Layer):
     """Inception V4 block B layer implemented as a feature extraction layer."""
 
+<<<<<<< HEAD:tensorhub/layers/inception_v4.py
     def __init__(self, activation=relu):
+=======
+    def __init__(self, activation="relu", name=None):
+>>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(LayerB, self).__init__()
+        if name:
+            super(LayerB, self).__init__(name=name)
+        else:
+            super(LayerB, self).__init__()
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -137,13 +151,20 @@ class LayerB(keras.layers.Layer):
 class LayerC(keras.layers.Layer):
     """Inception V4 block C layer implemented as a feature extraction layer."""
 
+<<<<<<< HEAD:tensorhub/layers/inception_v4.py
     def __init__(self, activation=relu):
+=======
+    def __init__(self, activation="relu", name=None):
+>>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(LayerC, self).__init__()
+        if name:
+            super(LayerC, self).__init__(name=name)
+        else:
+            super(LayerC, self).__init__()
         self.activation = activation
         self.strides = 1
         self.padding = "same"
@@ -199,13 +220,20 @@ class LayerC(keras.layers.Layer):
 class ReductionLayerA(keras.layers.Layer):
     """Inception V4 Reduction-A layer implemented as a feature extraction layer."""
 
+<<<<<<< HEAD:tensorhub/layers/inception_v4.py
     def __init__(self, activation=relu):
+=======
+    def __init__(self, activation="relu", name=None):
+>>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(ReductionLayerA, self).__init__()
+        if name:
+            super(ReductionLayerA, self).__init__(name=name)
+        else:
+            super(ReductionLayerA, self).__init__()
         self.activation = activation
         self.s1 = 1
         self.s2 = 2
@@ -249,13 +277,20 @@ class ReductionLayerA(keras.layers.Layer):
 class ReductionLayerB(keras.layers.Layer):
     """Inception V4 Reduction-B layer implemented as a feature extraction layer."""
 
+<<<<<<< HEAD:tensorhub/layers/inception_v4.py
     def __init__(self, activation=relu):
+=======
+    def __init__(self, activation="relu", name=None):
+>>>>>>> c0ee2512920cc1ad8fec3f3fb5bfcffb2e587a30:tensorhub/layers/layer_wrapper/inception_v4.py
         """Class constructor to initialize variables.
 
         Keyword Arguments:
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
         """
-        super(ReductionLayerB, self).__init__()
+        if name:
+            super(ReductionLayerB, self).__init__(name=name)
+        else:
+            super(ReductionLayerB, self).__init__()
         self.activation = activation
         self.s1 = 1
         self.s2 = 2
