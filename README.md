@@ -42,7 +42,7 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
 
 ## What's coming in V1.0
 + Pre-built Models
-    + Image Classification (Not all models support transfer learning on Image Net weights)
+    + Image Classification
             + Xception
             + VGG16
             + VGG19
