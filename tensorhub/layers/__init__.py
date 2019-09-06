@@ -19,8 +19,13 @@ from tensorhub.layers.bahdanau_attention import BahdanauAttention
 from tensorhub.layers.luong_attention import LuongAttention
 
 from tensorhub.layers import inception_v1, inception_v2, inception_v4
+<<<<<<< HEAD
 
 from tensorhub.layers.bert.model import BertLayer
 from tensorhub.layers.bert.config import BertConfig
 
 from tensorhub.layers.squeeze_fire_module import SqueezeFire
+=======
+# from tensorhub.layers.bert.model import BertEmbeddingLayer
+from tensorhub.layers.bert.config import BertConfig
+>>>>>>> bug_fix
