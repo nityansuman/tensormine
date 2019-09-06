@@ -161,7 +161,6 @@ class VGG19(ModelTail, keras.models.Model):
         return self.top_model(y)
 
 
-
 class MobileNet(ModelTail, keras.models.Model):
     """MobileNet based image classification model with transfer learning support on imagenet weights.
     
