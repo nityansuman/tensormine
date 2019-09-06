@@ -33,7 +33,7 @@ with open("README.md", mode="r") as fh:
 # Create setup
 setuptools.setup(
     name="tensorhub",
-    version="1.0.0-alpha5",
+    version="1.0",
     author="Kumar Nityan Suman",
     author_email="nityan.suman@gmail.com",
     description="Deep Learning for Everybody.",
@@ -41,7 +41,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/nityansuman/tensorhub",
     license="MIT",
-    packages=setuptools.find_packages(exclude=["examples", ]),
+    packages=setuptools.find_packages(exclude=["examples", "data", ]),
     install_requires=[
         "numpy>=1.16",
         "tensorflow>=2.0.0a0"
