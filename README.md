@@ -27,8 +27,6 @@ Use `TensorHub` if you need a deep learning library that:
 
 ## Getting started: 30 seconds to TensorHub
 
-<p align="center"><img src="data/readme_code_example_1.png?raw=true" alt="code"/></p>
-
 Building a question answering system, an image classification model, a Neural Turing Machine, or any other model is just as fast. The ideas behind deep learning are simple, so why should their implementation be painful?
 
 For a more in-depth tutorial about Keras, you can check out:
@@ -44,35 +42,34 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
 
 ## What's coming in V1.0
 + Pre-built Models
-    + Image Classification
-        + Xception
-        + VGG16
-        + VGG19
-        + ResNet50
-        + InceptionV3
-        + InceptionResNetV2
-        + MobileNet
-        + DenseNet
-        + NASNet
-        + SqueezeNet
-        + Inception V4
+    + Image Classification (Not all models support transfer learning on Image Net weights)
+            + Xception
+            + VGG16
+            + VGG19
+            + MobileNet
+            + ResNet50
+            + InceptionV3
+            + InceptionResNetV2
+            + Xception
+            + DenseNet121
+            + DenseNet169
+            + DenseNet201
+            + NASNetMobile
+            + NASNetLarge
+            + SmallVGG
+            + InceptionV4
 
     + Text Classification
-        + Stacked RNN Models
-            + LSTM - BiLSTM Model
-            + GRU - BiGRU Model
-        + Custom Models
-            + Text-CNN
+            + Stacked RNN Models
+                + LSTM - BiLSTM Model
+                + GRU - BiGRU Model
+            + Text-CNN Model
+    
+    + Neural Machine Translation
+            + Encoder-Decoder Sequence Translation Model
 
-    + Neural Machine Translation *
-        + Encoder-Decoder Sequence Translation Model
-        + Translation with Attention
-
-    + Text Generation *
-        + RNN, LSTM, GRU Based Model
-        
-    + Named Entity Recogniton *
-        + RNN, LSTM, GRU Based Model
+    + Named Entity Recogniton
+            + LSTM, GRU Based Model
 
 + Custom Modules/Layers
     + Linear Transformation Layer
@@ -82,31 +79,27 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
     + Attention layers
         + Bahdanau Attention
         + Luong Attention
-        + Self-Attention *
 
 + Utilities
-    + Text
-        + Custom Word and Character Tokenizer
-        + Load Pre-trained Embeddings
-        + Create Vocabulary Matrix
-    + Image *
-        + Image Augmentation
+    + Processor
+            + Learn Tokenizer and Create Vocabulary
+            + Load Pre-trained Embeddings
     + Activations
-        + GELU
-        + RELU
-        + SELU
-        + ELU
-        + Tanh
-        + Sigmoid
-        + Hard Sigmoid
-        + Softmax
-        + Softplus
-        + Softsign
-        + Exponential
-        + Linear
-    + Trainer (Generic TF2.0 train and validation pipelines) *
-
-Note: `*` - Support coming soon
+            + GELU
+            + RELU
+            + SELU
+            + ELU
+            + Tanh
+            + Sigmoid
+            + Hard Sigmoid
+            + Softmax
+            + Softplus
+            + Softsign
+            + Exponential
+            + Linear
+            + Mish
+            + Swish
+    + Model Trainer (Generic TF2.0 train and validation pipelines) *
 
 ------------------
 
@@ -135,21 +128,6 @@ If you are using a virtualenv, you may want to avoid using sudo:
 ```sh
 pip install -U tensorhub
 ```
-
-<!-- + **Alternatively: Install TensorHub from the GitHub source:**
-
-First, clone TensorHub using `git`:
-
-```sh
-git clone https://github.com/nityansuman/tensorhub.git
-```
-
-Then, `cd` to the TensroHub folder and run the install command:
-```sh
-cd tensorhub
-sudo python setup.py install
-``` -->
-
 ------------------
 
 
