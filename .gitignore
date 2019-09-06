@@ -10,6 +10,11 @@ __pycache__
 build/
 dist/
 
+# Data
+*.csv
+*.json
+*.tsv
+
 # Tests
 .pytest_cache/
 
