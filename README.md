@@ -43,33 +43,33 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
 ## What's coming in V1.0
 + Pre-built Models
     + Image Classification
-            + Xception
-            + VGG16
-            + VGG19
-            + MobileNet
-            + ResNet50
-            + InceptionV3
-            + InceptionResNetV2
-            + Xception
-            + DenseNet121
-            + DenseNet169
-            + DenseNet201
-            + NASNetMobile
-            + NASNetLarge
-            + SmallVGG
-            + InceptionV4
-
+        + Xception
+        + VGG16
+        + VGG19
+        + MobileNet
+        + ResNet50
+        + InceptionV3
+        + InceptionResNetV2
+        + Xception
+        + DenseNet121
+        + DenseNet169
+        + DenseNet201
+        + NASNetMobile
+        + NASNetLarge
+        + SmallVGG
+        + InceptionV4
+        
     + Text Classification
-            + Stacked RNN Models
-                + LSTM - BiLSTM Model
-                + GRU - BiGRU Model
-            + Text-CNN Model
-    
+        + Stacked RNN Models
+        + LSTM - BiLSTM Model
+        + GRU - BiGRU Model
+        + Text-CNN Model
+        
     + Neural Machine Translation
-            + Encoder-Decoder Sequence Translation Model
+        + Encoder-Decoder Sequence Translation Model
 
     + Named Entity Recogniton
-            + LSTM, GRU Based Model
+        + LSTM, GRU Based Model
 
 + Custom Modules/Layers
     + Linear Transformation Layer
@@ -82,23 +82,23 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
 
 + Utilities
     + Processor
-            + Learn Tokenizer and Create Vocabulary
-            + Load Pre-trained Embeddings
+        + Learn Tokenizer and Create Vocabulary
+        + Load Pre-trained Embeddings
     + Activations
-            + GELU
-            + RELU
-            + SELU
-            + ELU
-            + Tanh
-            + Sigmoid
-            + Hard Sigmoid
-            + Softmax
-            + Softplus
-            + Softsign
-            + Exponential
-            + Linear
-            + Mish
-            + Swish
+        + GELU
+        + RELU
+        + SELU
+        + ELU
+        + Tanh
+        + Sigmoid
+        + Hard Sigmoid
+        + Softmax
+        + Softplus
+        + Softsign
+        + Exponential
+        + Linear
+        + Mish
+        + Swish
     + Model Trainer (Generic TF2.0 train and validation pipelines) *
 
 ------------------
