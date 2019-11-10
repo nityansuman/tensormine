@@ -120,13 +120,11 @@ You may also consider installing the following **optional dependencies**:
 Then, you can install TensorHub itself.
 
 ```sh
-sudo pip install -U tensorhub
-```
+$ pip install tensorhub
 
-If you are using a virtualenv, you may want to avoid using sudo:
+or
 
-```sh
-pip install -U tensorhub
+$ pip install -U tensorhub
 ```
 ------------------
 
