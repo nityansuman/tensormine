@@ -33,18 +33,17 @@ with open("README.md", mode="r") as fh:
 # Create setup
 setuptools.setup(
     name="tensorhub",
-    version="1.0-rc0",
+    version="1.0.0",
     author="Kumar Nityan Suman",
     author_email="nityan.suman@gmail.com",
-    description="Deep Learning for Everybody.",
+    description="TensorHub is a library of deep learning models and lego like interlocking blocks designed to make deep learning more accessible and accelerate ML research using TensorFlow 2.0.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/nityansuman/tensorhub",
     license="MIT",
     packages=setuptools.find_packages(exclude=["examples", "data", ]),
     install_requires=[
-        "numpy>=1.16",
-        "tensorflow>=2.0.0-rc0"
+        "tensorflow>=2.0.0"
     ],
     classifiers=[
         "Intended Audience :: Developers",
