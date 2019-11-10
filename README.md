@@ -42,7 +42,7 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
 
 ## What's coming in V1.0
 + Pre-built Models
-    + Image Classification
+    + Image Classification Models (w/ Transfer Learning on ImageNet Weights)
         + Xception
         + VGG16
         + VGG19
@@ -59,32 +59,30 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
         + SmallVGG
         + InceptionV4
         
-    + Text Classification
-        + Stacked RNN Models
-        + LSTM - BiLSTM Model
-        + GRU - BiGRU Model
-        + Text-CNN Model
+    + Text Classification Models
+        + Basic LSTM/GRU for Sequence Classification Model
+        + CNN for Sequence Classification Model
         
-    + Neural Machine Translation
+    + NMT Models
         + Encoder-Decoder Sequence Translation Model
+        + Attention Based Sequence Translation Model
 
-    + Named Entity Recogniton
-        + LSTM, GRU Based Model
+    + Named Entity Recogniton Models
+        + Stacked BiLSTM With Word/Characrter Embedding Model
+    
+    + Hybrid Models
+        + 
 
 + Custom Modules/Layers
     + Linear Transformation Layer
-    + Inception V1 Layers
-    + Inception V2 Layers
-    + Inception V4 Layers
+    + Inception Layers
     + Attention layers
-        + Bahdanau Attention
-        + Luong Attention
 
 + Utilities
     + Processor
         + Learn Tokenizer and Create Vocabulary
         + Load Pre-trained Embeddings
-    + Activations
+    + Activation Functions
         + GELU
         + RELU
         + SELU
@@ -99,8 +97,7 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
         + Linear
         + Mish
         + Swish
-    + Model Trainer (Generic TF2.0 train and validation pipelines) *
-
+    + Model Trainer (generic TF2.0 train and validation pipeline)
 ------------------
 
 
