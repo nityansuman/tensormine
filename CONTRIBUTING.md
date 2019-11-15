@@ -2,9 +2,9 @@
 
 ## Requesting a Feature
 
-You can also use Github issues to request features you would like to see in Keras, or changes in the Keras API.
+You can also use Github issues to request features you would like to see in Tensorhub or changes in the TensorHub API.
 
-1. Provide a clear and detailed explanation of the feature you want and why it's important to add. Keep in mind that we want features that will be useful to the majority of our users and not just a small subset. If you're just targeting a minority of users, consider writing an add-on library for Keras. It is crucial for Keras to avoid bloating the API and codebase.
+1. Provide a clear and detailed explanation of the feature you want and why it's important to add. Keep in mind that we want features that will be useful to the majority of our users and not just a small subset. If you're just targeting a minority of users, consider writing an add-on library for TensorHub. It is crucial for TensorHub to avoid bloating the API and codebase.
 
 2. Provide code snippets demonstrating the API you have in mind and illustrating the use cases of your feature. Of course, you don't need to write any real code at this point!
 
