@@ -14,15 +14,17 @@
 # ==============================================================================
 
 # Load packages
+import tensorflow as tf
 from tensorflow import keras
 
+
 class BahdanauAttention(keras.layers.Layer):
-    """Bahdanau Attention Implementation as a keras layer."""
+    """Bahdanau Attention Implementation as a modular layer."""
 
     def __init__(self, num_output):
         """Class constructors to initialize input independent variables."""
-        super(Attention, self).__init__()
-        self.num_outputs = num_outputs
+        super(BahdanauAttention, self).__init__()
+        self.num_outputs = num_output
 
     def build(self, input_shape):
         """Initialize input dependent variables.
