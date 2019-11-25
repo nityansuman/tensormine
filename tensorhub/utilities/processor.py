@@ -27,8 +27,7 @@ def create_vocabulary(corpus, type_embedding="word", num_words=10000):
             Only the most common (num_words-1) tokens will be kept. Not necessary when doing character embedding.
     
     Returns:
-        TokenizerObject -- Tokenizer object to fit sequences.
-        Dict -- Vocabulary dictionary.
+        Tokenizer object to fit sequences on the created vocabulary and a vocabulary dictionary.
     """
     # Custom tokenizer
     if type_embedding.lower() == "word":
@@ -43,31 +42,36 @@ def create_vocabulary(corpus, type_embedding="word", num_words=10000):
     vocab = tokenizer.word_index
     return tokenizer, vocab
 
-def load_embedding(filepath, token_index_mapping, embedding_dim=300):
-    """Create an embedding matrix from the given pre-trained vector.
+
+def load_trained_embeddings(filepath, token_index_mapping, embedding_dim=300):
+    """Create an embedding matrix from a pre-trained embedding (like glove).
     
     Arguments:
-        filepath {str} -- Path to load pre-trained embeddings (ex: glove).
-        embedding_dim {int} -- Dimension of the pre-trained embedding.
+        filepath {str} -- Path to load pre-trained embeddings (Ex: glove.6B.50d).
         token_index_mapping {dict} -- A dictionary containing token-index mapping from the whole corpus.
+        embedding_dim {int} -- Dimension of the pre-trained embedding.
     
     Returns:
-        Matrix -- A numpy matrix containing embeddings for each token in the token-index mapping.
+        A numpy matrix containing embeddings for each token in the token-index mapping.
     """
+    assert type(token_index_mapping) == dict # Requires a dictionary with token-index mapping (word-index mapping).
+    assert type(filepath) == str
+    assert type(embedding_dim) == int
+
     # Placeholder for embedding
     embedding_index = dict()
     # Access file to load pre-trained embedding
     with open(filepath, mode="r") as fp:
         for line in fp:
             values = line.split()
-            token = values[0:-dim]
-            coefs = values[-dim:]
+            token = values[0:-embedding_dim]
+            coefs = values[-embedding_dim:]
             embedding_index[token[0]] = coefs
     # Create a weight matrix for token in training docs
     embedding_matrix = np.zeros((len(token_index_mapping), embedding_dim))
     # Create token-index mapping
-    for token, i in word_index.items():
-        embedding_vector = embeddings_index.get(token)
+    for token, i in token_index_mapping.items():
+        embedding_vector = embedding_index.get(token)
         # Update embedding
         if embedding_vector is not None:
             embedding_matrix[i] = embedding_vector
