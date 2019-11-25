@@ -98,7 +98,7 @@ class MyDenseLayer(tf.keras.layers.Layer):
 layer = MyDenseLayer(10)
 ```
 
-### Another of Implementing a Custom Layer
+### Another Way of Implementing a Custom Layer
 ```
 class Linear(Layer):
     """y = w.x + b"""

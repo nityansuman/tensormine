@@ -13,9 +13,15 @@
 # limitations under the License.
 # ==============================================================================
 
-# Import modules
-from tensorhub.layers.basic_layers import Linear
-from tensorhub.layers.bahdanau_attention import BahdanauAttention
-from tensorhub.layers.luong_attention import LuongAttention
-from tensorhub.layers import inception_v1, inception_v2, inception_v4
-from tensorhub.layers.fire_module import SqueezeFire
+# Transformation layers
+from basic_layers import Linear
+
+# Attiontion layers
+from bahdanau_attention import BahdanauAttention
+from luong_attention import LuongAttention
+
+# Feature layers
+import inception_v1 as inception_v1
+import inception_v2 as inception_v2
+import inception_v4 as inception_v4
+from fire_module import FireModule

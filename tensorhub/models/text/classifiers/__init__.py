@@ -13,6 +13,5 @@
 # limitations under the License.
 # ==============================================================================
 
-# Import modules
-from tensorhub.models.text.classifiers.perceptron_classifier import PerceptronClassifier
-from tensorhub.models.text.classifiers.rnn_classifier import LSTMClassifier, GRUClassifier
+from perceptron_classifier import PerceptronClassifier
+from rnn_classifier import LSTMClassifier, GRUClassifier

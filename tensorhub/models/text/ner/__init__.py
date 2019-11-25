@@ -13,5 +13,4 @@
 # limitations under the License.
 # ==============================================================================
 
-# Import modules
-from tensorhub.models.text.ner.named_entity_recognizer import NER
+from named_entity_recognizer import NER

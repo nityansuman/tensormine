@@ -41,7 +41,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/nityansuman/tensorhub",
     license="MIT",
-    packages=setuptools.find_packages(exclude=["examples", "data", ]),
+    packages=setuptools.find_packages(exclude=["examples", "data", ".gihub"]),
     install_requires=[
         "tensorflow>=2.0.0"
     ],
