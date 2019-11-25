@@ -18,7 +18,7 @@ from tensorflow import keras
 
 
 class FireModule(keras.layers.Layer):
-    """Building block of `SqueezeNet Model` implemented as a layer.
+    """Building block of `SqueezeNet Model` implemented as a layer. It is mainly used for creating advance features on images.
     For the same accuracy of AlexNet, SqueezeNet can be 3 times faster and 500 times smaller.
     
     More about SqueezeNet: https://arxiv.org/pdf/1602.07360.pdf"""
@@ -29,7 +29,7 @@ class FireModule(keras.layers.Layer):
         Keyword Arguments:
             fire_filters {list} -- List of filters for squeezeing and expanding modules. (default: {[128, 256, 512]})
             skip_connection {bool} -- Boolean to indicate usage of skip-connection in the module.
-            activation {str} -- String denoting the activation to be used in the fire module.
+            activation {str} -- String denoting the activation to be used in the fire module. You can also pass a method for activation. (Pass method as an argument)
             name {str} -- (Optional) Name for the layer.
         """
         if fire_filters is not None:
@@ -50,7 +50,7 @@ class FireModule(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.squeeze_conv = keras.layers.Conv2D(filters=int(self.fire_filters[0]), kernel_size=(1, 1), strides=(1, 1), activation=None, padding="same", )
+        self.squeeze = keras.layers.Conv2D(filters=int(self.fire_filters[0]), kernel_size=(1, 1), strides=(1, 1), activation=None, padding="same", )
         self.expand_1 = keras.layers.Conv2D(filters=int(self.fire_filters[1]), kernel_size=(1, 1), strides=(1, 1),activation=None, padding="same")
         self.expand_2 = keras.layers.Conv2D(filters=int(self.fire_filters[2]), kernel_size=(3, 3), strides=(1, 1), activation=None, padding="same")
         self.batch_norm = keras.layers.BatchNormalization()
@@ -60,7 +60,7 @@ class FireModule(keras.layers.Layer):
         self.pool = keras.layers.MaxPooling2D(pool_size=(3, 3), strides=(2, 2), padding="same")
 
     def call(self, x):
-        """Forward pass of the layer.
+        """Forward pass of the `Fire Module` layer from SqueezeNet model.
 
         Arguments:
             x {tensor} -- Input tensor to the layer.
@@ -70,7 +70,7 @@ class FireModule(keras.layers.Layer):
         """
         # Keep a copy of inital input for skip connection
         x_ = x
-        x = self.squeeze_conv(x)
+        x = self.squeeze(x)
         x = self.batch_norm(x)
         x = self.activation(x)
         # First block
