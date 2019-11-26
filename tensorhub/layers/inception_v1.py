@@ -17,26 +17,24 @@
 from tensorflow import keras
 
 
-class LayerV1(keras.layers.Layer):
+class LayerA(keras.layers.Layer):
     """Standard Inception V1 (GoogLeNet) building block implemented as a layer for advance feature creation.
     From the name “GoogLeNet”, we’ve already known that it is from Google. And “GoogLeNet” also contains the word “LeNet” for paying tribute to Prof.
     
     Know more at: https://arxiv.org/pdf/1409.4842.pdf
     """
 
-    def __init__(self, num_filters=64, activation="relu", name="inception_v1_std_layer"):
+    def __init__(self, num_filters=512, activation="relu", name="inception_v1_std_layer"):
         """Initialize variables.
 
         Keyword Arguments:
-            num_filters {int} -- Number of filters to be used. (default: {64})
-            activation {str} -- Activation to be applied on each convolution. You can also pass an object to compute activation. (default: {"relu"})
+            num_filters {int} -- Number of filters to be used. (default: {512})
+            activation {str} -- activation to be applied on each convolution. You can also pass an object to compute activation. (default: {"relu"})
             name {str} -- Name associated with this layer. (default: {None})
         """
-        super(LayerV1, self).__init__(name=name)
+        super(LayerA, self).__init__(name=name)
         self.num_filters = num_filters
-        self.act = activation
-        self.strides = 1
-        self.padding = "same"
+        self.activation = activation
 
     def build(self, input_shape):
         """The __call__ method of your layer will automatically run build the first time it is called.
@@ -45,14 +43,13 @@ class LayerV1(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_block_a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_block_b = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_block_c = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.act, strides=self.strides, padding=self.padding)
-        self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
-        self.concatenate = keras.layers.concatenate(axis=-1)
+        self.conv_block_a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_block_b = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_block_c = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.activation, strides=1, padding="same")
+        self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=1, padding="same")
 
     def call(self, x):
-        """Forward pass of constructed `Inception V1 Layer`.
+        """Forward pass over the layer.
 
         Arguments:
             x {tensor} -- Input tensor to the layer.
@@ -69,31 +66,29 @@ class LayerV1(keras.layers.Layer):
         # Block 4
         out_d = self.maxpool_block(x)
         # Combine results from each block
-        output = self.concatenate([out_a, out_b, out_c, out_d])
+        output = keras.layers.concatenate([out_a, out_b, out_c, out_d], axis=-1)
         return output
 
 
-class ReductionLayerV1(keras.layers.Layer):
+class ReductionLayer(keras.layers.Layer):
     """Standard Inception V1 building block with dimensionality reduction (from GoogLeNet) implemented as a layer for scaled advance feature creation.
     From the name “GoogLeNet”, we’ve already known that it is from Google. And “GoogLeNet” also contains the word “LeNet” for paying tribute to Prof.
     
     Know more at: https://arxiv.org/pdf/1409.4842.pdf
     """
 
-    def __init__(self, num_filters=64, activation="relu", name="inception_v1_layer_with_dim_reduction"):
+    def __init__(self, num_filters=512, activation="relu", name="inception_v1_layer_with_dim_reduction"):
         """Initialize variables.
 
         Keyword Arguments:
-            num_filters {int} -- Number of filters to be used. (default: {64})
-            activation {str} -- Activation to be applied on each convolution. You can also pass an object to compute activation. (default: {"relu"})
+            num_filters {int} -- Number of filters to be used. (default: {512})
+            activation {str} -- activation to be applied on each convolution. You can also pass an object to compute activation. (default: {"relu"})
             name {str} -- Name associated with this layer. (default: {None})
         """
-        super(ReductionLayerV1, self).__init__(name=name)
+        super(ReductionLayer, self).__init__(name=name)
         self.num_filters = num_filters
-        self.act = activation
-        self.strides = 1
-        self.padding = "same"
-
+        self.activation = activation
+    
     def build(self, input_shape):
         """The __call__ method of your layer will automatically run build the first time it is called.
         You now have a layer that's lazy and easy to use.
@@ -101,17 +96,16 @@ class ReductionLayerV1(keras.layers.Layer):
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides*self.strides, padding=self.padding)
-        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_5 = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.act, strides=self.strides, padding=self.padding)
-        self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
-        self.concatenate = keras.layers.concatenate(axis=-1)
+        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_3 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_5 = keras.layers.Conv2D(self.num_filters, (5, 5), activation=self.activation, strides=1, padding="same")
+        self.maxpool_block = keras.layers.MaxPool2D(pool_size=(3, 3), strides=1, padding="same")
 
     def call(self, x):
-        """Forward pass of constructed `Inception V1 Layer with Dimensionality Reduction`.
+        """Forward pass over the layer.
 
         Arguments:
             x {tensor} -- Input tensor to the layer.
@@ -131,5 +125,5 @@ class ReductionLayerV1(keras.layers.Layer):
         out_d_inter = self.maxpool_block(x)
         out_d = self.conv_1d(out_d_inter)
         # Combine results from each block
-        output = self.concatenate([out_a, out_b, out_c, out_d])
+        output = keras.layers.concatenate([out_a, out_b, out_c, out_d], axis=-1)
         return output
