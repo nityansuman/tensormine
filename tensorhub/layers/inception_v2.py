@@ -15,47 +15,44 @@
 
 # Load packages
 from tensorflow import keras
-from tensorhub.utilities.activations import relu
 
 
-class BasicLayer(keras.layers.Layer):
-    """Standard Inception V2 layer implemented as a keras layer for feature creation."""
+class LayerA(keras.layers.Layer):
+    """Standard Inception V2 (Inception V2 module A) building block implemented as a layer for advance feature creation on images.
 
-    def __init__(self, num_filters=28, activation=relu, name=None):
-        """Class constructor to initialize variables.
+    Know more at: https://arxiv.org/pdf/1512.00567v3.pdf
+    """
+
+    def __init__(self, num_filters=768, activation="relu", name="inception_v2_layer_a"):
+        """Initialize variables.
 
         Keyword Arguments:
-            num_filters {int} -- Number of filters for convolution. (default: {28})
+            num_filters {int} -- Number of filters for convolution. (default: {288})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
             name {str} -- Name associated with this layer. (default: {None})
         """
-        if name:
-            super(BasicLayer, self).__init__(name=name)
-        else:
-            super(BasicLayer, self).__init__()
+        super(LayerA, self).__init__(name=name)
         self.num_filters = num_filters
-        self.act = activation
-        self.strides = 1
-        self.padding = "same"
+        self.activation = activation
 
     def build(self, input_shape):
-        """Lazing building of a layer.
+        """The __call__ method of your layer will automatically run build the first time it is called.
+        You now have a layer that's lazy and easy to use.
 
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides * self.strides, padding=self.padding)
-        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3b = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3c1 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3c2 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.maxpool_layer = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
-        self.concat_layer = keras.layers.concatenate(axis=-1)
+        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_3b = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_3c1 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_3c2 = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation, strides=1, padding="same")
+        self.maxpool_layer = keras.layers.MaxPool2D(pool_size=(3, 3), strides=1, padding="same")
 
     def call(self, x):
-        """Forward pass of the layer.
+        """Forward pass over the layer.
 
         Arguments:
             x {tensor} -- Input tensor to the layer.
@@ -76,50 +73,49 @@ class BasicLayer(keras.layers.Layer):
         out_d_inter = self.maxpool_layer(x)
         out_d = self.conv_1d(out_d_inter)
         # Combine results from each block
-        output = self.concat_layer([out_a, out_b, out_c, out_d], axis=-1)
+        output = keras.layers.concatenate([out_a, out_b, out_c, out_d], axis=-1)
         return output
 
 
-class DeepLayer(keras.layers.Layer):
-    """Deep Inception V2 layer implemeted as a kaeras layer for feature creation."""
+class LayerB(keras.layers.Layer):
+    """Inception V2 module B building block implemented as a layer for advance feature creation on images.
 
-    def __init__(self, num_filters=28, activation=relu, name=None):
-        """Class constructor to initialize variables.
+    Know more at: https://arxiv.org/pdf/1512.00567v3.pdf
+    """
+
+    def __init__(self, num_filters=1280, activation="relu", name="inception_v2_layer_b"):
+        """Initialize variables.
 
         Keyword Arguments:
-            num_filters {int} -- Number of filters for convolution. (default: {28})
+            num_filters {int} -- Number of filters for convolution. (default: {1280})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
             name {str} -- Name associated with this layer. (default: {None})
         """
-        if name:
-            super(DeepLayer, self).__init__(name=name)
-        else:
-            super(DeepLayer, self).__init__()
+        super(LayerB, self).__init__(name=name)
         self.num_filters = num_filters
-        self.act = activation
-        self.strides = 1
-        self.padding = "same"
+        self.activation = activation
 
     def build(self, input_shape):
-        """Lazing building of a layer.
+        """The __call__ method of your layer will automatically run build the first time it is called.
+        You now have a layer that's lazy and easy to use
 
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides * self.strides, padding=self.padding)
-        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1_3b = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3_1b = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1_3c1 = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3_1c1 = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1_3c2 = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3_1c2 = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.maxpool_layer = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
+        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1_3b = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_3_1b = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1_3c1 = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_3_1c1 = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1_3c2 = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_3_1c2 = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.maxpool_layer = keras.layers.MaxPool2D(pool_size=(3, 3), strides=1, padding="same")
 
     def call(self, x):
-        """Forward pass of the layer.
+        """Forward pass over the layer.
 
         Arguments:
             x {tensor} -- Input tensor to the layer.
@@ -147,46 +143,44 @@ class DeepLayer(keras.layers.Layer):
         return output
 
 
-class WideLayer(keras.layers.Layer):
-    """Wide Inception V2 layer implemented as a keras layer for feature creation."""
+class LayerC(keras.layers.Layer):
+    """Inception V2 module C building block implemented as a layer for advance feature creation on images.
 
-    def __init__(self, num_filters=28, activation=relu, name=None):
-        """Class constructor to initialize variables.
+    Know more at: https://arxiv.org/pdf/1512.00567v3.pdf
+    """
+
+    def __init__(self, num_filters=2048, activation="relu", name="inception_v2_layer_c"):
+        """Initialize variables.
 
         Keyword Arguments:
-            num_filters {int} -- Number of filters for convolution. (default: {28})
+            num_filters {int} -- Number of filters for convolution. (default: {2048})
             activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
             name {str} -- Name associated with this layer. (default: {None})
         """
-        if name:
-            super(WideLayer, self).__init__(name=name)
-        else:
-            super(WideLayer, self).__init__()
+        super(LayerC, self).__init__(name=name)
         self.num_filters = num_filters
-        self.act = activation
-        self.strides = 1
-        self.padding = "same"
+        self.activation = activation
 
     def build(self, input_shape):
-        """Lazing building of a layer.
+        """The __call__ method of your layer will automatically run build the first time it is called.
+        You now have a layer that's lazy and easy to use
 
         Arguments:
             input_shape {tensor} -- Input shape tensor.
         """
-        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides * self.strides, padding=self.padding)
-        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1_3b = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3_1b = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3c = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.act,strides=self.strides, padding=self.padding)
-        self.conv_1_3c = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_3_1c = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.act, strides=self.strides, padding=self.padding)
-        self.maxpool_layer = keras.layers.MaxPool2D(pool_size=(3, 3), strides=self.strides, padding=self.padding)
-        self.concat_layer = keras.layers.concatenate(axis=-1)
+        self.conv_1a = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1b = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1_3b = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_3_1b = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1c = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_3c = keras.layers.Conv2D(self.num_filters, (3, 3), activation=self.activation,strides=1, padding="same")
+        self.conv_1_3c = keras.layers.Conv2D(self.num_filters, (1, 3), activation=self.activation, strides=1, padding="same")
+        self.conv_3_1c = keras.layers.Conv2D(self.num_filters, (3, 1), activation=self.activation, strides=1, padding="same")
+        self.conv_1d = keras.layers.Conv2D(self.num_filters, (1, 1), activation=self.activation, strides=1, padding="same")
+        self.maxpool_layer = keras.layers.MaxPool2D(pool_size=(3, 3), strides=1, padding="same")
 
     def call(self, x):
-        """Forward pass of the layer.
+        """Forward pass over the layer.
 
         Arguments:
             x {tensor} -- Input tensor to the layer.
@@ -209,5 +203,5 @@ class WideLayer(keras.layers.Layer):
         out_d_inter = self.maxpool_layer(x)
         out_d = self.conv_1d(out_d_inter)
         # Combine results from each block
-        output = self.concat_layer([out_a, out_b1, out_b2, out_c1, out_c1, out_d], axis=-1)
+        output = keras.layers.concatenate([out_a, out_b1, out_b2, out_c1, out_c2, out_d], axis=-1)
         return output
