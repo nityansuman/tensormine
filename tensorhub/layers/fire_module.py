@@ -27,17 +27,11 @@ class FireModule(keras.layers.Layer):
         """Initialize variables.
 
         Keyword Arguments:
-            fire_filters {list} -- List of filters for squeezeing and expanding modules. (default: {[128, 256, 512]})
+            fire_filters {list} -- List of size 3 with filters for squeezeing and expanding modules. (default: {[128, 256, 512]})
             skip_connection {bool} -- Boolean to indicate usage of skip-connection in the module.
             activation {str} -- String denoting the activation to be used in the fire module. You can also pass a method for activation. (Pass method as an argument)
             name {str} -- (Optional) Name for the layer.
         """
-        if fire_filters is not None:
-            assert type(fire_filters) == list and len(fire_filters) == 3 # Requires 3 filter values always
-        if name is not None:
-            assert type(name) == str
-        assert type(skip_connection) == bool # Requires a boolean flag
-
         super(FireModule, self).__init__(name=name)
         self.fire_filters = [128, 256, 512] if fire_filters == None else fire_filters
         self.skip_connection = skip_connection

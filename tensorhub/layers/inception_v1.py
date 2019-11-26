@@ -15,30 +15,32 @@
 
 # Load packages
 from tensorflow import keras
-from tensorhub.utilities.activations import relu
 
 
-class BasicLayer(keras.layers.Layer):
-    """Inception V1 module implemented as a keras layer for feature creation."""
+class LayerV1(keras.layers.Layer):
+    """Standard Inception V1 (GoogLeNet) building block implemented as a layer for advance feature creation.
+    From the name “GoogLeNet”, we’ve already known that it is from Google. And “GoogLeNet” also contains the word “LeNet” for paying tribute to Prof.
+    
+    Know more at: https://arxiv.org/pdf/1409.4842.pdf
+    """
 
-    def __init__(self, activation=relu, name=None):
-        """Class constructor to initialize variables.
+    def __init__(self, num_filters=64, activation="relu", name="inception_v1_std_layer"):
+        """Initialize variables.
 
         Keyword Arguments:
-            activation {str} -- Activation to be applied on each convolution. (default: {"relu"})
+            num_filters {int} -- Number of filters to be used. (default: {64})
+            activation {str} -- Activation to be applied on each convolution. You can also pass an object to compute activation. (default: {"relu"})
             name {str} -- Name associated with this layer. (default: {None})
         """
-        if name:
-            super(BasicLayer, self).__init__(name=name)
-        else:
-            super(BasicLayer, self).__init__()
-        self.num_filters = 64
+        super(LayerV1, self).__init__(name=name)
+        self.num_filters = num_filters
         self.act = activation
         self.strides = 1
         self.padding = "same"
 
     def build(self, input_shape):
-        """Lazing building of a layer.
+        """The __call__ method of your layer will automatically run build the first time it is called.
+        You now have a layer that's lazy and easy to use.
 
         Arguments:
             input_shape {tensor} -- Input shape tensor.
@@ -50,7 +52,7 @@ class BasicLayer(keras.layers.Layer):
         self.concatenate = keras.layers.concatenate(axis=-1)
 
     def call(self, x):
-        """Forward pass of the layer.
+        """Forward pass of constructed `Inception V1 Layer`.
 
         Arguments:
             x {tensor} -- Input tensor to the layer.
@@ -71,27 +73,30 @@ class BasicLayer(keras.layers.Layer):
         return output
 
 
-class ReductionLayer:
-    """Inception V1 with reduction module implemented as a keras layer for feature creation."""
+class ReductionLayerV1(keras.layers.Layer):
+    """Standard Inception V1 building block with dimensionality reduction (from GoogLeNet) implemented as a layer for scaled advance feature creation.
+    From the name “GoogLeNet”, we’ve already known that it is from Google. And “GoogLeNet” also contains the word “LeNet” for paying tribute to Prof.
+    
+    Know more at: https://arxiv.org/pdf/1409.4842.pdf
+    """
 
-    def __init__(self, activation=relu, name=None):
-        """Class constructor to initialize variables.
+    def __init__(self, num_filters=64, activation="relu", name="inception_v1_layer_with_dim_reduction"):
+        """Initialize variables.
 
         Keyword Arguments:
-            activation {str} -- Activation to be applied on each convolution. (default: {relu})
+            num_filters {int} -- Number of filters to be used. (default: {64})
+            activation {str} -- Activation to be applied on each convolution. You can also pass an object to compute activation. (default: {"relu"})
             name {str} -- Name associated with this layer. (default: {None})
         """
-        if name:
-            super(ReductionLayer, self).__init__(name=name)
-        else:
-            super(ReductionLayer, self).__init__()
-        self.num_filters = 64
+        super(ReductionLayerV1, self).__init__(name=name)
+        self.num_filters = num_filters
         self.act = activation
         self.strides = 1
         self.padding = "same"
 
     def build(self, input_shape):
-        """Lazing building of a layer.
+        """The __call__ method of your layer will automatically run build the first time it is called.
+        You now have a layer that's lazy and easy to use.
 
         Arguments:
             input_shape {tensor} -- Input shape tensor.
@@ -106,7 +111,7 @@ class ReductionLayer:
         self.concatenate = keras.layers.concatenate(axis=-1)
 
     def call(self, x):
-        """Forward pass of the layer.
+        """Forward pass of constructed `Inception V1 Layer with Dimensionality Reduction`.
 
         Arguments:
             x {tensor} -- Input tensor to the layer.
