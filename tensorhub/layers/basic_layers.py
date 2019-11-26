@@ -29,7 +29,7 @@ from tensorflow import keras
 
 
 class Linear(keras.layers.Layer):
-    """Standard `Linear transfromation` layer implementation."""
+    """Standard `Linear transformation` layer implementation."""
 
     def __init__(self, units=128):
         """Initialize variables.
