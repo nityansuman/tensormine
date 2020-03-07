@@ -1,8 +1,8 @@
 """ 
 @Author: Kumar Nityan Suman
-@Date: 2019-06-25 03:01:24
+@Date: 2020-03-05 00:00:00
 
-Copyright (c) 2018 The Python Packaging Authority
+Copyright (c) 2020 The Python Packaging Authority
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +30,7 @@ import setuptools
 with open("README.md", mode="r") as fh:
     long_description = fh.read()
 
+
 # Create setup
 setuptools.setup(
     name="tensorhub",
@@ -41,7 +42,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/nityansuman/tensorhub",
     license="MIT",
-    packages=setuptools.find_packages(exclude=["examples", "data", ".gihub"]),
+    packages=setuptools.find_packages(exclude=["examples", "test", "data", ".github"]),
     install_requires=[
         "tensorflow>=2.0.0"
     ],

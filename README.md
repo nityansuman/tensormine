@@ -69,14 +69,13 @@ In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/ex
 
     + Named Entity Recogniton Models
         + Stacked BiLSTM With Word/Characrter Embedding Model
-    
-    + Hybrid Models
-        + 
+
 
 + Custom Modules/Layers
     + Linear Transformation Layer
     + Inception Layers
     + Attention layers
+
 
 + Utilities
     + Processor
