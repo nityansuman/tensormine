@@ -31,16 +31,16 @@ Building a question answering system, an image classification model, a Neural Tu
 
 For a more in-depth tutorial about Keras, you can check out:
 
-+ [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/text-classifier-using-tensorhub-models.ipynb)
-+ [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/image-classifier-using-tensorhub-models.ipynb)
-+ [Build your own custom Model](https://github.com/nityansuman/tensorhub/tree/master/examples/working-with-custom-layers.ipynb)
++ [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/)
++ [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/)
++ [Build your own custom Model](https://github.com/nityansuman/tensorhub/tree/master/examples/)
 
-In the [examples folder](https://github.com/nityansuman/tensorhub/tree/master/examples) of this repository, you will find much more advanced examples coming your way very soon.
+Look here [examples folder](https://github.com/nityansuman/tensorhub/tree/master/examples) for more.
 
 ------------------
 
 
-## What's coming in V1.0
+## What's coming in v1.0.0
 + Pre-built Models
     + Image Classification Models (w/ Transfer Learning on ImageNet Weights)
         + Xception
