@@ -143,7 +143,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/sanjyot-zade"><img src="https://avatars0.githubusercontent.com/u/14342494?v=4" width="100px;" alt="Sanjyot"/><br /><sub><b>Sanjyot</b></sub></a><br /><a href="https://github.com/nityansuman/tensorhub/commits?author=Sanjyot22" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/navalchand"><img src="https://avatars0.githubusercontent.com/u/25399517?v=4" width="100px;" alt="Naval Chand"/><br /><sub><b>Naval Chand</b></sub></a><br /><a href="https://github.com/nityansuman/tensorhub/commits?author=navalchand" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/nazim1021"><img src="https://avatars0.githubusercontent.com/u/39544613?v=4" width="100px;" alt="Nazim Shaikh"/><br /><sub><b>Nazim Shaikh</b></sub></a><br /><a href="https://github.com/nityansuman/tensorhub/commits?author=nazim1021" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/misradiganta/"><img src="https://avatars1.githubusercontent.com/u/34192716?v=4" width="100px;" alt="Diganta Misra"/><br /><sub><b>Diganta Misra</b></sub></a><br /><a href="https://github.com/nityansuman/tensorhub/commits?author=digantamisra98" title="Code">💻</a></td>
   </tr>
