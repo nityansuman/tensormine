@@ -1,4 +1,4 @@
-# Copyright 2019 The TensorHub Authors. All Rights Reserved.
+# Copyright 2020 The TensorHub Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # limitations under the License.
 # ==============================================================================
 
-# Load packages
 import tensorflow as tf
 import numpy as np
 
@@ -30,12 +29,12 @@ def relu(x, alpha=0., max_value=None, threshold=0.):
     Returns:
         tensor -- Output of RELU activation.
     """
-    if max_value is None:
-        max_value = np.inf
-    above_threshold = x * (x >= threshold)
-    above_threshold = tf.clip_by_value(above_threshold, 0.0, max_value)
-    below_threshold = alpha * (x - threshold) * (x < threshold)
-    return below_threshold + above_threshold
+	if max_value is None:
+		max_value = np.inf
+	above_threshold = x * (x >= threshold)
+	above_threshold = tf.clip_by_value(above_threshold, 0.0, max_value)
+	below_threshold = alpha * (x - threshold) * (x < threshold)
+	return below_threshold + above_threshold
 
 def gelu(x):
     """Gaussian Error Linear Unit. This is a smoother version of the RELU.
@@ -46,8 +45,7 @@ def gelu(x):
     Returns:
         tensor -- Output of GELU activation.
     """
-    cdf = x * 0.5 * (1.0 + tf.math.erf(x / tf.math.sqrt(2.0)))
-    return cdf
+	return x * 0.5 * (1.0 + tf.math.erf(x / tf.math.sqrt(2.0)))
 
 def linear(x):
     """Linear activation function.
@@ -58,7 +56,7 @@ def linear(x):
     Returns:
         tensor -- Output of linear activation.
     """
-    return x
+	return x
 
 def exponential(x):
     """Exponential activation function.
@@ -69,7 +67,7 @@ def exponential(x):
     Returns:
         tensor -- Output of exponential activation.
     """
-    return tf.math.exp(x)
+	return tf.math.exp(x)
 
 def tanh(x):
     """Hyperbolic Tangent (tanh) activation function.
@@ -80,7 +78,7 @@ def tanh(x):
     Returns:
         tensor -- Output of tanh activation.
     """
-    return tf.math.sinh(x) / tf.math.cosh(x)
+	return tf.math.sinh(x) / tf.math.cosh(x)
 
 def sigmoid(x):
     """Sigmoid activation function. For small values
@@ -93,7 +91,7 @@ def sigmoid(x):
     Returns:
         tensor -- Output of sigmoid activation.
     """
-    return 1.0 / (1.0 + tf.math.exp(-x))
+	return 1.0 / (1.0 + tf.math.exp(-x))
 
 def hard_sigmoid(x):
     """Hard-sigmoid activation function. For small values
@@ -106,8 +104,8 @@ def hard_sigmoid(x):
     Returns:
         tensor -- Output of sigmoid activation.
     """
-    y = 0.2 * x + 0.5
-    return tf.clip_by_value(y, 0, 1)
+	y = 0.2 * x + 0.5
+	return tf.clip_by_value(y, 0, 1)
 
 def softsign(x):
     """Softsign activation function.
@@ -118,7 +116,7 @@ def softsign(x):
     Returns:
         tensor -- Output of softsign activation.
     """
-    return x / (tf.math.abs(x) + 1)
+	return x / (tf.math.abs(x) + 1)
 
 def softplus(x):
     """Softplus activation function.
@@ -129,7 +127,7 @@ def softplus(x):
     Returns:
         tensor -- Output of softplus activation.
     """
-    return tf.math.log(tf.math.exp(x) + 1)
+	return tf.math.log(tf.math.exp(x) + 1)
 
 def softmax(x, axis=-1):
     """Softmax activation function.
@@ -144,13 +142,12 @@ def softmax(x, axis=-1):
     Raises:
         ValueError: In case `dim(x) == 1`.
     """
-    # Dimension of the input tensor
-    ndim = x.ndim
-    if ndim >= 2:
-        y = tf.math.exp(x - np.max(x, axis=axis, keepdims=True))
-        return y / np.sum(y, axis=axis, keepdims=True)
-    else:
-        raise ValueError("Cannot apply softmax to a tensor that is 1D. Received input shape: {}".format(x.shape))
+	ndim = x.ndim
+	if ndim >= 2:
+		y = tf.math.exp(x - np.max(x, axis=axis, keepdims=True))
+		return y / np.sum(y, axis=axis, keepdims=True)
+	else:
+		raise ValueError("Cannot apply softmax to a tensor that is 1D. Received input shape: {}".format(x.shape))
 
 def elu(x, alpha=1.):
     """Exponential linear unit.
@@ -162,7 +159,7 @@ def elu(x, alpha=1.):
     Returns:
         tensor -- Output of exponential linear activation
     """
-    return x * (x > 0) + alpha * (tf.math.exp(x) - 1.) * (x < 0)
+	return x * (x > 0) + alpha * (tf.math.exp(x) - 1.) * (x < 0)
 
 def selu(x):
     """Scaled Exponential Linear Unit (SELU).
@@ -180,9 +177,9 @@ def selu(x):
     Returns:
        tensor -- The scaled exponential unit activation: `scale * elu(x, alpha)`.
     """
-    alpha = 1.6732632423543772848170429916717
-    scale = 1.0507009873554804934193349852946
-    return scale * elu(x, alpha)
+	alpha = 1.6732632423543772848170429916717
+	scale = 1.0507009873554804934193349852946
+	return scale * elu(x, alpha)
 
 def mish(x):
     """Mish: A Self Regularized Non-Monotonic Neural Activation Function.
@@ -196,4 +193,4 @@ def mish(x):
     Reference:
     https://arxiv.org/abs/1908.08681
     """
-    return x * tanh(softplus(x))
+	return x * tanh(softplus(x))
