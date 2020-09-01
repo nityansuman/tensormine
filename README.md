@@ -13,7 +13,7 @@
 ## You have just found TensorHub
 
 The open source library to help you develop and train models, easy and fast as never before with `TensorFlow 2.0`.
-`TensorHub` is a global hub of `building blocks` and `ready to serve models`.
+`TensorHub` is a hub of `building blocks` and `ready to serve models`.
 
 `TensorHub` is a library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research.
 
@@ -26,7 +26,7 @@ Use `TensorHub` if you need a deep learning library that:
 
 + **Prototyping** - Code less build more. Apply `TensorHub` to create fast prototypes with the help of pre-cooked models, custom layers and utilities support.
 
-+ **Platform Independent** - Supports both `Keras` and `TensorFlow 2.0`. Run your model on CPU, single GPU or using a distributed training strategy.
++ **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.0.
 
 ## Getting started: 30 seconds to TensorHub
 
@@ -49,12 +49,8 @@ Before installing `TensorHub`, please install its backend engines: TensorFlow (*
 
 + [Build, deploy, and experiment easily with TensorFlow](https://www.tensorflow.org/)
 
-You may also consider installing the following **optional dependencies**:
 
-+ [cuDNN](https://docs.nvidia.com/deeplearning/sdk/cudnn-install/) (*Recommended if you plan on running Keras on GPU*).
-+ HDF5 and [h5py](http://docs.h5py.org/en/latest/build.html) (*Required if you plan on saving Keras models to disk*).
-
-Then, you can install TensorHub itself.
+**Install TensorHub**
 
 ```sh
 $ pip install tensorhub
