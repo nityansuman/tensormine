@@ -1,7 +1,5 @@
 <p align="center"><img src="data/logo.png?raw=true" alt="LOGO"/></p>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d1e35c252db741b28144f5b7b9ffd7d2)](https://www.codacy.com/app/nityansuman/tensorhub?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nityansuman/tensorhub&amp;utm_campaign=Badge_Grade)
-
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 ![GitHub LICENSE](https://img.shields.io/github/license/nityansuman/pywings)
