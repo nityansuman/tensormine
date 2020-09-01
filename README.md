@@ -10,6 +10,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/nityansuman/pywings)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
 
+
 ## You have just found TensorHub
 
 The open source library to help you develop and train models, easy and fast as never before with `TensorFlow 2.0`.
@@ -28,6 +29,7 @@ Use `TensorHub` if you need a deep learning library that:
 
 + **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.0.
 
+
 ## Getting started: 30 seconds to TensorHub
 
 Building a question answering system, an image classification model, a Neural Turing Machine, or any other model is just as fast.
@@ -40,6 +42,7 @@ For a more in-depth tutorial, you can check out:
 + [Build your own custom Model with TF2.0 and TH](https://github.com/nityansuman/tensorhub/tree/master/examples/)
 
 Look here [examples folder](https://github.com/nityansuman/tensorhub/tree/master/examples) for more.
+
 
 ## Installation
 
@@ -55,6 +58,7 @@ Before installing `TensorHub`, please install its backend engines: TensorFlow (*
 ```sh
 $ pip install tensorhub
 ```
+
 
 ## Support
 
