@@ -1,10 +1,18 @@
 <p align="center"><img src="data/logo.png?raw=true" alt="LOGO"/></p>
 
-<img alt="PyPI" src="https://img.shields.io/pypi/v/tensorhub.svg?color=blue&style=flat"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tensorhub.svg?style=flat">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/nityansuman/tensorhub.svg?color=blue&style=flat"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/tensorhub.svg?style=flat"> [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d1e35c252db741b28144f5b7b9ffd7d2)](https://www.codacy.com/app/nityansuman/tensorhub?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nityansuman/tensorhub&amp;utm_campaign=Badge_Grade) [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d1e35c252db741b28144f5b7b9ffd7d2)](https://www.codacy.com/app/nityansuman/tensorhub?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nityansuman/tensorhub&amp;utm_campaign=Badge_Grade)
 
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
+![GitHub LICENSE](https://img.shields.io/github/license/nityansuman/pywings)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nityansuman/pywings)
+![GitHub repo size](https://img.shields.io/github/repo-size/nityansuman/pywings)
+![GitHub language count](https://img.shields.io/github/languages/count/nityansuman/pywings)
 
-## You have just found TensorHub.
+![GitHub last commit](https://img.shields.io/github/last-commit/nityansuman/pywings)
+![Maintenance](https://img.shields.io/maintenance/yes/2020)
+
+## You have just found TensorHub
 
 The open source library to help you develop and train models, easy and fast as never before with `TensorFlow 2.0`.
 `TensorHub` is a global hub of `building blocks` and `ready to serve models`.
@@ -22,83 +30,18 @@ Use `TensorHub` if you need a deep learning library that:
 
 + **Platform Independent** - Supports both `Keras` and `TensorFlow 2.0`. Run your model on CPU, single GPU or using a distributed training strategy.
 
-------------------
-
-
 ## Getting started: 30 seconds to TensorHub
 
-Building a question answering system, an image classification model, a Neural Turing Machine, or any other model is just as fast. The ideas behind deep learning are simple, so why should their implementation be painful?
+Building a question answering system, an image classification model, a Neural Turing Machine, or any other model is just as fast.
+The ideas behind deep learning are simple, so why should their implementation be painful?
 
-For a more in-depth tutorial about Keras, you can check out:
+For a more in-depth tutorial, you can check out:
 
-+ [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/)
-+ [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/)
-+ [Build your own custom Model](https://github.com/nityansuman/tensorhub/tree/master/examples/)
++ [Getting started with Text Classification using TH](https://github.com/nityansuman/tensorhub/tree/master/examples/)
++ [Getting started with Image Classification using TH](https://github.com/nityansuman/tensorhub/tree/master/examples/)
++ [Build your own custom Model with TF2.0 and TH](https://github.com/nityansuman/tensorhub/tree/master/examples/)
 
 Look here [examples folder](https://github.com/nityansuman/tensorhub/tree/master/examples) for more.
-
-------------------
-
-
-## What's coming in v1.0.0
-+ Pre-built Models
-    + Image Classification Models (w/ Transfer Learning on ImageNet Weights)
-        + Xception
-        + VGG16
-        + VGG19
-        + MobileNet
-        + ResNet50
-        + InceptionV3
-        + InceptionResNetV2
-        + Xception
-        + DenseNet121
-        + DenseNet169
-        + DenseNet201
-        + NASNetMobile
-        + NASNetLarge
-        + SmallVGG
-        + InceptionV4
-        
-    + Text Classification Models
-        + Basic LSTM/GRU for Sequence Classification Model
-        + CNN for Sequence Classification Model
-        
-    + NMT Models
-        + Encoder-Decoder Sequence Translation Model
-        + Attention Based Sequence Translation Model
-
-    + Named Entity Recogniton Models
-        + Stacked BiLSTM With Word/Characrter Embedding Model
-
-
-+ Custom Modules/Layers
-    + Linear Transformation Layer
-    + Inception Layers
-    + Attention layers
-
-
-+ Utilities
-    + Processor
-        + Learn Tokenizer and Create Vocabulary
-        + Load Pre-trained Embeddings
-    + Activation Functions
-        + GELU
-        + RELU
-        + SELU
-        + ELU
-        + Tanh
-        + Sigmoid
-        + Hard Sigmoid
-        + Softmax
-        + Softplus
-        + Softsign
-        + Exponential
-        + Linear
-        + Mish
-        + Swish
-    + Model Trainer (generic TF2.0 train and validation pipeline)
-------------------
-
 
 ## Installation
 
@@ -117,37 +60,13 @@ Then, you can install TensorHub itself.
 
 ```sh
 $ pip install tensorhub
-
-or
-
-$ pip install -U tensorhub
 ```
-------------------
-
 
 ## Support
 
 You can also post **bug reports and feature requests** (only) in [GitHub issues](https://github.com/nityansuman/tensorhub/issues). Make sure to read [our guidelines](https://github.com/nityansuman/tensorhub/blob/master/CONTRIBUTING.md) first.
 
 We are eager to collaborate with you. Feel free to open an issue on or send along a pull request.
-If you like the work, show your appreciation by "FORK", "STAR", or "SHARE".
+If you like the work, show your appreciation by "FORK", "STAR", and "SHARE".
 
 [![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/sanjyot-zade"><img src="https://avatars0.githubusercontent.com/u/14342494?v=4" width="100px;" alt="Sanjyot"/><br /><sub><b>Sanjyot</b></sub></a><br /><a href="https://github.com/nityansuman/tensorhub/commits?author=Sanjyot22" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/nazim1021"><img src="https://avatars0.githubusercontent.com/u/39544613?v=4" width="100px;" alt="Nazim Shaikh"/><br /><sub><b>Nazim Shaikh</b></sub></a><br /><a href="https://github.com/nityansuman/tensorhub/commits?author=nazim1021" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/misradiganta/"><img src="https://avatars1.githubusercontent.com/u/34192716?v=4" width="100px;" alt="Diganta Misra"/><br /><sub><b>Diganta Misra</b></sub></a><br /><a href="https://github.com/nityansuman/tensorhub/commits?author=digantamisra98" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
