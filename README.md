@@ -1,4 +1,4 @@
-<p align="center"><img src="data/logo.png?raw=true" alt="LOGO"/></p>
+<p align="center"><img src="metadata/th-logo.png?raw=true" alt="LOGO"/></p>
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
