@@ -13,19 +13,19 @@
 
 ## You have just found TensorHub
 
-The open source library to help you develop and train models, easy and fast as never before with `TensorFlow 2.0`.
-`TensorHub` is a hub of `building blocks` and `ready to serve models`.
+TensorHub is a library built on top of TensorFlow 2.0 designed to provide simple, modular, repeatable abstractions to accelerate machine learning research. TensorHub is also designed to be simple to understand, easy to write and quick to change (according to the need of hour!).
 
-`TensorHub` is a library of deep learning models and neural lego blocks designed to make deep learning more accessible and accelerate ML research.
+Unlike many frameworks TensorHub is extremely flexible about how to use modules. Modules are designed to be self contained and entirely decoupled from one another. TensorHub does not ship with a training framework and users are encouraged to build their own or adopt those built by others. In future training framework and inference engine would also be part of TensorHub build on top of an already amazing peace of art (heard about ML-Flow!).
+
 
 Use `TensorHub` if you need a deep learning library that:
 + **Reproducibility** - Reproduce the results of existing pre-training models (such as Google BERT, XLNet).
 
-+ **Model modularity** - TensorHub is divided into multiple components: ready-to-serve models, layers, neural-blocks etc. Ample modules are implemented in each component. Clear and robust interface allows users to combine modules with as few restrictions as possible.
++ **Modularity** - Clear and robust interface allows users to combine modules with as few restrictions as possible.
 
 + **Fast** - Our custom utilities and layers are made from the ground up to support pre-existing standard frameworks like TensorFlow and Keras with efficiency in mind.
 
-+ **Prototyping** - Code less build more. Apply `TensorHub` to create fast prototypes with the help of pre-cooked models, custom layers and utilities support.
++ **Prototyping** - Code less build more. Apply modular blocks to create fast prototypes with the help of pre-cooked models, custom layers and utilities support.
 
 + **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.0.
 
@@ -37,11 +37,12 @@ The ideas behind deep learning are simple, so why should their implementation be
 
 For a more in-depth tutorial, you can check out:
 
-+ [Getting started with Text Classification using TH](https://github.com/nityansuman/tensorhub/tree/master/examples/)
-+ [Getting started with Image Classification using TH](https://github.com/nityansuman/tensorhub/tree/master/examples/)
-+ [Build your own custom Model with TF2.0 and TH](https://github.com/nityansuman/tensorhub/tree/master/examples/)
++ [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-text-classification.ipynb)
++ [Getting started with NER](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-ner.ipynb)
++ [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-image-classification.ipynb)
++ [Build your own custom Model with TF2.0 and TensorHub](https://github.com/nityansuman/tensorhub/tree/master/examples/custom-model-with-tensorhub.ipynb)
 
-Look here [examples folder](https://github.com/nityansuman/tensorhub/tree/master/examples) for more.
+Look more [examples](https://github.com/nityansuman/tensorhub/tree/master/examples/) for more.
 
 
 ## Installation
