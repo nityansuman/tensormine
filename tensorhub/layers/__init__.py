@@ -1,4 +1,4 @@
-# Copyright 2019 The TensorHub Authors. All Rights Reserved.
+# Copyright 2020 The TensorHub Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,15 +13,5 @@
 # limitations under the License.
 # ==============================================================================
 
-# Transformation layers
-from basic_layers import Linear
-
-# Attiontion layers
-from bahdanau_attention import BahdanauAttention
-from luong_attention import LuongAttention
-
-# Feature layers
-import inception_v1 as inception_v1
-import inception_v2 as inception_v2
-import inception_v4 as inception_v4
-from fire_module import FireModule
+from .bahdanau_attention import BahdanauAttention
+from .luong_attention import LuongAttention

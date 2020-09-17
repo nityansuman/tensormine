@@ -1,4 +1,4 @@
-# Copyright 2019 The TensorHub Authors. All Rights Reserved.
+# Copyright 2020 The TensorHub Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,17 +13,4 @@
 # limitations under the License.
 # ==============================================================================
 
-# SOTA models support transfer learning
-from transfer_learning import VGG16, VGG19
-from transfer_learning import InceptionV3, InceptionResNetV2
-from transfer_learning import MobileNet
-from transfer_learning import NASNetMobile, NASNetLarge
-from transfer_learning import ResNet50
-from transfer_learning import Xception
-from transfer_learning import DenseNet121, DenseNet169, DenseNet201
-
-# Basic models
-from basic_classifiers import SmallVGG
-
-# Advance models
-from inception_v4 import InceptionV4
+from .activations import *

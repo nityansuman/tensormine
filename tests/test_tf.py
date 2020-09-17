@@ -1,4 +1,4 @@
-# Copyright 2019 The TensorHub Authors. All Rights Reserved.
+# Copyright 2020 The TensorHub Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,5 +13,10 @@
 # limitations under the License.
 # ==============================================================================
 
-from perceptron_classifier import PerceptronClassifier
-from rnn_classifier import LSTMClassifier, GRUClassifier
+import tensorflow as tf
+
+# Installed version
+print("TF Version:", tf.__version__)
+
+# Check GPU availability
+print("Available GPUs:", tf.config.list_physical_devices("GPU"))
