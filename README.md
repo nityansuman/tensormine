@@ -10,7 +10,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/nityansuman/tensorhub)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
 
-
 ## You have just found TensorHub!
 
 TensorHub is a library built on top of TensorFlow 2.0. It is designed to provide simple, modular and repeatable abstractions to accelerate machine learning research. TensorHub is also designed to be simple to understand, easy to write and quick to change (according to the need of the hour!).
@@ -29,7 +28,6 @@ Use TensorHub if you need a deep learning library that:
 
 + **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.0.
 
-
 ## Getting started: 30 seconds to TensorHub
 
 Building a question answering system, an image classification model, a Neural Turing Machine, or any other model is just as fast.
@@ -43,7 +41,6 @@ For a more in-depth tutorial, you can check out:
 + [Build your own custom Model with TF2.0 and TensorHub](https://github.com/nityansuman/tensorhub/tree/master/examples/custom-model-with-tensorhub.ipynb)
 
 Look more [examples](https://github.com/nityansuman/tensorhub/tree/master/examples/) for more.
-
 
 ## Installation
 
