@@ -1,8 +1,8 @@
 <p align="center"><img src="metadata/th-logo.png?raw=true" alt="LOGO"/></p>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/92d9bc37335c4fda8bedb50455ef1233)](https://app.codacy.com/manual/nityansuman/tensorhub?utm_source=github.com&utm_medium=referral&utm_content=nityansuman/tensorhub&utm_campaign=Badge_Grade_Settings)
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/92d9bc37335c4fda8bedb50455ef1233)](https://app.codacy.com/manual/nityansuman/tensorhub?utm_source=github.com&utm_medium=referral&utm_content=nityansuman/tensorhub&utm_campaign=Badge_Grade_Settings)
 ![GitHub LICENSE](https://img.shields.io/github/license/nityansuman/tensorhub)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nityansuman/tensorhub)
 ![GitHub repo size](https://img.shields.io/github/repo-size/nityansuman/tensorhub)
