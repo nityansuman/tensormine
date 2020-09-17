@@ -2,24 +2,24 @@
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-![GitHub LICENSE](https://img.shields.io/github/license/nityansuman/pywings)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nityansuman/pywings)
-![GitHub repo size](https://img.shields.io/github/repo-size/nityansuman/pywings)
-![GitHub language count](https://img.shields.io/github/languages/count/nityansuman/pywings)
+![GitHub LICENSE](https://img.shields.io/github/license/nityansuman/tensorhub)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nityansuman/tensorhub)
+![GitHub repo size](https://img.shields.io/github/repo-size/nityansuman/tensorhub)
+![GitHub language count](https://img.shields.io/github/languages/count/nityansuman/tensorhub)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/nityansuman/pywings)
+![GitHub last commit](https://img.shields.io/github/last-commit/nityansuman/tensorhub)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
 
 
-## You have just found TensorHub
+## You have just found TensorHub!
 
-TensorHub is a library built on top of TensorFlow 2.0 designed to provide simple, modular, repeatable abstractions to accelerate machine learning research. TensorHub is also designed to be simple to understand, easy to write and quick to change (according to the need of hour!).
+TensorHub is a library built on top of TensorFlow 2.0. It is designed to provide simple, modular and repeatable abstractions to accelerate machine learning research. TensorHub is also designed to be simple to understand, easy to write and quick to change (according to the need of the hour!).
 
 Unlike many frameworks TensorHub is extremely flexible about how to use modules. Modules are designed to be self contained and entirely decoupled from one another. TensorHub does not ship with a training framework and users are encouraged to build their own or adopt those built by others. In future training framework and inference engine would also be part of TensorHub build on top of an already amazing peace of art (heard about ML-Flow!).
 
 
-Use `TensorHub` if you need a deep learning library that:
-+ **Reproducibility** - Reproduce the results of existing pre-training models (such as Google BERT, XLNet).
+Use TensorHub if you need a deep learning library that:
++ **Reproducibility** - Reproduce the results of existing pre-training models (such as ResNet, VGG, BERT, XLNet).
 
 + **Modularity** - Clear and robust interface allows users to combine modules with as few restrictions as possible.
 
@@ -47,25 +47,28 @@ Look more [examples](https://github.com/nityansuman/tensorhub/tree/master/exampl
 
 ## Installation
 
-Before installing `TensorHub`, please install its backend engines: TensorFlow (*TensorFlow 2.0 is Recommended*).
+To get started install TensorFlow 2.0 and TensorHub:
 
-+ [Install TensorFlow and Get Started!](https://www.tensorflow.org/install)
-
-+ [Build, deploy, and experiment easily with TensorFlow](https://www.tensorflow.org/)
-
-
-**Install TensorHub**
-
-```sh
+```
+$ pip install tensorflow
 $ pip install tensorhub
 ```
 
+You can run the following to verify things installed correctly:
+
+```
+import tensorflow as tf
+import tensorhub as th
+
+print("TensorFlow version {}".format(tf.__version__))
+print("TensorHub version {}".format(th.__version__))
+```
 
 ## Support
 
-You can also post **bug reports and feature requests** (only) in [GitHub issues](https://github.com/nityansuman/tensorhub/issues). Make sure to read [our guidelines](https://github.com/nityansuman/tensorhub/blob/master/CONTRIBUTING.md) first.
-
 We are eager to collaborate with you. Feel free to open an issue on or send along a pull request.
 If you like the work, show your appreciation by "FORK", "STAR", and "SHARE".
+
+Drop me a mail or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/).
 
 [![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
