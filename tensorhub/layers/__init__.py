@@ -13,5 +13,6 @@
 # limitations under the License.
 # ==============================================================================
 
-from .bahdanau_attention import BahdanauAttention
-from .luong_attention import LuongAttention
+from .additive_attention import AdditiveAttention
+from .dot_product_attention import DotProductAttention
+from .multi_head_attention import MultiHeadAttention
