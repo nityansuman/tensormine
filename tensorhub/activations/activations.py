@@ -13,6 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 
+# Import packages
 import tensorflow as tf
 import numpy as np
 
