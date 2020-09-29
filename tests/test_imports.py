@@ -17,6 +17,5 @@ import sys
 sys.path.append("..")
 
 
-# Check imports
-from tensorhub.utils import *
-from tensorhub.text.models import *
+# Check activation imports
+from tensorhub.activations import relu, gelu, linear, exponential, tanh, sigmoid, softsign, softplus, softmax, elu, selu, mish
