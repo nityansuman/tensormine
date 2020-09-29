@@ -13,4 +13,4 @@
 # limitations under the License.
 # ==============================================================================
 
-from .activations import relu, gelu, linear, exponential, tanh, sigmoid, softsign, softplus, softmax, elu, selu, mish
+from ._activations import relu, gelu, linear, exponential, tanh, sigmoid, softsign, softplus, softmax, elu, selu, mish
