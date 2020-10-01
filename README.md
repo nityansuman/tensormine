@@ -39,8 +39,6 @@ For a more in-depth tutorial (coming up!), you can check out:
 + [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-text-classification.ipynb)
 + [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-image-classification.ipynb)
 
-Look more [examples](https://github.com/nityansuman/tensorhub/tree/master/examples/) for more.
-
 ## Installation
 
 To get started install TensorFlow 2.0 and TensorHub:
