@@ -37,9 +37,7 @@ The ideas behind deep learning are simple, so why should their implementation be
 For a more in-depth tutorial (coming up!), you can check out:
 
 + [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-text-classification.ipynb)
-+ [Getting started with NER](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-ner.ipynb)
 + [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-image-classification.ipynb)
-+ [Build your own custom Model with TF2.0 and TensorHub](https://github.com/nityansuman/tensorhub/tree/master/examples/custom-model-with-tensorhub.ipynb)
 
 Look more [examples](https://github.com/nityansuman/tensorhub/tree/master/examples/) for more.
 
