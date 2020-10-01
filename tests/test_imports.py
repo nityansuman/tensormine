@@ -20,5 +20,6 @@ sys.path.append("..")
 # Check activation imports
 from tensorhub.activations import relu, gelu, linear, exponential, tanh, sigmoid, softsign, softplus, softmax, elu, selu, mish
 
-# Check model import
-from tensorhub.moap.image import MiniGoogleNet
+# Check moap imports
+from tensorhub.moap.image import GoogLeNet, SmallXceptionNet, ConvNet
+from tensorhub.moap.text import RNNClassifier
