@@ -29,7 +29,7 @@ class DimReductionLayer(tf.keras.layers.Layer):
 			num_filters {int} -- Number of filters. (default: {64})
 			name {str} -- Name of the layer. (default: {None})
 		"""
-		super(LayerWithReduction, self).__init__(name=name)
+		super(DimReductionLayer, self).__init__(name=name)
 		self.conv2d_1a = tf.keras.layers.Conv2D(filters=num_filters, kernel_size=(1, 1), strides=(1, 1))
 		self.conv2d_1b = tf.keras.layers.Conv2D(filters=num_filters, kernel_size=(1, 1), strides=(1, 1))
 		self.conv2d_1c = tf.keras.layers.Conv2D(filters=num_filters, kernel_size=(1, 1), strides=(1, 1))
