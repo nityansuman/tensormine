@@ -14,5 +14,3 @@
 # ==============================================================================
 
 from tensorhub.moap.image.convnet import ConvNet
-# from tensorhub.moap.image.small_exception import SmallXceptionNet
-# from tensorhub.moap.image.google_net import GoogLeNet
