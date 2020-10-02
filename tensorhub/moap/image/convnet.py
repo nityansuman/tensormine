@@ -21,7 +21,7 @@ class ConvNet(tf.keras.Model):
 	"""ConvNet Model class - A simple CNN based model developed on MNIST dataset for image classification.
 
 	Args:
-		tf (cls): Inhereting parent `Model` class.
+		tf (cls):  Parent `Model` class.
 	"""
 	def __init__(self, num_classes, name=None):
 		"""Model constructor.
