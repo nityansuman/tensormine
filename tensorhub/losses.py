@@ -12,3 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
+import tensorflow as tf
+
+
+class CustomLoss(tf.keras.losses.Loss):
+	def __init__(self, name, **kwargs):
+		super(CustomLoss, self).__init__(name=name, **kwargs)
+	
+	def call(self, y_true, y_pred):
+		pass

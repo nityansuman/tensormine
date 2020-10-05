@@ -12,3 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
+import tensorflow as tf
+
+
+class CustomMetric(tf.keras.metrics.Metric):
+	def __init__(self, name="name", **kwargs):
+		super(CustomMetric, self).__init__(name=name, **kwargs)
+	
+	def update_state(self, y_true, y_pred, sample_weight=None):
+		pass
+	
+	def result(self):
+		pass
