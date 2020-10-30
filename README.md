@@ -1,7 +1,5 @@
 <p align="center"><img src="metadata/th-logo.png?raw=true" alt="LOGO"/></p>
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/92d9bc37335c4fda8bedb50455ef1233)](https://app.codacy.com/manual/nityansuman/tensorhub?utm_source=github.com&utm_medium=referral&utm_content=nityansuman/tensorhub&utm_campaign=Badge_Grade_Settings)
 ![GitHub LICENSE](https://img.shields.io/github/license/nityansuman/tensorhub)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nityansuman/tensorhub)
@@ -58,12 +56,5 @@ print("TensorFlow version {}".format(tf.__version__))
 print("TensorHub version {}".format(th.__version__))
 ```
 
-## Support
-
-We are eager to collaborate with you. Feel free to open an issue on or send along a pull request.
-
-If you like the work, show your appreciation by "FORK", "STAR", and "SHARE".
-
-Drop me a mail or connect with me on [Linkedin](https://linkedin.com/in/kumar-nityan-suman/).
-
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
