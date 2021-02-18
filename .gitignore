@@ -1,5 +1,6 @@
 # Ignore project folders
 .vscode/
+others/
 notes.txt
 
 # Byte-compiled / optimized / DLL files
