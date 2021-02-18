@@ -11,7 +11,7 @@
 
 ## You have just found TensorHub!
 
-TensorHub is a library built on top of TensorFlow 2.0 to provide simple, modular and repeatable abstractions to accelerate deep learning research. TensorHub is designed to be simple to understand, easy to write and quick to change (according to the need of the hour!).
+TensorHub is a library built on top of TensorFlow 2 to provide simple, modular and repeatable abstractions to accelerate deep learning research. TensorHub is designed to be simple to understand, easy to write and quick to change (according to the need of the hour!).
 
 Unlike many frameworks TensorHub is extremely flexible about how to use modules. Modules are designed to be self contained and entirely decoupled from one another.
 
