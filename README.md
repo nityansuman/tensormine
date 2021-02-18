@@ -11,10 +11,9 @@
 
 ## You have just found TensorHub!
 
-TensorHub is a library built on top of TensorFlow 2.0. It is designed to provide simple, modular and repeatable abstractions to accelerate machine learning research. TensorHub is also designed to be simple to understand, easy to write and quick to change (according to the need of the hour!).
+TensorHub is a library built on top of TensorFlow 2.0 to provide simple, modular and repeatable abstractions to accelerate deep learning research. TensorHub is designed to be simple to understand, easy to write and quick to change (according to the need of the hour!).
 
-Unlike many frameworks TensorHub is extremely flexible about how to use modules. Modules are designed to be self contained and entirely decoupled from one another. TensorHub does not ship with a training framework and users are encouraged to build their own or adopt those built by others. In future training framework and inference engine would also be part of TensorHub build on top of an already amazing peace of art (heard about ML-Flow!).
-
+Unlike many frameworks TensorHub is extremely flexible about how to use modules. Modules are designed to be self contained and entirely decoupled from one another.
 
 Use TensorHub if you need a deep learning library that:
 + **Reproducibility** - Reproduce the results of existing pre-training models (such as ResNet, VGG, BERT, XLNet).
@@ -34,25 +33,22 @@ The ideas behind deep learning are simple, so why should their implementation be
 
 For a more in-depth tutorial (coming up!), you can check out:
 
-+ [Getting started with Text Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-text-classification.ipynb)
-+ [Getting started with Image Classification](https://github.com/nityansuman/tensorhub/tree/master/examples/getting-started-with-image-classification.ipynb)
++ [Getting started with Text Classification](examples/getting-started-with-text-classification.ipynb)
++ [Getting started with Image Classification](examples/getting-started-with-image-classification.ipynb)
 
 ## Installation
 
 To get started install TensorFlow 2.0 and TensorHub:
 
 ```
-$ pip install tensorflow
 $ pip install tensorhub
 ```
 
 You can run the following to verify things installed correctly:
 
 ```
-import tensorflow as tf
 import tensorhub as th
 
-print("TensorFlow version {}".format(tf.__version__))
 print("TensorHub version {}".format(th.__version__))
 ```
 
