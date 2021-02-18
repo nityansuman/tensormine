@@ -24,7 +24,7 @@ Use TensorHub if you need a deep learning library that:
 
 + **Prototyping** - Code less build more. Apply modular blocks to create fast prototypes with the help of pre-cooked models, custom layers and utilities support.
 
-+ **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.0.
++ **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.
 
 ## Getting started: 30 seconds to TensorHub
 
@@ -38,8 +38,6 @@ For a more in-depth tutorial (coming up!), you can check out:
 
 ## Installation
 
-To get started install TensorFlow 2.0 and TensorHub:
-
 ```
 $ pip install tensorhub
 ```
@@ -49,7 +47,7 @@ You can run the following to verify things installed correctly:
 ```
 import tensorhub as th
 
-print("TensorHub version {}".format(th.__version__))
+print("TensorHub Version {}".format(th.__version__))
 ```
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
