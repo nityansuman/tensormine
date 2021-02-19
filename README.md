@@ -31,10 +31,7 @@ Use TensorHub if you need a deep learning library that:
 Building a question answering system, an image classification model, a Neural Turing Machine, or any other model is just as fast.
 The ideas behind deep learning are simple, so why should their implementation be painful?
 
-For a more in-depth tutorial (coming up!), you can check out:
-
-+ [Getting started with Text Classification](examples/getting-started-with-text-classification.ipynb)
-+ [Getting started with Image Classification](examples/getting-started-with-image-classification.ipynb)
+For a more in-depth tutorial, stay tuned!
 
 ## Installation
 
