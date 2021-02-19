@@ -13,4 +13,5 @@
 # limitations under the License.
 # ==============================================================================
 
-from tensorhub.moap.text.rnn_classifier import RNNClassifier
+# Import packges
+from .text_cnn import TextCNN
