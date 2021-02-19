@@ -15,15 +15,16 @@
 
 # Import packages
 import tensorflow as tf
+from tensorflow.keras import layers
 
 
 class ConvNet(tf.keras.Model):
-	"""ConvNet Model class - A simple CNN based model developed on MNIST dataset for image classification.
+	"""ConvNet image classifier.
 
 	Args:
 		tf (cls):  Parent `Model` class.
 	"""
-	def __init__(self, num_classes, name=None):
+	def __init__(self, num_classes, name="ConvNet"):
 		"""Model constructor.
 
 		Args:
@@ -31,12 +32,17 @@ class ConvNet(tf.keras.Model):
 			name (str, optional): Name of the model. Defaults to None.
 		"""
 		super(ConvNet, self).__init__(name=name)
-		self.conv_2d_1 = tf.keras.layers.Conv2D(filters=32, kernel_size=(3, 3), activation="relu")
-		self.conv_2d_2 = tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), activation="relu")
-		self.max_pool = tf.keras.layers.MaxPool2D(pool_size=(2, 2))
-		self.flatten = tf.keras.layers.Flatten()
-		self.dropout = tf.keras.layers.Dropout(rate=0.5)
-		self.dense = tf.keras.layers.Dense(units=num_classes, activation="softmax")
+		self.conv_2d_1 = layers.Conv2D(filters=32, kernel_size=3, activation="relu")
+		self.conv_2d_2 = layers.Conv2D(filters=64, kernel_size=3, activation="relu")
+		self.max_pool = layers.MaxPool2D()
+		self.flatten = layers.Flatten()
+		self.drop_out = layers.Dropout(0.5)
+		if num_classes == 1:
+			self.dense_1 = layers.Dense(units=num_classes, activation="sigmoid")
+		elif num_classes >= 2:
+			self.dense_1 = layers.Dense(units=num_classes, activation="softmax")
+		else:
+			raise ValueError("`num_classes` cannot be Null or negative.")
 	
 	def call(self, x):
 		"""Foreward pass of the model.
@@ -52,6 +58,5 @@ class ConvNet(tf.keras.Model):
 		x = self.conv_2d_2(x)
 		x = self.max_pool(x)
 		x = self.flatten(x)
-		x = self.dropout(x)
-		x = self.dense(x)
-		return x
+		x = self.drop_out(x)
+		return self.dense_1(x)

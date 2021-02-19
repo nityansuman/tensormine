@@ -19,7 +19,7 @@ from tensorflow.keras import layers
 
 
 class TextCNN(tf.keras.Model):
-	"""TextCNN classifier model based on 1D CNN.
+	"""TextCNN text classifier.
 
 	Args:
 		tf (cls): Base abstract `Model` class.
