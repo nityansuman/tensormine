@@ -29,7 +29,7 @@ Use TensorHub if you need a deep learning library that:
 
 ## Installation & Compatibility
 
-To use, simply install using:
+To use, simply install from [PyPI](https://pypi.org/) via `pip`:
 
 ```
 $ pip install tensorhub
@@ -58,7 +58,6 @@ MoaP's are deep learning models that are made available with TensorHub. These mo
 Layers are the basic building blocks of neural networks in TensorHub. A layer consists of a tensor-in tensor-out computation function (the layer's call method) and some state, held in TensorFlow variables (the layer's weights).
 
 TensorHub provides customs layers conceptualized from proven and high performing deep learning models. This helps to take advantage of core magic blocks from high performing SOTA models with smaller or a different neural architecture.
-
 
 ## Support
 
