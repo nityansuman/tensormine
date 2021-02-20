@@ -1,4 +1,4 @@
-# Copyright 2020 The TensorHub Authors. All Rights Reserved.
+# Copyright 2021 The TensorHub Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ import tensorflow as tf
 
 
 class CustomMetric(tf.keras.metrics.Metric):
-	def __init__(self, name="name", **kwargs):
+	def __init__(self, name, **kwargs):
 		super(CustomMetric, self).__init__(name=name, **kwargs)
 	
 	def update_state(self, y_true, y_pred, sample_weight=None):
