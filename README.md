@@ -37,7 +37,7 @@ $ pip install tensorhub
 
 TensorHub is compatible with:
 - Python 3.5–3.8
-- TensorFlow 2.0 or later
+- TensorFlow 2.3.0 or later
 - Ubuntu 16.04 or later
 - Windows 7 or later
 - macOS 10.12.6 (Sierra) or later.
