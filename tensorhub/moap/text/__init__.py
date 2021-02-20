@@ -12,6 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+"""Models"""
 
-# Import packges
-from .text_cnn import TextCNN
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+from tensorhub.moap.text.text_cnn import TextCNN
+
+__all__ = [
+	"TextCNN"
+]
