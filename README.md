@@ -11,11 +11,12 @@
 
 ## You have just found TensorHub!
 
-TensorHub is a library built on top of TensorFlow 2 to provide simple, modular and repeatable abstractions to accelerate deep learning research. TensorHub is designed to be simple to understand, easy to write and quick to change (according to the need of the hour!).
+TensorHub is a deep learning API written in Python, running on top of the machine learning platform TensorFlow 2 to provide simple, modular and repeatable abstractions to accelerate deep learning research. TensorHub is designed to be simple to understand, easy to write and quick to change.
 
 Unlike many frameworks TensorHub is extremely flexible about how to use modules. Modules are designed to be self contained and entirely decoupled from one another.
 
 Use TensorHub if you need a deep learning library that:
+
 + **Reproducibility** - Reproduce the results of existing pre-training models (such as ResNet, VGG, BERT, XLNet).
 
 + **Modularity** - Clear and robust interface allows users to combine modules with as few restrictions as possible.
@@ -26,26 +27,42 @@ Use TensorHub if you need a deep learning library that:
 
 + **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.
 
-## Getting started: 30 seconds to TensorHub
+## Installation & Compatibility
 
-Building a question answering system, an image classification model, a Neural Turing Machine, or any other model is just as fast.
-The ideas behind deep learning are simple, so why should their implementation be painful?
-
-For a more in-depth tutorial, stay tuned!
-
-## Installation
+To use, simply install using:
 
 ```
 $ pip install tensorhub
 ```
 
-You can run the following to verify things installed correctly:
+TensorHub is compatible with:
 
-```
-import tensorhub as th
+- Python 3.5–3.8
+- TensorFlow 2.0 or later
+- Ubuntu 16.04 or later
+- Windows 7 or later
+- macOS 10.12.6 (Sierra) or later.
 
-print("TensorHub Version {}".format(th.__version__))
-```
+## Getting Started
+
+The ideas behind deep learning are simple, so why should their implementation be painful?
+
+TensorHub ships with a number of built in modules that you can trivially use from proved `models` to advance `layers`.
+
+### Models on a Plate (MoaP)
+
+MoaP's are deep learning models that are made available with TensorHub. These models can be used for training, feature extraction, fine-tuning or as you wish.
+
+### Layers
+
+Layers are the basic building blocks of neural networks in TensorHub. A layer consists of a tensor-in tensor-out computation function (the layer's call method) and some state, held in TensorFlow variables (the layer's weights).
+
+TensorHub provides customs layers conceptualized from proven and high performing deep learning models. This helps to take advantage of core magic blocks from high performing SOTA models with smaller or a different neural architecture.
+
+
+## Support
+
+You can also post bug reports and feature requests (only) in GitHub issues. Make sure to read our guidelines first.
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://GitHub.com/nityansuman/tensorhub/)
