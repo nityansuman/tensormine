@@ -17,15 +17,15 @@ Unlike many frameworks TensorHub is extremely flexible about how to use modules.
 
 Use TensorHub if you need a deep learning library that:
 
-+ **Reproducibility** - Reproduce the results of existing pre-training models (such as ResNet, VGG, BERT, XLNet).
+- **Reproducibility** - Reproduce the results of existing pre-training models (such as ResNet, VGG, BERT, XLNet).
 
-+ **Modularity** - Clear and robust interface allows users to combine modules with as few restrictions as possible.
+- **Modularity** - Clear and robust interface allows users to combine modules with as few restrictions as possible.
 
-+ **Fast** - Our custom utilities and layers are made from the ground up to support pre-existing standard frameworks like TensorFlow and Keras with efficiency in mind.
+- **Fast** - Our custom utilities and layers are made from the ground up to support pre-existing standard frameworks like TensorFlow and Keras with efficiency in mind.
 
-+ **Prototyping** - Code less build more. Apply modular blocks to create fast prototypes with the help of pre-cooked models, custom layers and utilities support.
+- **Prototyping** - Code less build more. Apply modular blocks to create fast prototypes with the help of pre-cooked models, custom layers and utilities support.
 
-+ **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.
+- **Platform Independent** - Run your model on CPU, single GPU or using a distributed training strategy on top of TensorFlow 2.
 
 ## Installation & Compatibility
 
@@ -36,7 +36,6 @@ $ pip install tensorhub
 ```
 
 TensorHub is compatible with:
-
 - Python 3.5–3.8
 - TensorFlow 2.0 or later
 - Ubuntu 16.04 or later
