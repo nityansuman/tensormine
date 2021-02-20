@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Models"""
+"""Natural language processing models."""
 
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorhub.moap.image.convnet import ConvNet
+from tensorhub.moap.nlp.text_cnn import TextCNN
 
 __all__ = [
-	"ConvNet"
+	"TextCNN"
 ]
