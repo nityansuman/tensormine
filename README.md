@@ -46,7 +46,7 @@ TensorHub is compatible with:
 
 The ideas behind deep learning are simple, so why should their implementation be painful?
 
-TensorHub ships with a number of built in modules that you can trivially use from proved `models` to advance `layers`.
+TensorHub ships with a number of built in modules like pre-built `models` and advance `layers` that can be used easily.
 
 ### Models on a Plate (MoaP)
 
