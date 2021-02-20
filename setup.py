@@ -34,7 +34,7 @@ setuptools.setup(
     license="Apache-2.0",
     packages=setuptools.find_packages(exclude=[".github", "tests", "metadata"]),
     install_requires=[
-        "tensorflow>=2.0.0"
+        "tensorflow>=2.3.0"
     ],
     classifiers=[
         "Intended Audience :: Developers",
