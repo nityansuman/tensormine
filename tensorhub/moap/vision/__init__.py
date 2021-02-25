@@ -18,11 +18,11 @@ from __future__ import absolute_import, division, print_function
 
 from tensorhub.moap.vision.alex_net import AlexNet
 from tensorhub.moap.vision.conv_net import ConvNet
-from tensorhub.moap.vision.le_net import LeNet
+from tensorhub.moap.vision.le_net import LeNet5
 from tensorhub.moap.vision.zf_net import ZfNet
 
 __all__ = [
-	"LeNet",
+	"LeNet5",
 	"ZfNet",
 	"ConvNet",
 	"AlexNet"
