@@ -14,12 +14,16 @@
 # ==============================================================================
 """Computer vision models."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+from __future__ import absolute_import, division, print_function
 
-from tensorhub.moap.vision.convnet import ConvNet
+from tensorhub.moap.vision.alex_net import AlexNet
+from tensorhub.moap.vision.conv_net import ConvNet
+from tensorhub.moap.vision.le_net import LeNet
+from tensorhub.moap.vision.zf_net import ZfNet
 
 __all__ = [
-	"ConvNet"
+	"LeNet",
+	"ZfNet",
+	"ConvNet",
+	"AlexNet"
 ]
