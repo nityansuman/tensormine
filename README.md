@@ -5,9 +5,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nityansuman/tensorhub)
 ![GitHub repo size](https://img.shields.io/github/repo-size/nityansuman/tensorhub)
 ![GitHub language count](https://img.shields.io/github/languages/count/nityansuman/tensorhub)
-
 ![GitHub last commit](https://img.shields.io/github/last-commit/nityansuman/tensorhub)
-![Maintenance](https://img.shields.io/maintenance/yes/2020)
 
 ## You have just found TensorHub!
 
