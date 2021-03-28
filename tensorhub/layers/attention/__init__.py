@@ -12,8 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+"""Attention layers."""
 
-from tensorhub.layers.attention.attention import AttentionBase
+from __future__ import absolute_import, division, print_function
 
 from tensorhub.layers.attention.additive_attention import AdditiveAttention
-from tensorhub.layers.attention.dot_product_attention import DotProductAttention
+from tensorhub.layers.attention.attention import AttentionBase
+from tensorhub.layers.attention.dot_product_attention import \
+    DotProductAttention
