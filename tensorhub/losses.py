@@ -16,9 +16,9 @@
 import tensorflow as tf
 
 
-class CustomLoss(tf.keras.losses.Loss):
+class BaseLoss(tf.keras.losses.Loss):
 	def __init__(self, name, **kwargs):
-		super(CustomLoss, self).__init__(name=name, **kwargs)
-	
+		super(BaseLoss, self).__init__(name=name, **kwargs)
+
 	def call(self, y_true, y_pred):
 		pass
